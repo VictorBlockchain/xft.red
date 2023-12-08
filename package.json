@@ -1,6 +1,6 @@
 {
-  "name": "african-hyena-pets",
-  "version": "0.1.0",
+  "name": "NFTea.app",
+  "version": "0.1.2",
   "private": true,
   "scripts": {
     "dev": "next dev",
@@ -9,19 +9,48 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@metamask/sdk-react": "^0.12.0",
+    "bignumber.js": "^9.1.1",
+    "bn.js": "^5.2.1",
+    "jquery": "^3.7.1",
+    "next": "14.0.3",
+    "next-pwa": "^5.4.6",
+    "quill": "^1.3.7",
     "react": "^18",
     "react-dom": "^18",
-    "next": "14.0.3"
+    "react-quill": "^2.0.0",
+    "react-slick": "^0.29.0",
+    "simple-get": "^4.0.1",
+    "slick-carousel": "^1.8.1",
+    "web3-utils": "^1.10.0"
   },
   "devDependencies": {
-    "typescript": "^5",
+    "@types/jquery": "^3.5.27",
     "@types/node": "^20",
     "@types/react": "^18",
+    "@types/react-datepicker": "^4.19.3",
     "@types/react-dom": "^18",
+    "@types/react-slick": "^0.23.12",
     "autoprefixer": "^10.0.1",
-    "postcss": "^8",
-    "tailwindcss": "^3.3.0",
+    "axios": "^0.27.2",
+    "canvas": "^2.10.2",
+    "canvas-to-buffer": "^2.0.0",
+    "dotenv": "^16.0.3",
     "eslint": "^8",
-    "eslint-config-next": "14.0.3"
+    "eslint-config-next": "14.0.3",
+    "fs-plus": "^3.1.1",
+    "ipfs-http-client": "^59.0.0",
+    "moment": "^2.29.4",
+    "mongodb": "^3.5.9",
+    "next-google-fonts": "^2.2.0",
+    "postcss": "^8",
+    "qrcode": "^1.5.1",
+    "react-datepicker": "^4.11.0",
+    "react-player": "^2.11.0",
+    "react-twitter-embed": "^4.0.4",
+    "tailwindcss": "^3.3.0",
+    "typescript": "^5",
+    "ultimate-text-to-image": "^1.0.0",
+    "web3": "^1.9.0"
   }
 }
