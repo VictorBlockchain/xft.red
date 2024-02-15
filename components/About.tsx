@@ -37,8 +37,8 @@ const About = () => {
             <div className="container">
                 <div className="cs-cta cs-style1 cs-type1 cs-bg">
                     <div className="cs-cta_right">
-                    <h2 className="cs-cta_title" style={{fontFamily: 'Comfortaa'}}>Our mission is global economic empowerment through the utilization of smart NFTs.</h2>
-                    <div className="cs-cta_subtitle" style={{fontFamily: 'Comfortaa'}}>We will harness the power of web3, envisioning it as a domain of collateralized value. We empower individuals to utilize their smart NFTs as peer-to-peer collateral, transcending geographical boundaries for a truly global impact. </div>
+                    <h2 className="cs-cta_title" style={{fontFamily: 'Comfortaa'}}>Our mission is global economic empowerment through the utilization of web3 technologies.</h2>
+                    <div className="cs-cta_subtitle" style={{fontFamily: 'Comfortaa'}}>We will harness this new collective power, envisioning it as a domain of collateralized value. We empower individuals to utilize their xFTs as peer-to-peer collateral, transcending geographical boundaries for a truly global impact. </div>
                     {/* <a href="#" className="cs-btn cs-style1 cs-btn_lg"><span>Let’s Start</span></a> */}
                     </div>
                     <div className="cs-cta_img text-center">

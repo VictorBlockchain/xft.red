@@ -163,7 +163,7 @@ const Label = ({label}:any) => {
                     let childData:any = []
                     let profileData:any = await axios.get(`/api/getProfile?account=${resp.data.creator}`)
                     resp.data.creatorName = profileData.data.artistName
-                    resp.data.profilePic = profileData.data.profilePic
+                    resp.data.avatar = profileData.data.avatar
                     resp.data.twitter = profileData.data.twitter
                     resp.data.children = respLabel_.label[1]
                     resp.data.id = respLabel_.label[0][0]
@@ -175,8 +175,8 @@ const Label = ({label}:any) => {
                         childipfs_ = childipfs_
                        let childresp:any = await axios.get(childipfs_)
                         let childCreator:any = await axios.get(`/api/getProfile?account=${childresp.data.creator}`)
-                        childresp.data.creatorName = childCreator.data.artistName
-                        childresp.data.profilePic = childCreator.data.profilePic
+                        childresp.data.creatorName = childCreator.data.name2
+                        childresp.data.avatar = childCreator.data.avatar
                         childresp.data.twitter = childCreator.data.twitter
                         childresp.data.id = element
                         childresp.data.key = i
@@ -424,7 +424,7 @@ const Label = ({label}:any) => {
                                         <div className="cs-card_info">
                                         <a href="#" className="cs-avatar cs-white_bg">
                                         <Image
-                                                src={item.profilePic}
+                                                src={item.avatar}
                                                 alt="Image"
                                                 className="cs-zoom_item"
                                                 width='200'
@@ -446,7 +446,7 @@ const Label = ({label}:any) => {
                                                     
                                                     </div>
                                                     <div className="col-6">
-                                                        <span> 0 <small> TEA</small></span>
+                                                        <span> 0 <small> XTHOS</small></span>
                                                     
                                                     </div>
                                                 </div>
@@ -529,7 +529,7 @@ const Label = ({label}:any) => {
                                             <div className="cs-card_info">
                                             <a href="#" className="cs-avatar cs-white_bg">
                                             <Image
-                                                    src={item.seller.profilePic}
+                                                    src={item.seller.avatar}
                                                     alt="Image"
                                                     className="cs-zoom_item"
                                                     width='200'
@@ -550,7 +550,7 @@ const Label = ({label}:any) => {
                                                     
                                                     </div>
                                                     <div className="col-6 text-center">
-                                                        <span> 0 <small> TEA</small></span>
+                                                        <span> 0 <small> XTHOS</small></span>
                                                     
                                                     </div>
                                                 </>
@@ -629,7 +629,7 @@ const Label = ({label}:any) => {
                                             <div className="cs-card_info">
                                             <a href="#" className="cs-avatar cs-white_bg">
                                             <Image
-                                                    src={item.holder.profilePic}
+                                                    src={item.holder.avatar}
                                                     alt="Image"
                                                     className="cs-zoom_item"
                                                     width='200'
@@ -649,11 +649,11 @@ const Label = ({label}:any) => {
                                                     </div>
                                                     <div className="col-6 text-center">
                                                         {item.teaBalance>0 && (
-                                                            <span> {formatNumber(item.teaBalance || 0)} <small> TEA</small></span>
+                                                            <span> {formatNumber(item.teaBalance || 0)} <small> XTHOS</small></span>
                                                         
                                                         )}
                                                         {item.teaBalance==0 && (
-                                                            <span> 0 <small> TEA</small></span>
+                                                            <span> 0 <small> XTHOS</small></span>
                                                         
                                                         )}                                                    
                                                     </div>
@@ -707,7 +707,7 @@ const Label = ({label}:any) => {
                                                 <div className="cs-card_info">
                                                 <a href="#" className="cs-avatar cs-white_bg">
                                                 <Image
-                                                        src={item.creator.profilePic}
+                                                        src={item.creator.avatar}
                                                         alt="Image"
                                                         className="cs-zoom_item"
                                                         width='200'
@@ -728,11 +728,11 @@ const Label = ({label}:any) => {
                                                             </div>
                                                             <div className="col-6 text-center">
                                                                 {item.tea>0 && (
-                                                                <span> {formatNumber(item.teaBalance || 0)} <small> TEA</small></span>
+                                                                <span> {formatNumber(item.teaBalance || 0)} <small> XTHOS</small></span>
                                                             
                                                             )}
                                                             {item.tea==0 && (
-                                                                <span> 0 <small> TEA</small></span>
+                                                                <span> 0 <small> XTHOS</small></span>
                                                             
                                                             )}                                                             
                                                             </div>
@@ -775,11 +775,11 @@ const Label = ({label}:any) => {
                                                 <div className="col-lg-6">
                                                     <div className="cs-sidebar_widget cs-box_shadow cs-white_bg h4">
                                                     <h2 className="cs-widget_title"><span>Stats</span></h2>
-                                                        <p className="pb-1">volume: {_stats[0] || 0} TEA</p>
-                                                        <p className="pb-1">royalties paid: {_royaltea[1] || 0} TEA</p>
-                                                        <p className="pb-1">royalties collected: {_royaltea[2] || 0} TEA</p>
+                                                        <p className="pb-1">volume: {_stats[0] || 0} XTHOS</p>
+                                                        <p className="pb-1">royalties paid: {_royaltea[1] || 0} XTHOS</p>
+                                                        <p className="pb-1">royalties collected: {_royaltea[2] || 0} XTHOS</p>
                                                         <p className="pb-1">buyers: {_stats[1].length || 0}</p>
-                                                        <p>your royalteas: {_royaltea[4] || 0} TEA </p>
+                                                        <p>your royalteas: {_royaltea[4] || 0} XTHOS </p>
                                                     
                                                     </div>
                                                 </div>

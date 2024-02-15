@@ -61,7 +61,7 @@
   });
 
   $(window).on('resize', function () {
-    //isotopInit();
+    isotopInit();
   });
 
   $(window).on('scroll', function () {

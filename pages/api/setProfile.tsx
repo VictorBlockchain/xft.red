@@ -2,83 +2,104 @@
 import fs from 'fs';
 
 import clientPromise from "../../lib/mongodb";
+import Profile from "./schema/profile"
 
 export default async (req:any, res:any) => {
     try {
-        const client = await clientPromise;
-        const db = client.db("nftea");
+        // const client = await clientPromise;
+        // const db = client.db("nftea");
+        const { email,phone,account,name,name2,avatar,twitter,tiktok,story,cover,admin } = req.body;   
+        let msg:any = {};
         
-        const { account, name, email, artistName, story, twitter, profilePic, pfp, cover } = req.body;   
-
-        const existingProfile = await db.collection("profiles").findOne({ artistName });
-        // console.log(existingProfile)
-
-        if (existingProfile && existingProfile.account!=account) {
-            // artistName is already taken
-            return res.status(400).json({ message: "Artist name is not available." });
-
+        let exists = await Profile.findOne({ name2:name2 });
+        if(exists && exists.account!=account){
+          msg = {msg: 'user name taken'}
         }else{
-            // Check if account exists
-            const existingAccount = await db.collection("profiles").findOne({ account });
             
-            if (existingAccount) {
-            // Account exists, update the profile
-            const updatedFields:any = {};
-  
-            if (name && name !== existingAccount.name) {
-                updatedFields.name = name;
-            }
-            if (email && email !== existingAccount.email) {
-              updatedFields.email = email;
-          }
-            if (profilePic && profilePic !== existingAccount.profilePic) {
-                updatedFields.profilePic = profilePic;
-              }
-              
-            if (artistName && artistName !== existingAccount.artistName) {
-              updatedFields.artistName = artistName;
-            }
+          exists = await Profile.findOne({ email:email });
+          if(exists && exists.account!=account){
+            msg = {msg: 'email taken'}
+          }else{
 
-              if (story && story !== existingAccount.story) {
-                updatedFields.story = story;
-              }
-              if (twitter && twitter !== existingAccount.twitter) {
-                updatedFields.twitter = twitter;
-              }
-              if (artistName && artistName !== existingAccount.artistName) {
-                updatedFields.artistName = artistName;
-              }
-              if (pfp && pfp !== existingAccount.pfp) {
-                updatedFields.pfp = pfp;
-              }
-            if (Object.keys(updatedFields).length > 0) {
-              const updatedProfile = await db.collection("profiles").updateOne(
-                { account },
-                {
-                  $set: updatedFields
+            exists = await Profile.findOne({ twitter:twitter });
+            if(exists && exists.account!=account){
+              msg = {msg: 'twitter taken'}
+            }else{
+
+              exists = await Profile.findOne({ tiktok:tiktok });
+              if(exists && exists.account!=account){
+                msg = {msg: 'tiktok taken'}
+
+              }else{
+                  
+                exists = await Profile.findOne({ account:account });
+                if(exists){
+                  ///update fields
+                  if(email!=""){
+                    exists.email = email
+                  }
+                  if(phone!=""){
+                    exists.phone = phone
+                  }
+                  if(name!=""){
+                    exists.name = name
+                  }
+                  if(name2!=""){
+                    exists.name2 = name2
+                  }
+                  if(avatar!=""){
+                    exists.avatar = avatar
+                  }
+                  if(twitter!=""){
+                    exists.twitter = twitter
+                  }
+                  if(tiktok!=""){
+                    exists.tiktok = tiktok
+                  }
+                  if(story!=""){
+                    exists.story = story
+                  }
+                  if(cover!=""){
+                    exists.cover = cover
+                  }
+                  if(admin!=""){
+                    exists.admin = admin
+                  }
+                  exists.active = true
+                  await exists.save()
+                  msg = {msg: 'profile updated'}
+
+                }else{
+                  //create new
+                  const post = new Profile({
+                      account:account,
+                      name:name,
+                      email:email,
+                      name2:name2,
+                      story:story,
+                      twitter:twitter,
+                      avatar:avatar,
+                      tiktok:tiktok,
+                      cover:cover,
+                      phone:phone,
+                      active:true,
+                      verifiedEmail:false,
+                      verifiedTwitter:false,
+                      verifiedTiktok:false,
+                      verifiedPhone:false,
+                      ahpReferrals:0,
+                      admin:0
+                  });
+                  await post.save();
+                  msg = {msg: 'profile created'}
                 }
-              );
-            // console.log(updatedProfile)
-            return res.json(existingAccount);
+              }
             }
-
-            } else {
-            // Account does not exist, insert the profile
-            const post = await db.collection("profiles").insertOne({
-                account,
-                name,
-                email,
-                artistName,
-                story,
-                twitter,
-                profilePic,
-                pfp,
-                cover
-            });
-
-            return res.json(post);
-            }
+          }
         }
+        
+        res.json(msg);
+
     } catch (e:any) {
         console.error(e);
         throw new Error(e).message;

@@ -19,7 +19,15 @@ import shopStorageABI from '../lib/contracts/shopstorage.json';
 import teaTokenABI from '../lib/contracts/NFTEA.json';
 import teaPotABI from '../lib/contracts/teapot.json';
 import bridgeABI from '../lib/contracts/bridge.json';
+import eSportsABI from '../lib/contracts/eSports.json';
+import {setChallenge} from './events'
+import {
+  esports_abi,
+  esports_contract,
+  esports_events,
+} from "../lib/abi/esports"
 const NFTEA_BRIDGE = '0xf637fd72f0f9582C442E2bC193af1e8ecc72F374';
+const BLANK = '0x0000000000000000000000000000000000000000';
 
 dotenv.config();
 const teaPot = process.env.teaPot;
@@ -35,6 +43,7 @@ const mintStorage = process.env.mintStorage;
 const mint = process.env.mint;
 const kettle = process.env.kettle;
 const fire = process.env.fire;
+const eSports = esports_contract;
 //const web3 = new Web3(Web3.givenProvider || 'http://localhost:9545');
 let selectedProvider;
 let web3; // Declare web3 as a global variable
@@ -208,11 +217,26 @@ function stringToUtf8Hex(string) {
   }
   return "0x" + hexString;
 }
+
+export const toString = async (inputs,logData)=>{
+  if(!web3){
+    web3 = await getWeb3()
+  }
+  const receipt = await new Promise((resolve, reject) => {
+    
+    const contract = new web3.eth.Contract(eSportsABI.abi, eSports);
+    const formattedLogData = logData.padEnd(66, '0');
+    let convert = web3.eth.abi.decodeLog(inputs, formattedLogData, [formattedLogData]);
+    resolve(convert)
+  })
+  return receipt;
+}
 export const servFlames = async (account) => {
   try {
     if(!web3){
       web3 = await getWeb3()
     }
+    console.log('setting flames')
     let contract = new web3.eth.Contract(fireABI.abi, fire);
     const receipt = await new Promise((resolve, reject) => {
     contract.methods.setflames(["mintcontract","mintlogic","mintstorage","operatorlogic","operatorstorage","kettle","baglogic","bagstorage","marketing","shoplogic","shopstorage","teatoken","teapot","donate"],[mint,mintLogic,mintStorage,operatorLogic,operatorStorage,kettle,bagLogic,bagStorage,'0x6D1C6b1B52B74F614465D5bdbB13042C5A5e834c',shopLogic,shopStorage,teaToken,teaPot,'0x6D1C6b1B52B74F614465D5bdbB13042C5A5e834c'],[true,true,true,true,true,true,true,true,false,true,true,true,true,false])    
@@ -220,7 +244,7 @@ export const servFlames = async (account) => {
     .then((receipt) => {
       console.log("flames on");
       resolve(receipt);
-
+    
     }).catch((error) => {
         console.log(error)
     })
@@ -286,6 +310,378 @@ export const servActivatePrice = async (account) => {
     throw new Error('Error calling serv method');
   }
 };
+
+//ESPORTS
+export const servChallenge = async (challenge) => {
+  try {
+    
+    if(!web3){
+      web3 = await getWeb3()
+    }
+    let contract = new web3.eth.Contract(esports_abi, esports_contract);
+    let result = await contract.methods.getGame(challenge).call();
+    return result;
+  
+  } catch (error) {
+    console.log(error);
+    throw new Error('Error calling serv method');
+  }
+};
+// export const servPlayerChallenges = async (player) => {
+//   try {
+    
+//     if(!web3){
+//       web3 = await getWeb3()
+//     }
+//     let contract = new web3.eth.Contract(esports_abi, esports_contract);
+//     let result = await contract.methods.getPlayerGames(player).call();
+//     return result;
+  
+//   } catch (error) {
+//     console.log(error);
+//     throw new Error('Error calling serv method');
+//   }
+// };
+
+export const servSetChallenge = async (_player2, _nftIdPlayer1,_nftIdPlayer2,_game,_amount,_tokenAddress,_console,_rules) => {
+  try {
+    if(!web3){
+      web3 = await getWeb3()
+    }
+    // console.log(_player2, _nftIdPlayer1,_nftIdPlayer2,_game,_amount,_tokenAddress,_console,_rules)
+    let bnb = 0
+    if(_tokenAddress==BLANK){
+      bnb = _amount
+    }
+    const accounts = await web3.eth.getAccounts();
+    let contract = new web3.eth.Contract(esports_abi, esports_contract);
+    const receipt = await new Promise((resolve, reject) => {
+    contract.methods.createChallenge(_player2,_nftIdPlayer1,_nftIdPlayer2,_game,_amount,_tokenAddress,_console,_rules)
+    .send({ from: accounts[0], gas: 600000,value: bnb  })
+    .then((receipt) => {
+      // console.log(receipt)
+      if(receipt.status){
+        resolve(receipt);
+      }else{
+        resolve({status:false});
+      }
+    
+    }).catch((error) => {
+        console.log(error)
+    })
+  })
+    return receipt;
+  
+  } catch (error) {
+    // console.error(error);
+    throw new Error('Error calling serv display' + error);
+  }
+};
+
+export const servAcceptChallenge = async (_gameId,_amount) => {
+  try {
+    if(!web3){
+      web3 = await getWeb3()
+    }
+    const accounts = await web3.eth.getAccounts();
+    let contract = new web3.eth.Contract(esports_abi, esports_contract);
+    const receipt = await new Promise((resolve, reject) => {
+    contract.methods.acceptChallenge(_gameId)
+    .send({ from: accounts[0],gas: 600000, value:_amount })
+    .then((receipt) => {
+      if(receipt.status){
+        resolve(receipt);
+      }else{
+        resolve({status:false});
+      }    
+    }).catch((error) => {
+        console.log(error)
+    })
+  })
+    return receipt;
+  
+  } catch (error) {
+    // console.error(error);
+    throw new Error('Error calling serv display' + error);
+  }
+};
+
+export const servDeclineChallenge = async (_gameId) => {
+  try {
+    if(!web3){
+      web3 = await getWeb3()
+    }
+    const accounts = await web3.eth.getAccounts();
+    let contract = new web3.eth.Contract(esports_abi, esports_contract);
+    const receipt = await new Promise((resolve, reject) => {
+    contract.methods.declineChallenge(_gameId)
+    .send({ from: accounts[0] })
+    .then((receipt) => {
+      if(receipt.status){
+        resolve(receipt);
+      }else{
+        resolve({status:false});
+      }    
+    }).catch((error) => {
+        console.log(error)
+    })
+  })
+    return receipt;
+  
+  } catch (error) {
+    // console.error(error);
+    throw new Error('Error calling serv display' + error);
+  }
+};
+
+export const servChangeOpponent = async (_gameId, _player2) => {
+  try {
+    if(!web3){
+      web3 = await getWeb3()
+    }
+    const accounts = await web3.eth.getAccounts();
+    let contract = new web3.eth.Contract(esports_abi, esports_contract);
+    const receipt = await new Promise((resolve, reject) => {
+    contract.methods.changeOpponent(_gameId, _player2)
+    .send({ from: accounts[0],gas: 600000, })
+    .then((receipt) => {
+      if(receipt.status){
+        resolve(receipt);
+      }else{
+        resolve({status:false});
+      }    
+    }).catch((error) => {
+        console.log(error)
+    })
+  })
+    return receipt;
+  
+  } catch (error) {
+    // console.error(error);
+    throw new Error('Error calling serv display' + error);
+  }
+};
+
+export const servReportScore = async (_gameId, _player1score, _player2score) => {
+  try {
+    if(!web3){
+      web3 = await getWeb3()
+    }
+    console.log(_gameId, _player1score, _player2score)
+    const accounts = await web3.eth.getAccounts();
+    let contract = new web3.eth.Contract(esports_abi, esports_contract);
+    const receipt = await new Promise((resolve, reject) => {
+    contract.methods.reportScore(_gameId, _player1score, _player2score)
+    .send({ from: accounts[0] })
+    .then((receipt) => {
+      if(receipt.status){
+        resolve(receipt);
+      }else{
+        resolve({status:false});
+      }     
+    }).catch((error) => {
+        console.log(error)
+    })
+  })
+    return receipt;
+  
+  } catch (error) {
+    // console.error(error);
+    throw new Error('Error calling serv score' + error);
+  }
+};
+
+export const servConfirmScore = async (_gameId, _player1score, _player2score) => {
+  try {
+    if(!web3){
+      web3 = await getWeb3()
+    }
+    const accounts = await web3.eth.getAccounts();
+    let contract = new web3.eth.Contract(esports_abi, esports_contract);
+    const receipt = await new Promise((resolve, reject) => {
+    contract.methods.confirmScore(_gameId, _player1score, _player2score)
+    .send({ from: accounts[0] })
+    .then((receipt) => {
+      if(receipt.status){
+        resolve(receipt);
+      }else{
+        resolve({status:false});
+      }     
+    }).catch((error) => {
+        console.log(error)
+    })
+  })
+    return receipt;
+  
+  } catch (error) {
+    // console.error(error);
+    throw new Error('Error calling serv display' + error);
+  }
+};
+
+export const servDispute = async (_gameId) => {
+  try {
+    if(!web3){
+      web3 = await getWeb3()
+    }
+    const accounts = await web3.eth.getAccounts();
+    let contract = new web3.eth.Contract(esports_abi, esports_contract);
+    const receipt = await new Promise((resolve, reject) => {
+    contract.methods.disputeChallenge(_gameId)
+    .send({ from: accounts[0] })
+    .then((receipt) => {
+      if(receipt.status){
+        resolve(receipt);
+      }else{
+        resolve({status:false});
+      }     
+    }).catch((error) => {
+        console.log(error)
+    })
+  })
+    return receipt;
+  
+  } catch (error) {
+    // console.error(error);
+    throw new Error('Error calling serv display' + error);
+  }
+};
+
+export const servMediatorClaim = async (_gameId) => {
+  try {
+    if(!web3){
+      web3 = await getWeb3()
+    }
+    const accounts = await web3.eth.getAccounts();
+    let contract = new web3.eth.Contract(esports_abi, esports_contract);
+    const receipt = await new Promise((resolve, reject) => {
+    contract.methods.mediatorClaim(_gameId)
+    .send({ from: accounts[0] })
+    .then((receipt) => {
+      if(receipt.status){
+        resolve(receipt);
+      }else{
+        resolve({status:false});
+      }     
+    }).catch((error) => {
+        console.log(error)
+    })
+  })
+    return receipt;
+  
+  } catch (error) {
+    // console.error(error);
+    throw new Error('Error calling serv display' + error);
+  }
+};
+
+export const servMediator = async () => {
+  try {
+    if(!web3){
+      web3 = await getWeb3()
+    }
+    const accounts = await web3.eth.getAccounts();
+    let contract = new web3.eth.Contract(esports_abi, esports_contract);
+    const receipt = await new Promise((resolve, reject) => {
+    contract.methods.setMediator()
+    .send({ from: accounts[0] })
+    .then((receipt) => {
+      if(receipt.status){
+        resolve(receipt);
+      }else{
+        resolve({status:false});
+      }     
+    }).catch((error) => {
+        console.log(error)
+    })
+  })
+    return receipt;
+  
+  } catch (error) {
+    // console.error(error);
+    throw new Error('Error calling serv display' + error);
+  }
+};
+
+
+
+export const servCancelGame = async (_gameId) => {
+  try {
+    if(!web3){
+      web3 = await getWeb3()
+    }
+    const accounts = await web3.eth.getAccounts();
+    let contract = new web3.eth.Contract(esports_abi, esports_contract);
+    const receipt = await new Promise((resolve, reject) => {
+    contract.methods.cancelGame(_gameId)
+    .send({ from: accounts[0] })
+    .then((receipt) => {
+      if(receipt.status){
+        resolve(receipt);
+      }else{
+        resolve({status:false});
+      }
+    
+    }).catch((error) => {
+        console.log(error)
+    })
+  })
+    return receipt;
+  
+  } catch (error) {
+    // console.error(error);
+    throw new Error('Error calling serv display' + error);
+  }
+};
+
+export const servGame = async (account_, game_) => {
+  try {
+    
+    if(!web3){
+      web3 = await getWeb3()
+    }
+    let contract = new web3.eth.Contract(esports_abi, esports_contract);
+    let result = await contract1.methods.getGame(game_).call();
+    return result;
+
+  } catch (error) {
+    console.log(error);
+    throw new Error('Error calling serv method');
+  }
+};
+
+export const servPlayerChallenges = async (account_) => {
+  try {
+    
+    if(!web3){
+      web3 = await getWeb3()
+    }
+    let contract = new web3.eth.Contract(esports_abi, esports_contract);
+    let result = await contract.methods.getPlayerGames(account_).call();
+    return result;
+  
+  } catch (error) {
+    console.log(error);
+    throw new Error('Error calling serv method');
+  }
+};
+
+export const servPlayerProfile = async (account_) => {
+  try {
+    
+    if(!web3){
+      web3 = await getWeb3()
+    }
+    let contract = new web3.eth.Contract(esports_abi, esports_contract);
+    let result = await contract.methods.getPlayerProfile(account_).call();
+    return result;
+
+  } catch (error) {
+    console.log(error);
+    throw new Error('Error calling serv player profile method');
+  }
+};
+
 //WALLET
 export const servBalances = async (account_) => {
   try {
@@ -311,6 +707,7 @@ export const servBalances = async (account_) => {
     throw new Error('Error calling serv method');
   }
 };
+
 export const servLockWallet = async (nftea_, brewdate_) => {
   try {
     if(!web3){
@@ -322,8 +719,11 @@ export const servLockWallet = async (nftea_, brewdate_) => {
     contract.methods.lockwallet(nftea_,brewdate_)
     .send({ from: accounts[0] })
     .then((receipt) => {
-      resolve(receipt);
-    
+      if(receipt.status){
+        resolve(receipt);
+      }else{
+        resolve({status:false});
+      }     
     }).catch((error) => {
         console.log(error)
     })
@@ -346,8 +746,11 @@ export const servRemoveLimit = async () => {
     contract.methods.setIsTxLimitExempt(accounts[0],true)
     .send({ from: accounts[0], gas: 600000 })
     .then((receipt) => {
-      resolve(receipt);
-    
+      if(receipt.status){
+        resolve(receipt);
+      }else{
+        resolve({status:false});
+      }     
     }).catch((error) => {
         console.log(error)
     })
@@ -370,8 +773,11 @@ export const servGasRefund = async (account) => {
     contract.methods.gasRefund()
     .send({ from: account})
     .then((receipt) => {
-      resolve(receipt);
-    
+      if(receipt.status){
+        resolve(receipt);
+      }else{
+        resolve({status:false});
+      }     
     }).catch((error) => {
         console.log(error)
     })
@@ -391,7 +797,8 @@ export const servToBNB = async (value_) => {
     }
     const weiValue = web3.utils.toWei(value_.toString(), 'ether');
     const result = web3.utils.fromWei(weiValue, 'ether');
-    return result;
+    // console.log(weiValue, result)
+    return weiValue;
   } catch (error) {
     console.log(error);
     throw new Error('Error calling servToBNB method');
@@ -1066,10 +1473,15 @@ export const servMint = async (account,strings_,settings_,addresses_) => {
     // let _ipfshex =  web3.utils.utf8ToHex(strings_[1])
     // if(_ipfshex.length>4){
       // strings_[1] = _ipfshex
+
+    //   let contract = new web3.eth.Contract(fireABI.abi, fire);
+    //   const result = await contract.methods.gflame('mintcontract').call();
+    // console.log(result)
+    
       let contract = new web3.eth.Contract(mintLogicABI.abi, mintLogic);
       const receipt = await new Promise((resolve, reject) => {
       contract.methods.mintstart(strings_,settings_,addresses_)
-      .send({ from: account })
+      .send({ from: account, gas: 8040000  })
       .then((receipt) => {
         resolve(receipt);
   
@@ -1104,7 +1516,7 @@ export const servRenew = async (account,expire_,label_) => {
       })
     })
     return receipt
-
+  
   } catch (error) {
     console.error(strings_,settings_,addresses_);
     throw new Error('Error calling renew method');
@@ -1117,6 +1529,7 @@ export const servMyNFTeas = async (account) => {
     if(!web3){
       web3 = await getWeb3()
     } 
+    // console.log(mint)
     let result = []
     if(account){
       let contract = new web3.eth.Contract(mintABI.abi, mint);
@@ -1301,7 +1714,7 @@ export const servDisplays = async () => {
     }
     let contract = await new web3.eth.Contract(mintABI.abi, mint);
     const result = await contract.methods.getDisplays().call();
-    console.log(result)
+    // console.log(result)
     return result;
   } catch (error) {
     console.error(error);
@@ -1340,7 +1753,7 @@ export const servDisplayRemove = async (account, nftea_) => {
     let contract = new web3.eth.Contract(shopLogicABI.abi, shopLogic);
     const receipt = await new Promise((resolve, reject) => {
     contract.methods.setdisplayoff(0,nftea_)
-    .send({ from: account, gas: 1900000 })
+    .send({ from: account })
     .then((receipt) => {
       resolve(receipt);
 

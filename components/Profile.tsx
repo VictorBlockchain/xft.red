@@ -129,6 +129,7 @@ const Profile = ({creator}:any) => {
       const handleGetProfile = async (_creator:any) => {
         try {
            let data = await axios.get(`/api/getProfile?account=${_creator}`)
+          //  console.log(data.data)
            if(data.data){
             data.data.account = _creator
             setProfile(data.data)
@@ -479,7 +480,7 @@ const Profile = ({creator}:any) => {
                                   
                                   </div>
                                   <div className="col-6 text-center">
-                                    <span> {item.tea} <small> TEA</small></span>
+                                    <span> {item.tea} <small> XTHOS</small></span>
                                   
                                   </div>
                                 </>
@@ -563,7 +564,7 @@ const Profile = ({creator}:any) => {
                           <div className="cs-card_info">
                           <a href="#" className="cs-avatar cs-white_bg">
                           <Image
-                                  src={_profile.profilePic}
+                                  src={_profile.avatar}
                                   alt="Image"
                                   className="cs-zoom_item"
                                   width='200'
@@ -579,7 +580,7 @@ const Profile = ({creator}:any) => {
                               <div className="row">
                               <div className="col-12">
                                   <table className="text-center mb-0 pb-0">
-                                      <tbody><tr><td>0 BNB</td><td>{item.tea || 0} TEA</td></tr></tbody>
+                                      <tbody><tr><td>0 BNB</td><td>{item.tea || 0} XTHOS</td></tr></tbody>
                                   </table>
                               </div>
                               </div>
@@ -634,7 +635,7 @@ const Profile = ({creator}:any) => {
                               <div className="cs-card_info">
                               <a href="#" className="cs-avatar cs-white_bg">
                               <Image
-                                      src={_profile.profilePic}
+                                      src={_profile.avatar}
                                       alt="Image"
                                       className="cs-zoom_item"
                                       width='200'
@@ -650,7 +651,7 @@ const Profile = ({creator}:any) => {
                                   <div className="row">
                                   <div className="col-12">
                                       <table className="text-center mb-0 pb-0">
-                                          <tbody><tr><td>0 BNB</td><td>{item.tea || 0} TEA</td></tr></tbody>
+                                          <tbody><tr><td>0 BNB</td><td>{item.tea || 0} XTHOS</td></tr></tbody>
                                       </table>
                                   </div>
                                   </div>
@@ -705,7 +706,7 @@ const Profile = ({creator}:any) => {
                               <div className="cs-card_info">
                               <a href="#" className="cs-avatar cs-white_bg">
                               <Image
-                                      src={_profile.profilePic}
+                                      src={_profile.avatar}
                                       alt="Image"
                                       className="cs-zoom_item"
                                       width='200'
@@ -723,7 +724,7 @@ const Profile = ({creator}:any) => {
                                     <button type="button"  onClick={() => handleOpenRepayModal(item.id, item.loan, item.maturedate)} className="cs-btn cs-style1 cs-btn_lg w-100"><span>Repay</span></button>
 
                                         {/* <table className="text-center mb-0 pb-0">
-                                            <tbody><tr><td>0 BNB</td><td>{item.tea || 0} TEA</td></tr></tbody>
+                                            <tbody><tr><td>0 BNB</td><td>{item.tea || 0} XTHOS</td></tr></tbody>
                                         </table> */}
                                     </div>
                                   </div>

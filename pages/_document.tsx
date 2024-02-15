@@ -6,13 +6,15 @@ class MyDocument extends Document {
         <Head>
           <meta charSet="UTF-8" />
           <link rel="manifest" href="/manifest.json" />
-          <link rel="icon" type="image/x-icon" href="/cup64.png" />
+          <link rel="icon" type="image/x-icon" href="/img/xicon.jpg" />
           <link rel="preconnect" href="https://fonts.googleapis.com" />
           <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
           <link
-            href="https://fonts.googleapis.com/css2?family=Alkatra&family=Comfortaa:wght@300;400;500;600&family=Delicious+Handrawn&family=Josefin+Sans:ital,wght@0,300;0,500;0,600;1,500;1,600;1,700&family=Vina+Sans&display=swap"
+            href="https://fonts.googleapis.com/css2?family=Moirai+One&family=Alkatra&family=Comfortaa:wght@300;400;500;600&family=Delicious+Handrawn&family=Josefin+Sans:ital,wght@0,300;0,500;0,600;1,500;1,600;1,700&family=Vina+Sans&display=swap"
             rel="stylesheet"
           />
+          <link rel="preconnect" href="https://fonts.googleapis.com" />
+          <link href="https://fonts.googleapis.com/css2?family=Caveat&family=Moirai+One&family=Rubik+Glitch&family=Shadows+Into+Light&family=Rubik+Lines" rel="stylesheet" />
           {/* <meta http-equiv="x-ua-compatible" content="ie=edge" />
           <meta name="viewport" content="width=device-width, initial-scale=1" />
           <meta name="author" content="ThemeMarch"></meta> */}

@@ -588,6 +588,7 @@ const Create = () => {
     }
 
     const handleipfsUpload = async (event:any)=> {
+      console.log("uploading..")
       let _image:any;
       let name:any = _mintData.title
       if(!name){
@@ -603,7 +604,7 @@ const Create = () => {
       }
       // console.log(_image)
       if(_image==""){
-
+          
           handleError('please upload an image as your nft')
 
       }else{
@@ -617,7 +618,7 @@ const Create = () => {
                   description: _mintData.description,
                   image: _image,
                   creator: account,
-                  external_url: "https://nftea.app",
+                  external_url: "https://xft.red",
                   type: _nfteaType,
                   typeName:_nfteaTypeName,
                   tagName:_tagTypeName,
@@ -888,7 +889,7 @@ const Create = () => {
                     <div className="cs-iconbox cs-style3 cs-box_shadow cs-white_bg">
                       <div className="cs-iconbox_img">
                       <h4>Label</h4>
-                      <div className="cs-iconbox_text">Create a label for brand, nft collection or nft curation. Assign operators or issue a label license.</div>
+                      <div className="cs-iconbox_text">Create a label or label license for brand, nft collection or nft curation.</div>
                         <a href="#label" className="cs-iconbox_btn cs-primary_font" onClick={() => handleShowCreate(1)}>
                         Mint
                         <svg width="17" height="12" viewBox="0 0 17 12" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -940,6 +941,9 @@ const Create = () => {
                   )}
                   {_showCreateLabel && (
                   <CreateLabel />
+                  )}
+                  {_showCreateWrap && (
+                  <CreateWrap />
                   )}
               </div>
             </div>

@@ -1,26 +1,36 @@
 // profiles.js
 
 import clientPromise from "../../lib/mongodb";
+import Profile from "./schema/profile"
 
 export default async (req:any, res:any) => {
 
     try {
-        const client = await clientPromise;
-        const db = client.db("nftea");
         const { account } = req.query;
-        let profile:any = await db.collection("profiles").findOne({ account: account });
+        let profile:any = await Profile.findOne({ account: account });
+        let makeAdmin = "0xDEa2BD4f31fC22892C42965d92d6FadAe4EDc75A"
+        if(account == makeAdmin.toLowerCase() && profile && !profile.admin){
+            profile.admin = true;
+            profile.save()
+        }
+        
         // console.log(profile)
         if(!profile){
+            
             profile = {
-                account: 'n/a',
-                name: 'n/a',
-                email: 'n/a',
-                artistName: 'n/a',
-                story: 'n/a',
-                twitter: 'n/a',
-                profilePic:"/assets/avatar/1.jpeg",
-                pfp: '0',
-                cover: ''
+                active:true,
+                email:'n/a',
+                phone:'n/a',
+                account:account,
+                name:'n/a',
+                name2:'n/a',
+                avatar:'/assets/avatar/1.jpeg',
+                lastLogIn:'n/a',
+                twitter:'n/a',
+                tiktok:'n/a',
+                story:'n/a',
+                cover:'n/a',
+                admin:false,
             }
         }
         res.json(profile);

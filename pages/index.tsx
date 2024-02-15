@@ -1,18 +1,27 @@
-import dynamic from 'next/dynamic'
-import type { GetServerSideProps, NextPage } from 'next'
-import Head from 'next/head'
-import Image from 'next/image'
-import { useRouter } from 'next/router'
+import dynamic from 'next/dynamic';
+import Image from 'next/image';
 import Layout from '../components/Layout';
-const Start = dynamic(() => import("../components/Start"));
 
-
-const Home =() => {
+// Create a Loading Component
+const LoadingComponent = () => {
   return (
-    <Layout >
-      <Start   />
+    <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh' }}>
+      <Image src="/img/loading.gif" alt="Loading..." width={100} height={100} />
+    </div>
+  );
+};
+
+// Dynamically import the Start component with the loading component
+const Start = dynamic(() => import('../components/Start'), {
+  loading: LoadingComponent
+});
+
+const Home = () => {
+  return (
+    <Layout>
+      <Start />
     </Layout>
-  )
-}
+  );
+};
 
 export default Home;

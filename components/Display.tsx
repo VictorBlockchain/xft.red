@@ -52,6 +52,7 @@ const Display = ({ nftea, sellid, seller, isConnected, url, type }:any) => {
     const [isSellModalOpen, setSellModalOpen] = useState(false);
     const [isCollateralModalOpen, setCollateralModalOpen] = useState(false);
     const [isDisplayModalOpen, setDisplayModalOpen] = useState(false);
+    const [isDisplayOffModalOpen, setDisplayOffModalOpen] = useState(false);
     const [isTradeModalOpen, setTradeModalOpen] = useState(false);
     const [isTransferModalOpen, setTransferModalOpen] = useState(false);
     const [isBagModalOpen, setBagModalOpen] = useState(false);
@@ -142,6 +143,9 @@ const Display = ({ nftea, sellid, seller, isConnected, url, type }:any) => {
         if(type_==12){
             setEditLinkedToModalOpen(true);
         } 
+        if(type_==13){
+            setDisplayOffModalOpen(true);
+        }
     };
   
     const closeModal = (type_:any) => {
@@ -184,6 +188,10 @@ const Display = ({ nftea, sellid, seller, isConnected, url, type }:any) => {
         if(type_==12){
             setEditLinkedToModalOpen(false);
         } 
+        if(type_==13){
+            setDisplayOffModalOpen(false);
+        } 
+
     };
     React.useEffect(()=>{
         setShowMedia(true)
@@ -737,7 +745,7 @@ const Display = ({ nftea, sellid, seller, isConnected, url, type }:any) => {
         }
     
     }
-    
+
     const handleDisplayRemove = async ()=> {
         let resp_ = await servDisplayRemove(account,nftea)
         if(resp_.status){
@@ -956,10 +964,10 @@ const Display = ({ nftea, sellid, seller, isConnected, url, type }:any) => {
             <section className="cs-page_head cs-bg" style={{backgroundImage: "url(/img/page_head_bg.svg)"}}>
                 <div className="container">
                     <div className="text-center">
-                        <h1 className="cs-page_title">Art Display</h1>
+                        <h1 className="cs-page_title" style={{fontFamily: 'Comfortaa'}}>Art Display</h1>
                         <ol className="breadcrumb">
-                        <li className="breadcrumb-item"><a href="/">Home</a></li>
-                        <li className="breadcrumb-item active">Display</li>
+                        <li className="breadcrumb-item" style={{fontFamily: 'Comfortaa'}}><a href="/">Home</a></li>
+                        <li className="breadcrumb-item active" style={{fontFamily: 'Comfortaa'}}>Display</li>
                         </ol>
                     </div>
                 </div>
@@ -987,57 +995,57 @@ const Display = ({ nftea, sellid, seller, isConnected, url, type }:any) => {
                         <div className="cs-tabs cs-fade_tabs cs-style1">
                             <div className="cs-medium">
                                 <ul className="cs-tab_links cs-style1 cs-medium cs-primary_color cs-mp0 cs-primary_font">
-                                <li className="active"><a href="#details" onClick={() => handleTab(3)}>Details</a></li>
-                                <li ><a href="#media" onClick={() => handleTab(4)}>Media</a></li>
-                                <li><a href="#bag" onClick={() => handleTab(5)}>Bag</a></li>
-                                <li><a href="#stats" onClick={() => handleTab(6)}>Label Stats</a></li>
+                                <li className="active" style={{fontFamily: 'Comfortaa'}}><a href="#details" onClick={() => handleTab(3)}>Details</a></li>
+                                <li style={{fontFamily: 'Comfortaa'}}><a href="#media" onClick={() => handleTab(4)}>Media</a></li>
+                                <li style={{fontFamily: 'Comfortaa'}}><a href="#bag" onClick={() => handleTab(5)}>Vault</a></li>
+                                <li style={{fontFamily: 'Comfortaa'}}><a href="#stats" onClick={() => handleTab(6)}>Label Stats</a></li>
                                 </ul>
                             </div>
                             <div className="cs-height_20 cs-height_lg_20"></div>
                             <div className="cs-tab_content">
                             <div id="details" className="cs-tab active">
                                     <div className="cs-white_bg cs-box_shadow cs-general_box_5">
-                                    <div className="mt-4">
+                                    <div className="mt-4" style={{fontFamily: 'Comfortaa'}}>
                                         <span className="font-medium text-slate-400 block mb-1">Token ID: </span>
                                         <span className="font-medium block">#{_nftea}</span>
                                     </div>
-                                    <div className="mt-4">
+                                    <div className="mt-4" style={{fontFamily: 'Comfortaa'}}>
                                         <span className="font-medium text-slate-400 block mb-1">Supply: </span>
                                         <span className="font-medium block">{_display.amount}</span>
                                     </div>
-                                    <div className="mt-4">
+                                    <div className="mt-4" style={{fontFamily: 'Comfortaa'}}>
                                         <span className="font-medium text-slate-400 block mb-1">Transferable: </span>
                                         <span className="font-medium block">{_display.transferable}</span>
                                     </div>
-                                    <div className="mt-4">
+                                    <div className="mt-4" style={{fontFamily: 'Comfortaa'}}>
                                         <span className="font-medium text-slate-400 block mb-1">Linked To Label: </span>
                                         {_display.nftea[0].settings[0] > 0 && (<span className="font-medium block">#{_display.nftea[0].settings[0]}</span>)}
                                         {_display.nftea[0].settings[0] < 1 && (<span className="font-medium block">not linked {_display.holders[0] == account && (<a href="#" onClick={() => openModal(12)} >edit</a>)}</span>)}
                                     </div>
                                     {_display.nftea[0].settings[3]<7 && (
-                                    <div className="mt-4">
+                                    <div className="mt-4" style={{fontFamily: 'Comfortaa'}}>
                                         <span className="font-medium text-slate-400 block mb-1">Label Expires On: </span>
                                         <span className="font-medium block">{moment.unix(_display.nftea[0][2][7]).format("MMMM Do YYYY, h:mm:ss a")}</span>
                                     </div>
                                     )}
-                                    <div className="mt-4">
+                                    <div className="mt-4" style={{fontFamily: 'Comfortaa'}}>
                                         <span className="font-medium text-slate-400 block mb-1">Type: </span>
                                         <span className="font-medium block">{_display.typeName}</span>
                                     </div>
                                     {_display.bag != BLANK && _display.holders[0]!=teaPot && (
-                                        <div className="mt-4">
+                                        <div className="mt-4" style={{fontFamily: 'Comfortaa'}}>
                                             <a href={`/operators/${_nftea}/${BLANK}`}className="btn rounded-full bg-violet-600 hover:bg-violet-700 border-violet-600 hover:border-violet-700 text-white w-full">Operators</a>
                                         </div>
                                     )}
                                     {_display.bag != BLANK && _display.holders[0]==teaPot && (
-                                        <div className="mt-4 text-center">
+                                        <div className="mt-4 text-center" style={{fontFamily: 'Comfortaa'}}>
                                             <span>loaned to teapot</span>
                                         </div>
                                     )}                               
                                     </div>
                                 </div>
                                 <div id="media" className="cs-tab">
-                                    <div className="cs-white_bg cs-box_shadow cs-general_box_5">
+                                    <div className="cs-white_bg cs-box_shadow cs-general_box_5" style={{fontFamily: 'Comfortaa'}}>
                                         {_showMedia && (
                                             <MediaComponent url={_mediaActive} type="video" />                                
                                         )}     
@@ -1049,7 +1057,7 @@ const Display = ({ nftea, sellid, seller, isConnected, url, type }:any) => {
 
                                     <div className="cs-white_bg cs-box_shadow cs-general_box_5">
                                         {_mediaTracks.length<1 && (
-                                        <p className="text-center">no additional media</p>
+                                        <p className="text-center" style={{fontFamily: 'Comfortaa'}}>no additional media</p>
                                         )}
                                         {_mediaTracks.length>0 && (
                                         <table className="min-w-full divide-y divide-gray-200">
@@ -1075,14 +1083,14 @@ const Display = ({ nftea, sellid, seller, isConnected, url, type }:any) => {
                                         <>
                                         <div className="row">
                                             <div className="col-6">
-                                                <p className="text-center"> BNB<br/> {_display.bnb/1000000000000000000}</p>
+                                                <p className="text-center" style={{fontFamily: 'Comfortaa'}}> BNB<br/> {_display.bnb/1000000000000000000}</p>
                                             </div>
                                             <div className="col-6">
                                             {_display.bag!=BLANK && (
-                                                <p className="text-center">TEA<br/>{formatNumber(_display.tea/1000000000)} </p> )}
+                                                <p className="text-center" style={{fontFamily: 'Comfortaa'}}>XTHOS<br/>{formatNumber(_display.tea/1000000000)} </p> )}
                                             
                                             {_display.bag==BLANK && (
-                                                <p className="text-center">0 TEA </p> )}
+                                                <p className="text-center" style={{fontFamily: 'Comfortaa'}}>0 XTHOS </p> )}
                                             
                                             </div>
                                         </div>
@@ -1091,7 +1099,7 @@ const Display = ({ nftea, sellid, seller, isConnected, url, type }:any) => {
                                         
                                         <div className="row">
                                             <div className="col-6">
-                                                <p className="text-center">bag<br/>
+                                                <p className="text-center" style={{fontFamily: 'Comfortaa'}}>vault<br/>
                                                 {_display.bag!=BLANK && (
                                                     <a href={`https://testnet.bscscan.com/address/${_display.bag}`} className="font-medium text-violet-600 underline block">{`${_display.bag.substring(0, 6)}...${_display.bag.substring(_display.bag.length - 6)}`}</a>
                                                     
@@ -1177,12 +1185,12 @@ const Display = ({ nftea, sellid, seller, isConnected, url, type }:any) => {
                     <div className="col-lg-6">
                         <div className="cs-height_0 cs-height_lg_40"></div>  
                         <div className="cs-single_product_head">
-                            <h2>{_display.name} #{_display.id}</h2>
+                            <h2 style={{fontFamily: 'Comfortaa'}}>{_display.name} #{_display.id}</h2>
                             { _display.nftea[2]!="" && (
-                                <p>Label: <a href="/" className="text-violet-600">{_display.nftea[2]}</a></p>
+                                <p style={{fontFamily: 'Comfortaa'}}>Label: <a href="/" className="text-violet-600">{_display.nftea[2]}</a></p>
                             )}
                             {_display.nftea[2]=="" && (
-                                <p>Label: N/A</p>
+                                <p style={{fontFamily: 'Comfortaa'}}>Label: N/A</p>
                             )}
                             {sellid>0 && (<span className="font-medium text-slate-400 block mt-2 whiteText">Market: {_display.label}</span>)}
                             {sellid < 1 && (<span className="font-medium text-slate-400 block mt-2 whiteText">you own: {_display.holding}/{_display.amount} {_display.wrappedto>0 && ( <small>(wrapped to: #{_display.wrappedto})</small>)}</span>)}
@@ -1201,12 +1209,12 @@ const Display = ({ nftea, sellid, seller, isConnected, url, type }:any) => {
                                     
                                     </div>
                                 <div className="cs-author_right">
-                                <h3>Owner</h3>
+                                <h3 style={{fontFamily: 'Comfortaa'}}>Owner</h3>
                                 {_display.holders[0] != teaPot && (
                                     <p><a href={`/profile/${_display.holders[0]}`}>{`${_display.holders[0].substring(0, 6)}...${_display.holders[0].substring(_display.holders[0].length - 6)}`}</a></p>
                                 )}
                                 {_display.holders[0] == teaPot && (
-                                    <p>Teapot</p>
+                                    <p style={{fontFamily: 'Comfortaa'}}>Teapot</p>
                                 )}
                                 </div>
                                 </div>
@@ -1219,8 +1227,8 @@ const Display = ({ nftea, sellid, seller, isConnected, url, type }:any) => {
                                     
                                     </div>
                                 <div className="cs-author_right">
-                                <h3>Creator</h3>
-                                <p>{`${_display.creator.substring(0, 6)}...${_display.creator.substring(_display.creator.length - 6)}`}</p>
+                                <h3 style={{fontFamily: 'Comfortaa'}}>Creator</h3>
+                                <p style={{fontFamily: 'Comfortaa'}}>{`${_display.creator.substring(0, 6)}...${_display.creator.substring(_display.creator.length - 6)}`}</p>
                                 </div>
                                 </div>
                                 <div className="cs-height_25 cs-height_lg_25"></div>
@@ -1229,14 +1237,14 @@ const Display = ({ nftea, sellid, seller, isConnected, url, type }:any) => {
                         <div className="cs-tabs cs-fade_tabs cs-style1">
                             <div className="cs-medium">
                                 <ul className="cs-tab_links cs-style1 cs-medium cs-primary_color cs-mp0 cs-primary_font">
-                                <li className="active"><a href="#story" onClick={() => handleTab(1)}>Story</a></li>
-                                <li><a href="#attributes" onClick={() => handleTab(2)}>Attributes</a></li>
+                                <li className="active" style={{fontFamily: 'Comfortaa'}}><a href="#story" onClick={() => handleTab(1)}>Story</a></li>
+                                <li style={{fontFamily: 'Comfortaa'}}><a href="#attributes" onClick={() => handleTab(2)}>Attributes</a></li>
                                 </ul>
                             </div>
                             <div className="cs-height_20 cs-height_lg_20"></div>
                             <div className="cs-tab_content">
                                 <div id="story" className="cs-tab active">
-                                    <div className="cs-white_bg cs-box_shadow cs-general_box_5">
+                                    <div className="cs-white_bg cs-box_shadow cs-general_box_5" style={{fontFamily: 'Comfortaa'}}>
                                         <DisplayDescription
                                         description={_display.description}
                                         initialExpanded={_display.description.length <= 500}
@@ -1244,7 +1252,7 @@ const Display = ({ nftea, sellid, seller, isConnected, url, type }:any) => {
                                     </div>
                                 </div>
                                 <div id="attributes" className="cs-tab">
-                                    <div className="cs-white_bg cs-box_shadow cs-general_box_5">
+                                    <div className="cs-white_bg cs-box_shadow cs-general_box_5" style={{fontFamily: 'Comfortaa'}}>
                                     no attributes
                                     </div>
                                 </div>
@@ -1254,47 +1262,72 @@ const Display = ({ nftea, sellid, seller, isConnected, url, type }:any) => {
                         <div className="row">
                             <div className="col-6">
                                 {_display.sell.length>0 && (
-                                    <p className="text-center">price<br/> {_display.sellprice || 0} TEA</p>
+                                    <p className="text-center">price<br/> {_display.sellprice || 0} XTHOS</p>
                                 )}
                                 {_display.sell.length<1 && (
-                                    <p className="text-center">price<br/> 0 TEA</p>
+                                    <p className="text-center">price<br/> 0 XTHOS</p>
                                 )}
                             </div>
                             <div className="col-6">
-                                    <p className="text-center">display earnings<br/> {_display.displayEarnings/1000000000} TEA</p>
+                                    <p className="text-center">display earnings<br/> {_display.displayEarnings/1000000000} XTHOS</p>
                             </div>
                         </div>
                         <div className="cs-height_25 cs-height_lg_25"></div>
-
+                        
                         <div className="row">
-                            <div className="col-6">
                             {_display.holding>0 && (
-                                <div className="text-center">
-                                    {!_display.ondisplay && sellid < 1 && ( <a href="#" onClick={() => openModal(3)}  className="cs-btn cs-style1 cs-btn_lg w-100 text-center"><i className="mdi mdi-swap-horizontal"></i> Trade</a>)}
-                                    {!_display.ondisplay && !_display.sell.active && sellid<1 && _display.amount==1 && (<a href="#" onClick={() => openModal(2)}  className="cs-btn cs-style1 cs-btn_lg w-100 text-center"><i className="mdi mdi-spotlight"></i> Display</a>)}
-                                    {!_display.ondisplay && sellid < 1 && (<a href="#" onClick={() => openModal(5)}  className="cs-btn cs-style1 cs-btn_lg w-100 text-center"><i className="mdi mdi-send"></i> Send</a>)}
-                                    {!_display.ondisplay && sellid < 1 && _display.holding>0 && _display.wrappedto>0 && (<a href="#" onClick={() => openModal(11)}  className="cs-btn cs-style1 cs-btn_lg w-100 text-center"><i className="mdi mdi-refresh"></i> UnWrap</a>)}
-                                    {_display.ondisplay && (<a href="#" onClick={() => openModal(2)}  className="cs-btn cs-style1 cs-btn_lg w-100 text-center"><i className="mdi mdi-spotlight"></i> Remove Display</a>)}
+                                <>        
+                                        {!_display.ondisplay && sellid < 1 && (
+                                        <div className="col-lg-4">
+                                         <a href="#" onClick={() => openModal(3)}  className="cs-btn cs-style1 cs-btn_lg w-100 text-center"><i className="mdi mdi-swap-horizontal"></i> Trade</a>
+
+                                        </div>)}
+
+                                        {!_display.ondisplay && !_display.sell.active && sellid<1 && _display.amount==1 && (
+                                        <div className="col-lg-4">
+                                        <a href="#" onClick={() => openModal(2)}  className="cs-btn cs-style1 cs-btn_lg w-100 text-center"><i className="mdi mdi-spotlight"></i> Display</a>
+                                        
+                                        </div>)}
+                                        {!_display.ondisplay && sellid < 1 && (
+                                        <div className="col-lg-4">
+                                            <a href="#" onClick={() => openModal(5)}  className="cs-btn cs-style1 cs-btn_lg w-100 text-center"><i className="mdi mdi-send"></i> Send</a>
+                                        
+                                        </div>)}
+                                
+
+                                        {!_display.ondisplay && sellid < 1 && _display.holding>0 && _display.wrappedto>0 && (
+                                        <div className="col-lg-4">
+                                        
+                                        <a href="#" onClick={() => openModal(11)}  className="cs-btn cs-style1 cs-btn_lg w-100 text-center"><i className="mdi mdi-refresh"></i> UnWrap</a>
+                                        </div>
+                                        )}
+                                        {_display.ondisplay && (
+                                        <div className="col-lg-4">
+                                        
+                                        <a href="#" onClick={() => openModal(13)}  className="cs-btn cs-style1 cs-btn_lg w-100 text-center"><i className="mdi mdi-spotlight"></i> Remove Display</a>
+                                        </div>
+                                        )}
                                     {/* {sellid>0 && (
                                         <>
                                         {_display.sell[3][0] == account && _display.sell.active && ( <a href="#" onClick={() => handleUnSell()}  className="btn rounded-full bg-red-600 hover:bg-red-700 border-red-600 hover:border-red-700 text-white ml-1"><i className="mdi mdi-close-outline"></i> End Sale</a>)}
                                         </>
                                     )} */}
-                                </div>
+                                </>
                             )}
                             {_display.holding <1 && (
-                                <div className="">
+                                <div className="col-12">
                                     {!_display.ondisplay && sellid <1 && ( <p className="text-center"><i className="mdi mdi-swap-horizontal"></i> Not On Display or Sale</p>)}
                                     {_display.ondisplay && (<a href="#" onClick={() => openModal(10)}  className="cs-btn cs-style1 cs-btn_lg w-100 text-center"><i className="mdi mdi-spotlight"></i> Show Love</a>)}
                                 </div>
                             )}
                             {seller==account && (
-                                <div className="">
+                                <div className="col-12">
                                 {_display.sell[3][0] == account && _display.sell.active && ( <a href="#" onClick={() => handleUnSell()}  className="cs-btn cs-style1 cs-btn_lg w-100 text-center"><i className="mdi mdi-close-outline"></i> End Sale</a>)}
                                 </div>
                             )}
-                            </div>
-                            <div className="col-6">
+                        </div>
+                        <div className="row">
+                        <div className="col-12">
                             {sellid>0 && (
                                 <div className="">
                                     {_display.sell[3][0] != account && (<a href="#" onClick={() => openModal(9)}  className="cs-btn cs-style1 cs-btn_lg w-100 text-center"><i className="mdi mdi-tag-faces"></i> Buy Item</a>)}
@@ -1409,7 +1442,21 @@ const Display = ({ nftea, sellid, seller, isConnected, url, type }:any) => {
                     </Modal>
                 </>
             )}
-
+                        {isDisplayOffModalOpen && (
+                <>
+                    <Modal onClose={() => closeModal(13)}  title="Remove Display">
+                                <div className="cs-height_20 cs-height_lg_20"></div>
+                                
+                                <p className="text-center">Remove this xFt from display.</p>
+                                <div className="cs-height_20 cs-height_lg_20"></div>
+                                
+                                <div className="mt-4">
+                                    <a href="#" onClick={() => handleDisplayRemove()} className="cs-btn cs-style1 cs-btn_lg w-100"><i className="mdi mdi-star-circle"></i> Remove</a>
+                                
+                                </div>                    
+                        </Modal>
+                </>
+            )}
             {isTradeModalOpen && (
                 <>
                      <Modal onClose={() => closeModal(3)}  title="Trade Your NFT">

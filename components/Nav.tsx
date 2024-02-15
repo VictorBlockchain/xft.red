@@ -6,6 +6,8 @@ import { preloader } from '../utils/main';
 import { smoothScroll } from '../utils/main';
 import { dynamicBackground } from '../utils/main';
 import { useUser } from './UserContext';
+import Image from 'next/image';
+
 import Modal from './Modal';
 interface NavProps {
   handleConnect: () => void; // Define the correct type for handleConnect
@@ -73,10 +75,13 @@ const Nav = ({}) => {
           $('.cs-mobile_search_toggle').off('click', handleSearchToggle);
         };
       }, []); 
-      
+      //0x38
+      //0x61 testnet
+      //0x539 truffle
       
       useEffect(() => {
         let user_ = localStorage.getItem("account")
+        // alert(chainId)
         if (user_ && connected) {
             sdk?.connect()
             .then((account:any)=>{
@@ -154,8 +159,9 @@ const Nav = ({}) => {
                 <div className="container-fluid">
                 <div className="cs-main_header_in">
                 <div className="cs-main_header_left">
+
                 <a className="cs-site_branding" href="/">
-                    <span className="animated-text" style={{fontFamily: 'Comfortaa'}}>NFTea.app</span>
+                    <span className="animated-text" style={{fontFamily: "'Rubik Lines',systen-ui", marginLeft:'10px', marginTop:'3px'}}>xFT.red</span>
                 </a>
                 </div>
                 <div className="cs-main_header_right">
@@ -177,14 +183,17 @@ const Nav = ({}) => {
                 <div className="cs-nav_in">
                 <div className="cs-nav">
                 <ul className="cs-nav_list">
+                {/* <li>
+                  <a href="https://pancakeswap.finance/swap?outputCurrency=0xb4668238Acf0314A7b4e153368e479fCd2E09831" target='_blank'>Buy XFT</a>
+                </li> */}
+                <li><a href="/xmash/0">xMash</a></li>
+                <li><a href="/esports/0">xSports</a></li>
+                
                 <li>
-                  <a href="https://pancakeswap.finance/swap?outputCurrency=0xb4668238Acf0314A7b4e153368e479fCd2E09831" target='_blank'>Buy Token</a>
+                  <a href="#" onClick={handleOpenSellModal}>Display</a>
                 </li>
-                <li>
-                  <a href="#" onClick={handleOpenSellModal}>On Display</a>
-                </li>
-                <li><a href="/loans">Get A Loan</a></li>
-                <li><a href="https://ahp.nftea.app">Hyena Pets</a></li>
+                <li><a href="/loans">Loans</a></li>
+                <li><a href="https://ahp.xft.red">Hyena Pets</a></li>
                 </ul>
                 <span className="cs-munu_toggle"><span></span></span>
                 </div>

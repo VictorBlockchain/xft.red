@@ -149,6 +149,10 @@ const CreateLabel = () => {
         }else{
             extcontract_ = BLANK
         }
+        if(_labelprice==0){
+            years_ = 1
+        }
+        console.log(_labelprice, years_)
         setContractAddress(extcontract_)
         let _mintForm:any = new Object();
         _mintForm.title = event.target.title.value
@@ -244,7 +248,7 @@ const CreateLabel = () => {
                     description: _mintData.description,
                     image: _image,
                     creator: account,
-                    external_url: "https://nftea.app",
+                    external_url: "https://xft.red",
                     type: _nfteaType,
                     typeName:_nfteaTypeName,
                     tagName:_tagTypeName,
@@ -670,7 +674,44 @@ const CreateLabel = () => {
                         
                         </>
                 )}
-                
+                    <div className="cs-height_30 cs-height_lg_30"></div>
+                    <div className='p-10' style={{borderRadius: '10px', backgroundImage: `url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' rx='8' ry='8' stroke='%237B61FFFF' stroke-width='3' stroke-dasharray='5%2c 10' stroke-dashoffset='0' stroke-linecap='square'/%3e%3c/svg%3e")` }}>
+                        <p className="smallText text-center pt-5">** need more variations of your label? don't worry you can link them to a main label ** </p>
+                        <p className="text-center p-3">
+                            <span>**</span> <span>labels</span> <span>STA</span>RTING <span>wit</span>h
+                            <span> spe</span>c<span>ial</span> <br />
+                            <span>are</span> <span>tre</span>ated <span>as</span> <span> non</span>e
+                            <span> tra</span>nsferable <span>(or</span> <span>lim</span>ited
+                            <span> tran</span>sfers)<br /> <span>this</span> <span>means</span> <span>the</span>
+                            <span> buy</span>er <span>will</span> <span>not</span> <span>be</span> <span>able</span>
+                            <span> to</span> <span>trans</span>fer <br /><span>except</span> <span>back</span>
+                            <span> to</span> <span>the</span> <span>cre</span>ator <span>or</span> <span>to</span>
+                            <span> the</span> <span>burn</span> <span>ad</span>dress<br/><br/><span>this</span> <span>is</span>
+                            <span>perfect</span> <span>for</span> <span>sub</span>scription <span>ser</span>vices,
+                            <span>pro</span>duct <span>au</span>thencity <span>val</span>idation <br />
+                            <span>and</span> <span>so</span>cial/<span>onl</span>ine <span>ac</span>cess.<br /><br />
+                            * <small>identity/profile</small><br />
+                            [ <small>label operator</small><br />
+                            # <small>social/lingo/marketplace license </small><br /><small>ie: #onFleek, #acmeshoes etc </small><br />
+                            ! <small>male</small><br />
+                            @ <small>contract</small> <br /><small>ie: don't call or email unless you have this label</small><br />
+                            $ <small>business</small><br />
+                            % <small>n/a</small> <br />
+                            ^ <small>travel</small> <br />
+                            & <small>Tickets/Gaming </small><br />
+                            ? <small>class/lessons</small> <br />
+                            () <small>female</small><br />
+                            ~ <small>adult</small><br />
+                            = <small>philosophy</small><br />
+                            + <small>animation</small><br />
+                            </p>
+                                
+                                <style jsx>{`
+                                    p:first-letter {
+                                        font-weight: bold;
+                                    }
+                                    `}</style>
+                    </div>
                 </div>
                 <div className="col-lg-6">
                     {!_showForm && (

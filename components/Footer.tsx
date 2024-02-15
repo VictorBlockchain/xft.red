@@ -87,32 +87,32 @@ const Footer = () => {
                     <div className="row">
                     <div className="col-lg-4 col-sm-4">
                     <div className="cs-footer_widget">
-                    <h2 className="cs-widget_title">Labels</h2>
+                    <h2 className="cs-widget_title" style={{fontFamily: 'Comfortaa'}}>Labels</h2>
                     <ul className="cs-widget_nav">
-                    <li><a href="#" onClick={handleLabelModal}>Whats A Label?</a></li>
-                    <li><a href="#" onClick={handleOperatorModal}>Label Operators</a></li>
-                    <li><a href="#" onClick={handleLicenseModal}>Label License</a></li>
-                    <li><a href="#" onClick={handleWalletModal}>Label Wallet</a></li>
-                    <li><a href="#" onClick={handleUseModal}>Use Cases</a></li>
+                    <li style={{fontFamily: 'Comfortaa'}}><a href="#" onClick={handleLabelModal}>Whats A Label?</a></li>
+                    <li style={{fontFamily: 'Comfortaa'}}><a href="#" onClick={handleOperatorModal}>Label Operators</a></li>
+                    <li style={{fontFamily: 'Comfortaa'}}><a href="#" onClick={handleLicenseModal}>Label License</a></li>
+                    <li style={{fontFamily: 'Comfortaa'}}><a href="#" onClick={handleWalletModal}>Label Wallet</a></li>
+                    <li style={{fontFamily: 'Comfortaa'}}><a href="#" onClick={handleUseModal}>Use Cases</a></li>
                     </ul>
                     </div>
                     </div>
                     <div className="col-lg-4 col-sm-4">
                     <div className="cs-footer_widget">
-                    <h2 className="cs-widget_title">NFTea Bag</h2>
+                    <h2 className="cs-widget_title" style={{fontFamily: 'Comfortaa'}}>Vaults</h2>
                     <ul className="cs-widget_nav">
-                    <li><a href="#" onClick={handleBagModal}>What's A Bag</a></li>
-                    <li><a href="#" onClick={handleLockModal}>Time Lock Bags</a></li>
+                    <li style={{fontFamily: 'Comfortaa'}}><a href="#" onClick={handleBagModal}>What's A Vault</a></li>
+                    <li style={{fontFamily: 'Comfortaa'}}><a href="#" onClick={handleLockModal}>Time Lock Vaults</a></li>
                     </ul>
                     </div>
                     </div>
                     <div className="col-lg-4 col-sm-4">
                     <div className="cs-footer_widget">
-                    <h2 className="cs-widget_title">Company</h2>
+                    <h2 className="cs-widget_title" style={{fontFamily: 'Comfortaa'}}>Company</h2>
                     <ul className="cs-widget_nav">
-                    <li><a href="/about">About Us</a></li>
-                    <li><a href="https://twitter.com/nftea___">Contact Us</a></li>
-                    <li><a href="https://bscscan.com/address/0xaf73c709e66fe339bee5608477f9e7a589acaec5#code" target='_blank'>Contract</a></li>
+                    <li style={{fontFamily: 'Comfortaa'}}><a href="/about">About Us</a></li>
+                    <li style={{fontFamily: 'Comfortaa'}}><a href="https://twitter.com/nftea___">Contact Us</a></li>
+                    <li style={{fontFamily: 'Comfortaa'}}><a href="https://bscscan.com/address/0xaf73c709e66fe339bee5608477f9e7a589acaec5#code" target='_blank'>Contract</a></li>
                     </ul>
                     </div>
                     </div>
@@ -120,7 +120,7 @@ const Footer = () => {
                     </div>
                     <div className="col-lg-4 col-sm-12">
                     <div className="cs-footer_widget">
-                    <h2 className="cs-widget_title">Subscribe to our newsletter.</h2>
+                    <h2 className="cs-widget_title" style={{fontFamily: 'Comfortaa'}}>Subscribe to our newsletter.</h2>
                     <form className="cs-footer_newsletter">
                     <input type="text" placeholder="Enter Your Email" className="cs-newsletter_input" />
                     <button className="cs-newsletter_btn">
@@ -142,10 +142,10 @@ const Footer = () => {
             <div className="container">
             <div className="cs-footer_separetor"></div>
             <div className="cs-footer_bottom_in">
-            <div className="cs-copyright">Copyright 2023 NFTea.app</div>
+            <div className="cs-copyright" style={{fontFamily: 'Comfortaa'}}>Copyright 2023 xFT.red</div>
             <ul className="cs-footer_menu">
-            <li><a href="/privacy">Privacy Policy</a></li>
-            <li><a href="/terms">Term &amp; Condition</a></li>
+            <li><a href="/privacy" style={{fontFamily: 'Comfortaa'}}>Privacy Policy</a></li>
+            <li><a href="/agreement" style={{fontFamily: 'Comfortaa'}}>Terms &amp; Condition</a></li>
             </ul>
             </div>
             </div>
@@ -201,20 +201,20 @@ Need to distribute funds to your team members? Effortlessly configure withdrawal
         
         )}
         {isBagModalOpen &&  (
-            <Modal onClose={handleBagModal} title="Bag">
+            <Modal onClose={handleBagModal} title="Vault">
               <div className="cs-single_post">
                 <p className="text-center" style={{color:'#000', lineHeight:'44px', fontFamily: 'Comfortaa'}}>
-                Empower your NFT with a Bag — a smart contract attached to your unique (1 of 1) NFT. Elevate its value by storing diverse assets such as wrapped BTC, wrapped ETH, DeFi tokens, other NFTeas, and more within its bag. Introduce captivating buyer incentives, like intricate puzzles featuring bags within bags within bags, enhancing your NFT's dynamism, enjoyment, and ensuring its resale value.                </p>
+                Empower your XFT with a Vault — a smart contract attached to your unique (1 of 1) "NFT". Elevate its value by storing diverse assets such as wrapped BTC, wrapped ETH, DeFi tokens, other XFT's, and more within its Vault. Introduce captivating buyer incentives, like intricate puzzles featuring vaults within bags within vaults, enhancing your XFT's dynamism, enjoyment, and ensuring its resale value.                </p>
                 <div className="cs-height_20 cs-height_lg_20"></div>
               </div>
             </Modal>
         
         )}
                 {isLockModalOpen &&  (
-            <Modal onClose={handleLockModal} title="Time Lock Bags">
+            <Modal onClose={handleLockModal} title="Time Lock Vault">
               <div className="cs-single_post">
                 <p className="text-center" style={{color:'#000', lineHeight:'44px', fontFamily: 'Comfortaa'}}>
-                Boost the value of your NFT by securing assets within its bag. Imagine locking 0.01 wrapped BTC in your NFT's bag for five years — how much would its current selling price reflect this added value?                 </p>
+                Boost the value of your XFT by securing assets within its vault. Imagine locking 0.01 wrapped BTC in your XFT's vault for five years — how much would its current selling price reflect this added value?                 </p>
                 <div className="cs-height_20 cs-height_lg_20"></div>
               </div>
             </Modal>

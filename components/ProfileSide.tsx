@@ -22,7 +22,8 @@ const Side = ({profile}:any) => {
     const [_isEditModalOpen, setEditModalOpen]:any = useState(false)
     const [_errorMsg, setErrorMsg]:any = useState(false)
     const [_showProfilePic, setShowProfilePic]:any = useState(false)
-    
+    const [_msg, setMessage]:any = useState()
+
   
     useEffect(() => {
       if(account && connected){
@@ -51,59 +52,65 @@ const Side = ({profile}:any) => {
         console.error(err);
       }
     };
-    
-    const handleSetPFP = async (event:any) => {
+
+    const handleProfile = async (event:any) => {
       event.preventDefault();
-      let profilePic:any;
-      if(event.target.pfp_id.value!=0){
+      let name:any = event.target.name.value
+      let name2:any = event.target.name2.value
+      let email:any = event.target.email.value
+      let avatar:any = event.target.avatar.value
+      let twitter:any = event.target.twitter.value
+      let tiktok:any = event.target.tiktok.value
+      let story:any = event.target.story.value
+      let phone:any;
+      let cover:any;
+      
+      if(event.target.avatar.value!=0){
           
-          let pfp:any = await servBag(event.target.pfp_id.value, profile.account)
-          console.log(pfp)
+          let pfp:any = await servBag(event.target.avatar.value, account)
           let ipfs_:any = pfp[0];
           let nftData:any = await axios.get(ipfs_)
           if(pfp[2][2]>0){
               
-              profilePic = nftData.data.image
+              avatar = nftData.data.image
           
           }else{
               
-              handleError('you do not own this nftea')
+              setMessage('you do not own this nftea')
           }
       
       }else{
           
-          profilePic = "/assets/images/avatar/1.jpeg"
+          avatar = "/assets/images/avatar/1.jpeg"
       }
       
-      const formData:any = {
-          account: account,
-          name: event.target.name.value,
-          email: event.target.email.value,
-          story: event.target.story.value,
-          twitter: event.target.twitter.value,
-          profilePic: profilePic,
-          pfp:event.target.pfp_id.value
-        };
-      
-      try {
-          if(account){
-              // alert(account)
-              let resp = await servSetProfile(formData);
-              // alert(JSON.stringify(resp))
-              // console.log(resp)
-              if(resp.message){
-                  handleError(resp.message)
-              }else{
-                  handleError('profile updated')
-                  setProfile(resp)
-                  setShowProfilePic(true)
-
-              }
-          }
-      } catch (error) {
-        // handle error
+      let data_ = {
+          email,
+          phone,
+          account,
+          name,
+          name2,
+          avatar,
+          twitter,
+          tiktok,
+          story,
+          cover
+        }
+      const JSONdata = JSON.stringify(data_)
+      const endpoint = '/api/setProfile'
+      const options = {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSONdata,
       }
-    }
+      const response = await fetch(endpoint, options)
+      const result = await response.json()
+      setMessage(result.msg)
+  
+  }
+    
 
     const handleError = async (msg:any)=>{
       setErrorMsg(msg)
@@ -132,7 +139,7 @@ const Side = ({profile}:any) => {
                       <div className="cs-profile_info">
                         <div className="cs-profile_pic">
                           <img
-                          src={profile.profilePic}
+                          src={profile.avatar}
                           alt="Image"
                           className="cs-zoom_item"
                           width='200'
@@ -140,7 +147,7 @@ const Side = ({profile}:any) => {
                           // onLoad={handleImageLoad}
                           />
                         </div>
-                        <h3 className="cs-profile_title">{profile.name}</h3>
+                        <h3 className="cs-profile_title">{profile.name2}</h3>
                         <p className="text-center p-1">{`${profile.account.substring(0, 6)}...${profile.account.substring(profile.account.length - 6)}`}<br/>@{profile.twitter}</p>
                         {/* <ul className="cs-profile_meta cs-mp0">
                           <li>Followers (560)</li>
@@ -196,44 +203,56 @@ const Side = ({profile}:any) => {
                 )}
             {_isEditModalOpen &&  
             <Modal onClose={handleCloseEditModal} title="Edit Profile">
-            <form onSubmit={handleSetPFP}>         
-              <div className="cs-height_20 cs-height_lg_20"></div>
-              
-              <label className="cs-form_label">Email</label>
-              <div className="cs-form_field_wrap">
-                  <input name="email" id="email" type="email" className="cs-form_field" placeholder="me@gmail.com" required />
-              </div>
-              <div className="cs-height_20 cs-height_lg_20"></div>
-              
-              <label className="cs-form_label">Name</label>
-              <div className="cs-form_field_wrap">
-                  <input name="name" id="name" type="text" className="cs-form_field" placeholder="metheartists" required />
-              </div>
-              <div className="cs-height_20 cs-height_lg_20"></div>
-              
-              <label className="cs-form_label">Avatar ID</label>
-              <div className="cs-form_field_wrap">
-                  <input name="pfp_id" id="pfp_id" type="number" className="cs-form_field" placeholder="1" />
-              </div>
-              <p className="text-center">use an nft you own as your avatar, leave blank if needed</p>
-
-              <div className="cs-height_20 cs-height_lg_20"></div>
-              
-              <label className="cs-form_label">Twitter</label>
-              <div className="cs-form_field_wrap">
-                  <input name="twitter" id="twitter" type="text" className="cs-form_field" placeholder="metheartists" />
-              </div>
-              <div className="cs-height_20 cs-height_lg_20"></div>
-              
-              <label className="cs-form_label">Story</label>
-              <div className="cs-form_field_wrap">
-                <textarea cols={30} rows={5} placeholder="e. g. Item description" className="cs-form_field" name="story" id="story" ></textarea>              
-              </div>
-              
-              <div className="cs-height_20 cs-height_lg_20"></div>
-              
-              <button type="submit" className="cs-btn cs-style1 cs-btn_lg w-100"><span>Edit</span></button>
-            </form>
+                <form onSubmit={handleProfile}>         
+                    <div className="cs-height_20 cs-height_lg_20"></div>
+                    
+                    <label className="cs-form_label">Real Name</label>
+                    <div className="cs-form_field_wrap">
+                        <input name="name" id="name"  type="text" className="cs-form_field" placeholder="john picasso" required />
+                    </div>
+                    <div className="cs-height_20 cs-height_lg_20"></div>
+                    
+                    <label className="cs-form_label">User Name</label>
+                    <div className="cs-form_field_wrap">
+                        <input name="name2" id="name2"  type="text" className="cs-form_field" placeholder="picasso" required />
+                    </div>
+                    <div className="cs-height_20 cs-height_lg_20"></div>
+                    
+                    <label className="cs-form_label">Email</label>
+                    <div className="cs-form_field_wrap">
+                        <input name="email" id="email"  type="email" className="cs-form_field" placeholder="picasso@gmail.com" required />
+                    </div>
+                    <div className="cs-height_20 cs-height_lg_20"></div>
+                    
+                    <label className="cs-form_label">Avatar</label>
+                    <div className="cs-form_field_wrap">
+                        <input name="avatar" id="avatar"  type="number" className="cs-form_field" placeholder="1" required />
+                    </div>
+                    <p className="text-center">must be an nftea you own, enter 0 to otherwise</p>
+                    <div className="cs-height_20 cs-height_lg_20"></div>
+                    
+                    <label className="cs-form_label">Twitter</label>
+                    <div className="cs-form_field_wrap">
+                        <input name="twitter" id="twitter"  type="text" className="cs-form_field" placeholder="picasso"/>
+                    </div>
+                    <div className="cs-height_20 cs-height_lg_20"></div>
+                    
+                    <label className="cs-form_label">Tiktok</label>
+                    <div className="cs-form_field_wrap">
+                        <input name="tiktok" id="tiktok"  type="text" className="cs-form_field" placeholder="picassotiktok" />
+                    </div>
+                    <div className="cs-height_20 cs-height_lg_20"></div>
+                    
+                    <label className="cs-form_label">Your Story</label>
+                    <div className="cs-form_field_wrap">
+                        <textarea name="story" id="story" className="cs-form_field" placeholder="I love nfteas..." required></textarea>
+                    </div>
+                    <div className="cs-height_20 cs-height_lg_20"></div>
+                    <button type="submit" className="cs-btn cs-style1 cs-btn_lg w-100"><span>Update</span></button>
+                    {_msg && (
+                        <p className="text-center">{_msg}</p>
+                    )}
+                </form>
             </Modal> } 
         
         </>

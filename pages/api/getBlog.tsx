@@ -9,7 +9,7 @@ export default async (req:any, res:any) => {
         const db = client.db("nftea");
         const { method, query } = req;
         const { account, id } = query;
-
+        
         if (method === 'GET') {
             if (account) {
             // Fetch all blogs for a user
