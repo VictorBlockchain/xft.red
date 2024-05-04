@@ -186,8 +186,9 @@ const Nav = ({}) => {
                 {/* <li>
                   <a href="https://pancakeswap.finance/swap?outputCurrency=0xb4668238Acf0314A7b4e153368e479fCd2E09831" target='_blank'>Buy XFT</a>
                 </li> */}
+                <li><a href="/swap/0/0">xSwap</a></li>
                 <li><a href="/xmash/0">xMash</a></li>
-                <li><a href="/esports/0">xSports</a></li>
+                {/* <li><a href="/esports/0">xSports</a></li> */}
                 
                 <li>
                   <a href="#" onClick={handleOpenSellModal}>Display</a>

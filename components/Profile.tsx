@@ -407,7 +407,7 @@ const Profile = ({creator}:any) => {
                 <div className="cs-tabs cs-fade_tabs cs-style1">
                   <div className="cs-medium">
                   <ul className="cs-tab_links cs-style1 cs-medium cs-primary_color cs-mp0 cs-primary_font">
-                    <li className="active" style={{fontFamily: 'Comfortaa'}}><a href="#nfteas" onClick={() => handleShow(1)}>My NFTeas</a></li>
+                    <li className="active" style={{fontFamily: 'Comfortaa'}}><a href="#nfteas" onClick={() => handleShow(1)}>My xFts</a></li>
                     <li className="" style={{fontFamily: 'Comfortaa'}}><a href="#forsale" onClick={() => handleShow(2)}>For Sale</a></li>
                     <li className="" style={{fontFamily: 'Comfortaa'}}><a href="#display" onClick={() => handleShow(3)}>On Display</a></li>
                     <li className="" style={{fontFamily: 'Comfortaa'}}><a href="#loans" onClick={() => handleShow(4)}>Loans</a></li>

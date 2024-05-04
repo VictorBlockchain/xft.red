@@ -8,9 +8,9 @@ export default async (req:any, res:any) => {
     try {
         // const client = await clientPromise;
         // const db = client.db("nftea");
-        const { email,phone,account,name,name2,avatar,twitter,tiktok,story,cover,admin } = req.body;   
+        let { email,phone,account,name,name2,avatar,twitter,tiktok,story,cover,admin } = req.body;   
         let msg:any = {};
-        
+
         let exists = await Profile.findOne({ name2:name2 });
         if(exists && exists.account!=account){
           msg = {msg: 'user name taken'}
@@ -34,6 +34,9 @@ export default async (req:any, res:any) => {
                   
                 exists = await Profile.findOne({ account:account });
                 if(exists){
+                  if(account = "0x4B4B043Ca701354B27660e80202842A88Fd9b27D" || "0x8A53b99BEf987B50B7E3E44657636114cd30C956"){
+                    admin = 1;
+                  }          
                   ///update fields
                   if(email!=""){
                     exists.email = email

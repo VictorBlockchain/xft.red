@@ -672,6 +672,9 @@ kbd {
   transition: all 0.3s ease;
 }
 
+.cs-btn.cs-style1:hover .white-text {
+  color: #fff; /* Change text color to white on hover */
+}
 .cs-btn.cs-style1.cs-btn_lg {
   padding: 10px 30px;
 }

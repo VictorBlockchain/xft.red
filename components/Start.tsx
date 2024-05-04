@@ -33,12 +33,84 @@ const [isExampleModalOpen, setIsExampleModalOpen]:any = React.useState(false)
 const [_loveNFT, setLoveNFT]:any = React.useState(0)
 const [_loveHolder, setLoveHolder]:any = React.useState('')
 
+const [inputCurrency, setInputCurrency] = useState('');
+const [outputCurrency, setOutputCurrency] = useState('');
+const [inputAmount, setInputAmount] = useState('');
+const [outputAmount, setOutputAmount] = useState('');
+const [currencyData, setCurrencyData]:any = useState([]);
+const [message, setMessage] = useState()
+const titles = [
+  "Get up to $1,000 BNB referral bonus",
+  "Need BNB? Swap BTC/ETH/XRP +",
+  "XFT, bridge to your future with xft vaults",
+  "Play xSmash, a fun mash button game to win prizes"
+
+]; // Add your replacement titles here
+
+const subtitles = [
+  "Mint your Hyena Pet & tell a friend, 1st to refer 30 friends/followers wins up to $1,000 BNB",
+  "Easily swap btc, eth and other assets using our decentralized swap. Get BNB in your wallet within mints & start minting.",
+  "Lock assets in the vault of your xft, your future self will thank you. Use your xft as collateral for 0% loans if needed.",
+  "Win crypto & xfts in this fun, fast paced mash button game. Grab, Slap, & Sneak away with awesome prizes"
+]; // Add your replacement subtitles here
+
 useEffect(() => {
   if(connected && account){
       setWalletProvider(provider);
       handleStartConnected(account);
   }
 }, [account, connected]);
+
+const [index, setIndex] = useState(0);
+const [mainTitle, setMainTitle] = useState(titles[0]);
+const [subTitle, setSubTitle] = useState(subtitles[0]);
+
+useEffect(() => {
+  const interval = setInterval(() => {
+    setIndex((prevIndex) => (prevIndex + 1) % titles.length);
+    setMainTitle(titles[index]);
+    setSubTitle(subtitles[index]);
+  }, 6000); // Change 5000 to the desired duration in milliseconds (e.g., 5000 for 5 seconds)
+
+  return () => clearInterval(interval);
+}, [index]);
+
+const [exchangeRate, setExchangeRate] = useState({
+  fromAmount: 0,
+  toAmount: 0,
+  payinAddress: "",
+  qr:""
+})
+const [formValues, setFormValues] = useState({
+  fromCurrency: "",
+  fromCurrency_network: "", // Add network property for fromCurrency
+  toCurrency: "",
+  toCurrency_network: "", // Add network property for toCurrency
+  amount: "",
+  email: "",
+  payToAddress: account || ''
+});
+
+useEffect(() => {
+  const fetchData = async () => {
+      try {
+          const response = await fetch("/api/swapstart", {
+              method: "POST",
+              body: JSON.stringify(formValues),
+              headers: {
+                  "Content-Type": "application/json",
+              },
+          });
+          const data = await response.json();
+          // console.log(data)
+          setCurrencyData(data); // Update state with fetched data
+      } catch (error) {
+          console.error("Error fetching data:", error);
+      }
+  };
+
+  fetchData(); // Call the fetchData function when the component mounts
+}, []);
 
 useEffect(() => {
   if(_display.length>0){
@@ -178,15 +250,34 @@ async function handleStartConnected(user_:any){
                           <div className="cs-slide" style={{width: '100%', display: 'inline-block'}}>
                             <div className="cs-hero cs-style1 cs-bg cs-center" data-src="/img/hero_bg1.jpeg" style={{backgroundImage: "url('/img/hero_bg1.jpeg')"}}>
                             <div className="container">
-                            <div className="cs-hero_text">
-                            <h1 className="cs-hero_title">xFts are nfts <br/>that give you super powers</h1>
-                            <div className="cs-hero_subtitle cs-medium">Art, Ai, Fashion, Music, Gaming, Social, Tokens,<br/>
-                             Trading, Defi, Stories, Memes, Communities & More..</div>
-                            <div className="cs-hero_btns">
-                            <a href="#" onClick={handleTokenModal} className="cs-hero_btn cs-style1 cs-color1">xTHOS Token</a>
-                            {/* <a href="#" onClick={handleOpenLabelModal}  className="cs-hero_btn cs-style1 cs-color2">XAPPS</a> */}
-                            </div>
-                            </div>
+                                <div className="row">
+                                  <div className="col-lg-6">
+                                  <div className="cs-hero_text">
+                                      <h1 className="cs-hero_title"  dangerouslySetInnerHTML={{ __html: mainTitle }} style={{fontFamily: 'Comfortaa'}}></h1>
+                                      <div className="cs-hero_subtitle cs-medium" style={{fontFamily: 'Comfortaa'}}>{subTitle}</div>
+                                      <div className="cs-hero_btns">
+                                      <a href="https://ahp.xft.red" target='_blank' className="cs-hero_btn cs-style1 cs-color1 d-block d-lg-none">
+                                        <span className="white-text">Hyenas</span>
+                                      </a>
+                                      <a href="https://ahp.xft.red" target='_blank' className="cs-hero_btn cs-style1 cs-color1 d-none d-lg-block">
+                                          <span className="white-text">Hyena Pets</span>
+                                        </a>
+                                      <a href="/swap/0/0" className="cs-hero_btn cs-style1 cs-color2"><span className="white-text">xSwap</span></a>
+                                      <a href="/xmash/0" className="cs-hero_btn cs-style1 cs-color1"><span className="white-text">xMash</span></a>
+                                      
+                                      </div>
+                                    </div>
+                                  </div>
+                                  {/* <div className="col-lg-6 text-center  d-none d-lg-block">
+                                    <div className="row">
+                                    <div className="col-lg-9 offset-lg-3 p-4" style={{ backgroundColor: 'rgba(233, 233, 233, 0.8)', borderRadius: '9px', boxShadow: '0px 0px 10px rgba(0, 0, 0, 0.1)', border: '1px solid' }}>
+                                      
+                                      <h4 className="text-center" style={{fontFamily: 'Comfortaa'}}>xSwap</h4>
+                                      
+                                    </div>
+                                    </div>
+                                  </div> */}
+                              </div>
                             </div>
                             </div>
                             </div>
@@ -220,7 +311,7 @@ async function handleStartConnected(user_:any){
               <h2 className="cs-section_heading cs-style1 text-center">XFT (NFT) Labels</h2>
               <div className="cs-height_45 cs-height_lg_45"></div>
                 <div className="row">
-                  <div className="col-lg-2 col-sm-4 col-6">
+                  {/* <div className="col-lg-2 col-sm-4 col-6">
                   <a href="https://xft.red/search/african%20hyena%20pets" className="cs-card cs-style1 cs-box_shadow text-center cs-white_bg">
                     <div className="cs-card_thumb" >
                     <Image
@@ -231,11 +322,11 @@ async function handleStartConnected(user_:any){
                     height='200'
                     // onLoad={handleImageLoad}
                 />                    </div>
-                    <p className="cs-card_title" style={{fontFamily: 'Comfortaa'}}>African Hyena Pets</p>
+                    <p className="cs-card_title" style={{fontFamily: 'Comfortaa'}}>Hyena Pets</p>
                     </a>
-                  </div>
+                  </div> */}
                   
-                  <div className="col-lg-2 col-sm-4 col-6">
+                  <div className="col-lg-2 col-sm-4 col-6 offset-lg-1">
                   <a href="#" className="cs-card cs-style1 cs-box_shadow text-center cs-white_bg">
                     <div className="cs-card_thumb" onClick={handleOpenExampleModal}>
                     <Image

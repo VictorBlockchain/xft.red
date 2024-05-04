@@ -111,7 +111,7 @@ const Footer = () => {
                     <h2 className="cs-widget_title" style={{fontFamily: 'Comfortaa'}}>Company</h2>
                     <ul className="cs-widget_nav">
                     <li style={{fontFamily: 'Comfortaa'}}><a href="/about">About Us</a></li>
-                    <li style={{fontFamily: 'Comfortaa'}}><a href="https://twitter.com/nftea___">Contact Us</a></li>
+                    <li style={{fontFamily: 'Comfortaa'}}><a href="https://discord.gg/RFu8Yj4YYk">Discord</a></li>
                     <li style={{fontFamily: 'Comfortaa'}}><a href="https://bscscan.com/address/0xaf73c709e66fe339bee5608477f9e7a589acaec5#code" target='_blank'>Contract</a></li>
                     </ul>
                     </div>
@@ -130,8 +130,8 @@ const Footer = () => {
                     </button>
                     </form>
                     <div className="cs-footer_social_btns">
-                    <a href="https://twitter.com/nftea___" target="_blank"><i className="fab fa-twitter fa-fw"></i></a>
-                    <a href="#"><i className="fab fa-github fa-fw"></i></a>
+                    <a href="https://twitter.com/xftdotred" target="_blank"><i className="fab fa-twitter fa-fw"></i></a>
+                    <a href="https://github.com/VictorBlockchain/xft.red" target='_blank'><i className="fab fa-github fa-fw"></i></a>
                     </div>
                     </div>
                     </div>

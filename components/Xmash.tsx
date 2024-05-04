@@ -476,7 +476,7 @@ const Grabbit = ({ play }:any) => {
         }
         const response = await fetch(endpoint, options)
         const result = await response.json()
-        // console.log(result)
+        console.log(result)
         setMessage(result.msg)
         // setMessage("create game is for AHP holders")
     }
@@ -632,7 +632,7 @@ const Grabbit = ({ play }:any) => {
                                     <div className="cs-card_info">
                                     <span>{item.title}</span>
                                     <h3 className="cs-card_title text-center"><a href={`/xmash/${item._id}`}>{item.title}</a></h3>
-                                    <p className="text-center mb-0 pb-0"><small>{item.playersMin} players 2 start</small></p>
+                                    <p className="text-center mb-0 pb-0"><small>{item.playersMin} players to start</small></p>
                                     </div>
                                     <hr />
                                     <div className="cs-card_footer">
