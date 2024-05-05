@@ -1531,7 +1531,7 @@ const Display = ({ nftea, sellid, seller, isConnected, url, type }:any) => {
                                 </div>
                                 <div className="cs-height_20 cs-height_lg_20"></div>
                                 
-                                <p className="text-center">Some NFTea's have limited transfer rights<br/>check to be sure this is transferable</p>
+                                <p className="text-center">Some NFTea&apos;s have limited transfer rights<br/>check to be sure this is transferable</p>
                                 
                                 <div className="cs-height_20 cs-height_lg_20"></div>
                                 

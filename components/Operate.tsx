@@ -474,7 +474,7 @@ const Operate = ({ nftea, op}:any) => {
                             <>
                             <div className="row">
                             {_operators.map((item:any) =>
-                                <div className="col-lg-6">
+                                <div className="col-lg-6" key={item.key}>
                                     <div className="row cs-white_bg cs-box_shadow cs-general_box_5">
                                         <div className="col-4">
                                             <Image

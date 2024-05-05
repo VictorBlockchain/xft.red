@@ -92,7 +92,7 @@ const Label = () => {
                                     <h2 className="text-3xl font-bold mb-4 whiteText">Embrace the Future of NFTs</h2>
                                     <p className="text-gray-700 whiteText">
                                     NFTEA is leading the way in the evolution of NFTs, as validated by the ERC 6551 proposal. Experience the limitless possibilities
-                                    of Smart NFTs, whether you're an artist, collector, gamer, or simply someone who wants to be at the forefront of the digital
+                                    of Smart NFTs, whether you&apos;re an artist, collector, gamer, or simply someone who wants to be at the forefront of the digital
                                     revolution. Unlock new dimensions with NFTEA today!
                                     </p>
                                 </div>

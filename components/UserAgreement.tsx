@@ -50,7 +50,7 @@ const UserAgreement = () => {
 
                                 <h2 className="text-2xl font-bold mb-4">4. Disclaimer and Limitation of Liability</h2>
 
-                                <p className="mb-4">4.1. Platform "As Is": The Platform is provided on an &quot;as is&quot; and &quot;as available&quot; basis. We do not make any warranties or representations regarding the accuracy, reliability, or completeness of the Platform or its content.</p>
+                                <p className="mb-4">4.1. Platform &apos;As Is&apos;: The Platform is provided on an &quot;as is&quot; and &quot;as available&quot; basis. We do not make any warranties or representations regarding the accuracy, reliability, or completeness of the Platform or its content.</p>
 
                                 <p className="mb-4">4.2. No Financial Advice: The Platform does not provide financial advice. Any information or content on the Platform is for informational purposes only and should not be considered as financial, investment, or legal advice.</p>
 

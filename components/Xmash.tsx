@@ -936,7 +936,7 @@ const Grabbit = ({ play }:any) => {
                                         <thead><tr><th></th><th>grabs used</th><th>slaps used</th><th>sneaks used</th></tr></thead>
                                         <tbody>
                                         {_players.map((item:any) => (
-                                            <tr><td>{item.playerName}</td><td>{item.grabsUsed}</td><td>{item.slapsUsed}</td><td>{item.sneaksUsed}</td></tr>
+                                            <tr key={item.key}><td>{item.playerName}</td><td>{item.grabsUsed}</td><td>{item.slapsUsed}</td><td>{item.sneaksUsed}</td></tr>
                                         ))}
                                         </tbody>
                                     </table>
@@ -1078,7 +1078,7 @@ const Grabbit = ({ play }:any) => {
                             <div className="cs-form_field_wrap">
                                 <input name="type" id="type"  type="number" className="cs-form_field" placeholder="1" required />
                             </div>
-                            <p className="text-center">enter 1 for nft or 2 if it's a crypto prize</p>
+                            <p className="text-center">enter 1 for nft or 2 if it&apos;s a crypto prize</p>
                             
                             <div className="cs-height_20 cs-height_lg_20"></div>
                             

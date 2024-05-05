@@ -9,6 +9,7 @@ import { useSDK } from '@metamask/sdk-react';
 import { useUser } from './UserContext';
 import Side from "./ProfileSide";
 import Modal from './Modal';
+import Link from 'next/link'
 
 const BLANK = '0x0000000000000000000000000000000000000000';
 
@@ -147,7 +148,7 @@ const Wallets = ({isConnected}:any) => {
                     <div className="text-center">
                         <h1 className="cs-page_title" style={{fontFamily: 'Comfortaa'}}>Wallet</h1>
                         <ol className="breadcrumb">
-                        <li className="breadcrumb-item" style={{fontFamily: 'Comfortaa'}}><a href="/">Home</a></li>
+                        <li className="breadcrumb-item" style={{fontFamily: 'Comfortaa'}}><Link href="/">Home</Link></li>
                         <li className="breadcrumb-item active" style={{fontFamily: 'Comfortaa'}}>Wallet</li>
                         </ol>
                     </div>

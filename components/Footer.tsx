@@ -102,7 +102,7 @@ const Footer = () => {
                     <div className="cs-footer_widget">
                     <h2 className="cs-widget_title" style={{fontFamily: 'Comfortaa'}}>Vaults</h2>
                     <ul className="cs-widget_nav">
-                    <li style={{fontFamily: 'Comfortaa'}}><Link href="#" onClick={handleBagModal}>What's A Vault</Link></li>
+                    <li style={{fontFamily: 'Comfortaa'}}><Link href="#" onClick={handleBagModal}>What&apos;s A Vault</Link></li>
                     <li style={{fontFamily: 'Comfortaa'}}><Link href="#" onClick={handleLockModal}>Time Lock Vaults</Link></li>
                     </ul>
                     </div>
@@ -205,7 +205,7 @@ Need to distribute funds to your team members? Effortlessly configure withdrawal
             <Modal onClose={handleBagModal} title="Vault">
               <div className="cs-single_post">
                 <p className="text-center" style={{color:'#000', lineHeight:'44px', fontFamily: 'Comfortaa'}}>
-                Empower your XFT with a Vault — a smart contract attached to your unique (1 of 1) &apos;NFT&apos;. Elevate its value by storing diverse assets such as wrapped BTC, wrapped ETH, DeFi tokens, other XFT&apos;s, and more within its Vault. Introduce captivating buyer incentives, like intricate puzzles featuring vaults within bags within vaults, enhancing your XFT's dynamism, enjoyment, and ensuring its resale value.                </p>
+                Empower your XFT with a Vault — a smart contract attached to your unique (1 of 1) &apos;NFT&apos;. Elevate its value by storing diverse assets such as wrapped BTC, wrapped ETH, DeFi tokens, other XFT&apos;s, and more within its Vault. Introduce captivating buyer incentives, like intricate puzzles featuring vaults within bags within vaults, enhancing your XFT&apos;s dynamism, enjoyment, and ensuring its resale value.                </p>
                 <div className="cs-height_20 cs-height_lg_20"></div>
               </div>
             </Modal>

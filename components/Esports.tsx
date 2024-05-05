@@ -722,8 +722,8 @@ const Esports = ({ challenge }:any) => {
             <div className="text-center">
             <h1 className="cs-page_title" style={{fontFamily: 'Comfortaa'}}>Esports</h1>
             <ol className="breadcrumb">
-            <li className="breadcrumb-item" style={{fontFamily: 'Comfortaa'}}><a href="/">Home</a></li>
-            <li className="breadcrumb-item active" style={{fontFamily: 'Comfortaa'}}><a href="/esports/0">Esports</a></li>
+            <li className="breadcrumb-item" style={{fontFamily: 'Comfortaa'}}><Link href="/">Home</Link></li>
+            <li className="breadcrumb-item active" style={{fontFamily: 'Comfortaa'}}><Link href="/esports/0">Esports</Link></li>
             </ol>
             </div>
             </div>
@@ -734,29 +734,29 @@ const Esports = ({ challenge }:any) => {
                 <div className="cs-isotop_filter cs-style1 cs-center">
                     <ul className="cs-mp0 cs-center">
                         <li className={activeTab === 'chat' ? 'active' : ''}>
-                            <a href="#" onClick={() => handleTabClick('chat')}>
+                            <Link href="#" onClick={() => handleTabClick('chat')}>
                                 <span>Chatroom</span>
-                            </a>
+                            </Link>
                         </li>
                         <li className={activeTab === 'mychallenges' ? 'active' : ''}>
-                            <a href="#" onClick={() => handleTabClick('mychallenges')}>
+                            <Link href="#" onClick={() => handleTabClick('mychallenges')}>
                                 <span>My Challenges</span>
-                            </a>
+                            </Link>
                         </li>
                         <li className={activeTab === 'history' ? 'active' : ''}>
-                            <a href="#" onClick={() => handleTabClick('history')}>
+                            <Link href="#" onClick={() => handleTabClick('history')}>
                                 <span>History</span>
-                            </a>
+                            </Link>
                         </li>
                         <li className={activeTab === 'rules' ? 'active' : ''}>
-                            <a href="#" onClick={() => handleTabClick('rules')}>
+                            <Link href="#" onClick={() => handleTabClick('rules')}>
                                 <span>Rules</span>
-                            </a>
+                            </Link>
                         </li>
                         <li className={activeTab === 'create' ? 'active' : ''}>
-                            <a href="#" onClick={() => handleTabClick('create')}>
+                            <Link href="#" onClick={() => handleTabClick('create')}>
                                 <span>Challenge</span>
-                            </a>
+                            </Link>
                         </li>
                     </ul>
                 </div>
@@ -812,8 +812,8 @@ const Esports = ({ challenge }:any) => {
                             <div className="cs-tabs cs-fade_tabs cs-style1">
                                 <div className="cs-medium">
                                     <ul className="cs-tab_links cs-style1 cs-medium cs-primary_color cs-mp0 cs-primary_font">
-                                    <li className="active" style={{fontFamily: 'Comfortaa'}}><a href="#HeadsUp">Heads Up</a></li>
-                                    <li><a href="#Help" style={{fontFamily: 'Comfortaa'}}>Help</a></li>
+                                    <li className="active" style={{fontFamily: 'Comfortaa'}}><Link href="#HeadsUp">Heads Up</Link></li>
+                                    <li><Link href="#Help" style={{fontFamily: 'Comfortaa'}}>Help</Link></li>
                                     </ul>
                                 </div>
                                 <div className="cs-tab_content">
@@ -1008,7 +1008,7 @@ const Esports = ({ challenge }:any) => {
                                             <td>{challenge.accepted ? 'Yes' : 'No'}</td>
                                             <td>
                                             {/* Link or button for more info, you can customize this */}
-                                            <a href="#" onClick={(e)=>handleActionsModal(e,challenge.gameId)} className="cs-btn"><small>actions</small></a>
+                                            <Link href="#" onClick={(e)=>handleActionsModal(e,challenge.gameId)} className="cs-btn"><small>actions</small></Link>
                                             </td>
                                         </tr>
                                         ))}
@@ -1035,8 +1035,8 @@ const Esports = ({ challenge }:any) => {
                     <div className="cs-tabs cs-fade_tabs cs-style1">
                         <div className="cs-medium">
                             <ul className="cs-tab_links cs-style1 cs-medium cs-primary_color cs-mp0 cs-primary_font">
-                            <li className="active" style={{fontFamily: 'Comfortaa'}}><a href="#HeadsUp">Heads Up</a></li>
-                            <li><a href="#Help" style={{fontFamily: 'Comfortaa'}}>Help</a></li>
+                            <li className="active" style={{fontFamily: 'Comfortaa'}}><Link href="#HeadsUp">Heads Up</Link></li>
+                            <li><Link href="#Help" style={{fontFamily: 'Comfortaa'}}>Help</Link></li>
                             </ul>
                         </div>
                         <div className="cs-tab_content">

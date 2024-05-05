@@ -227,7 +227,7 @@ const Blogs = ({id}:any) => {
 
                                   When you possess the label &quot;Brooklyn NFT&quot;, you wield exclusive rights to sell NFTs under that label. Take it a step further by offering licenses to artists globally or narrow it down to a local scale, allowing only Brooklyn-based artists to contribute to your curated collection.<br/><br/>
 
-                                  Labels aren't just a tool for individual ownership; they're a dynamic team management solution. Issue operator licenses to team members, granting them the authority to mint or sell NFTs on behalf of your label, fostering collaboration seamlessly.<br/><br/>
+                                  Labels aren&apos;t just a tool for individual ownership; they&apos;re a dynamic team management solution. Issue operator licenses to team members, granting them the authority to mint or sell NFTs on behalf of your label, fostering collaboration seamlessly.<br/><br/>
 
                                   What sets Labels apart is their integration of smart contracts. All sales generated from NFTs under your label are securely stored in the smart contract wallet associated with your label. This ensures effortless distribution of earnings to your team members. Fine-tune permissions, specifying when and how often team members can withdraw funds from the label wallet.<br/><br/>
 
@@ -263,7 +263,7 @@ Meet the Tea Pot, a unique community vault fueled by the NFTea token. Every time
 
 The magic lies in the reciprocity of the act. As you express your admiration for an artwork, you&quot;re not merely a passive viewer; you become an active participant in fostering a culture of appreciation. This mechanism not only empowers creators by attributing tangible value to their work but also creates a decentralized ecosystem where users collectively contribute to the growth and sustainability of the artistic community.<br/><br/>
 
-The "Show Love" feature isn&quot;t just a button; it&quot;s a conduit for genuine appreciation to flow through, fostering a symbiotic relationship between creators and their audience. No longer confined to the limitations of a singular gesture, your appreciation becomes an integral part of an evolving narrative, shaping the destiny of the digital art realm.<br/><br/>
+The &apos;Show Love&apos; feature isn&quot;t just a button; it&quot;s a conduit for genuine appreciation to flow through, fostering a symbiotic relationship between creators and their audience. No longer confined to the limitations of a singular gesture, your appreciation becomes an integral part of an evolving narrative, shaping the destiny of the digital art realm.<br/><br/>
 
 In the era of Web 3.0, let&quot;s redefine the dynamics of digital interaction. It&quot;s not just about acknowledging creativity; it&quot;s about actively contributing to its growth and acknowledging the profound impact it has on our digital culture. Step into a world where the act of showing love isn&quot;t just a click; it&quot;s a transformative force shaping the future of digital appreciation. Join us as we celebrate the true essence of art, one &quot;Show Love&quot; at a time.                                </p>
                             </div>

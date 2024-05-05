@@ -294,7 +294,7 @@ const Loan = ({nftea}:any) => {
                                         Buy defaulted loans from the Teapot. Some defaulted loans may have 55% or more in value stored in their bags compared to the loan amount.
                                     </p>
                                     <p className="mb-4">
-                                    Borrow from the Teapot, a community vault, based on the amount of Tea Tokens held in your NFT's wallet and your Loan-to-Value (LTV) rating. The higher your LTV rating, the more you can borrow. Loans are issued for 30 days, and you start with a 45% LTV rating.
+                                    Borrow from the Teapot, a community vault, based on the amount of Tea Tokens held in your NFT&apos;s wallet and your Loan-to-Value (LTV) rating. The higher your LTV rating, the more you can borrow. Loans are issued for 30 days, and you start with a 45% LTV rating.
                                     </p>
                         </div>
                     )}
