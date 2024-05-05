@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import {useCallback, useEffect, useState} from 'react'
-// import { UltimateTextToImage, ICanvas} from "ultimate-text-to-image";
+import { UltimateTextToImage, ICanvas} from "ultimate-text-to-image";
 import {create as ipfsHttpClient}  from "ipfs-http-client";
 import moment from 'moment';
 import axios from "axios";
