@@ -9,7 +9,7 @@ import axios from "axios";
 import moment from 'moment';
 import {create as ipfsHttpClient}  from "ipfs-http-client";
 import { BigNumber } from 'bignumber.js';
-import { setWalletProvider,servBag,servToBNB,servApproveToken,servChallenge,servChallenges,servSetChallenge,servAcceptChallenge,servDeclineChallenge,servChangeOpponent,servReportScore,servConfirmScore,servDispute,servMediatorClaim,servMediator,servCancelGame,servGame,servPlayerChallenges,servPlayerProfile } from '../services/web3Service';
+import { setWalletProvider,servBag,servToBNB,servApproveToken,servChallenge,servSetChallenge,servAcceptChallenge,servDeclineChallenge,servChangeOpponent,servReportScore,servConfirmScore,servDispute,servMediatorClaim,servMediator,servCancelGame,servGame,servPlayerChallenges,servPlayerProfile } from '../services/web3Service';
 import { servNFTbalance } from '../services/web3Service';
 import { servNFT } from '../services/web3Service';
 import { servNFT2Label } from '../services/web3Service';
