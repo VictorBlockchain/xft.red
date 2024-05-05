@@ -132,8 +132,10 @@ const Display = ({ nftea, sellid, seller, isConnected, url, type }:any) => {
             let balances_:any = await servBalances(account)
             const number = new BigNumber(balances_.teapot);
             let formattedNumber = number.dividedBy(1000000000).toFixed(9);   
-            const formattedString = formattedNumber.toLocaleString(undefined, { minimumFractionDigits: 0, maximumFractionDigits: 9 });
-            
+            const formattedString = parseFloat(formattedNumber).toLocaleString(undefined, {
+                minimumFractionDigits: 0,
+                maximumFractionDigits: 9
+            });            
             setTeaPot(formattedString)
             setLoveModalOpen(true);
         }  
