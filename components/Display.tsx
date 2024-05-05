@@ -365,7 +365,10 @@ const Display = ({ nftea, sellid, seller, isConnected, url, type }:any) => {
                     forsale_ = await servSale(sellid)
                     const number = new BigNumber(forsale_[2][1]);
                     let formattedNumber = number.dividedBy(1000000000).toFixed(9);   
-                    const formattedString = formattedNumber.toLocaleString(undefined, { minimumFractionDigits: 0, maximumFractionDigits: 9 });
+                    const formattedString = parseFloat(formattedNumber).toLocaleString(undefined, {
+                        minimumFractionDigits: 0,
+                        maximumFractionDigits: 9
+                    });                     
                     _content.sellprice = formattedString
                     _content.sell = forsale_
                     _content.sellSettings = forsale_.settings
@@ -437,29 +440,45 @@ const Display = ({ nftea, sellid, seller, isConnected, url, type }:any) => {
 
         }
         // console.log(labelstats)
+        
         let walletBalance:any = new BigNumber(labelstats[0][0]);
-        walletBalance = walletBalance.dividedBy(1000000000).toFixed(9);   
-        walletBalance = walletBalance.toLocaleString(undefined, { minimumFractionDigits: 0, maximumFractionDigits: 9 });
+        walletBalance = walletBalance.dividedBy(1000000000).toFixed(9);  
+        walletBalance = parseFloat(walletBalance).toLocaleString(undefined, {
+            minimumFractionDigits: 0,
+            maximumFractionDigits: 9
+        }); 
         stats[0] = walletBalance || 0
 
         let royalteasPaid:any = new BigNumber(labelstats[0][1]);
         royalteasPaid = royalteasPaid.dividedBy(1000000000).toFixed(9);   
-        royalteasPaid = royalteasPaid.toLocaleString(undefined, { minimumFractionDigits: 0, maximumFractionDigits: 9 });
+        royalteasPaid = parseFloat(royalteasPaid).toLocaleString(undefined, {
+            minimumFractionDigits: 0,
+            maximumFractionDigits: 9
+        }); 
         stats[1] = royalteasPaid || 0
 
         let royalteasCollected:any = new BigNumber(labelstats[0][2]);
         royalteasCollected = royalteasCollected.dividedBy(1000000000).toFixed(9);   
-        royalteasCollected = royalteasCollected.toLocaleString(undefined, { minimumFractionDigits: 0, maximumFractionDigits: 9 });
+        royalteasCollected = parseFloat(royalteasCollected).toLocaleString(undefined, {
+            minimumFractionDigits: 0,
+            maximumFractionDigits: 9
+        }); 
         stats[2] = royalteasCollected || 0
 
         let buyerRoyalteas:any = new BigNumber(labelstats[0][3]);
         buyerRoyalteas = buyerRoyalteas.dividedBy(1000000000).toFixed(9);   
-        buyerRoyalteas = buyerRoyalteas.toLocaleString(undefined, { minimumFractionDigits: 0, maximumFractionDigits: 9 });
+        buyerRoyalteas = parseFloat(buyerRoyalteas).toLocaleString(undefined, {
+            minimumFractionDigits: 0,
+            maximumFractionDigits: 9
+        }); 
         stats[3] = buyerRoyalteas || 0
 
         let volume:any = new BigNumber(labelstats[0][5]);
         volume = volume.dividedBy(1000000000).toFixed(9);   
-        volume = volume.toLocaleString(undefined, { minimumFractionDigits: 0, maximumFractionDigits: 9 });
+        volume = parseFloat(volume).toLocaleString(undefined, {
+            minimumFractionDigits: 0,
+            maximumFractionDigits: 9
+        }); 
         stats[5] = volume || 0
 
         stats[4] = labelstats[0][4]
