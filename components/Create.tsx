@@ -303,8 +303,11 @@ const Create = () => {
           }
           setSearch(resp.label)
           const number = new BigNumber(resp.price);
-          let formattedNumber = number.dividedBy(1000000000).toFixed(9);   
-          const formattedString = formattedNumber.toLocaleString(undefined, { minimumFractionDigits: 0, maximumFractionDigits: 9 });
+          let formattedNumber = number.dividedBy(1000000000).toFixed(9);  
+          const formattedString = parseFloat(formattedNumber).toLocaleString(undefined, {
+            minimumFractionDigits: 0,
+            maximumFractionDigits: 9
+        });
   
           setLabelPrice(formattedString)
           setLabel(label.toLowerCase())
