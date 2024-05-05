@@ -15,13 +15,13 @@
     "jsx": "preserve",
     "incremental": true,
     "typeRoots": ["./node_modules/@types", "./types"],
-    "types": ["mongoose", "mongodb"] // Added "mongodb" here
+    "types": ["mongoose", "mongodb"]
   },
   "include": [
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx",
-    "pages/**/*",  // Updated this to include all files under the pages directory
+    "pages/**/*",
     "components/Service.js"
   ],
   "exclude": ["node_modules"]
