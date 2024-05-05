@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 const UserAgreement = () => {
     
     return(
@@ -9,8 +11,8 @@ const UserAgreement = () => {
             <div className="text-center">
             <h1 className="cs-page_title" style={{fontFamily: 'Comfortaa'}}>Terms</h1>
             <ol className="breadcrumb">
-            <li className="breadcrumb-item" style={{fontFamily: 'Comfortaa'}}><a href="/">Home</a></li>
-            <li className="breadcrumb-item active" style={{fontFamily: 'Comfortaa'}}><a href="/agreement">Terms</a></li>
+            <li className="breadcrumb-item" style={{fontFamily: 'Comfortaa'}}><Link href="/">Home</Link></li>
+            <li className="breadcrumb-item active" style={{fontFamily: 'Comfortaa'}}><Link href="/agreement">Terms</Link></li>
             </ol>
             </div>
             </div>
@@ -24,7 +26,7 @@ const UserAgreement = () => {
                             <div className="text-gray-800">
                                 <h1 className="text-3xl font-bold mb-4">User Agreement</h1>
 
-                                <p className="mb-4">Welcome to XFT.red. This User Agreement ("Agreement") governs your use of our Smart NFT Marketplace platform ("Platform"). By accessing or using our Platform, you agree to comply with this Agreement. Please read it carefully.</p>
+                                <p className="mb-4">Welcome to XFT.red. This User Agreement (&quot;Agreement&quot;) governs your use of our Smart NFT Marketplace platform (&quot;Platform&quot;). By accessing or using our Platform, you agree to comply with this Agreement. Please read it carefully.</p>
 
                                 <h2 className="text-2xl font-bold mb-4">1. Use of the Platform</h2>
 
@@ -48,7 +50,7 @@ const UserAgreement = () => {
 
                                 <h2 className="text-2xl font-bold mb-4">4. Disclaimer and Limitation of Liability</h2>
 
-                                <p className="mb-4">4.1. Platform "As Is": The Platform is provided on an "as is" and "as available" basis. We do not make any warranties or representations regarding the accuracy, reliability, or completeness of the Platform or its content.</p>
+                                <p className="mb-4">4.1. Platform "As Is": The Platform is provided on an &quot;as is&quot; and &quot;as available&quot; basis. We do not make any warranties or representations regarding the accuracy, reliability, or completeness of the Platform or its content.</p>
 
                                 <p className="mb-4">4.2. No Financial Advice: The Platform does not provide financial advice. Any information or content on the Platform is for informational purposes only and should not be considered as financial, investment, or legal advice.</p>
 

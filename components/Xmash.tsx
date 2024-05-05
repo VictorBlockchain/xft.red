@@ -564,8 +564,8 @@ const Grabbit = ({ play }:any) => {
             <div className="text-center">
             <h1 className="cs-page_title" style={{fontFamily: 'Comfortaa'}}>xMash</h1>
             <ol className="breadcrumb">
-            <li className="breadcrumb-item" style={{fontFamily: 'Comfortaa'}}><a href="/">Home</a></li>
-            <li className="breadcrumb-item active" style={{fontFamily: 'Comfortaa'}}><a href="/xmash/0">xMash</a></li>
+            <li className="breadcrumb-item" style={{fontFamily: 'Comfortaa'}}><Link href="/">Home</Link></li>
+            <li className="breadcrumb-item active" style={{fontFamily: 'Comfortaa'}}><Link href="/xmash/0">xMash</Link></li>
             </ol>
             </div>
             </div>
@@ -577,29 +577,29 @@ const Grabbit = ({ play }:any) => {
                 <div className="cs-isotop_filter cs-style1 cs-center">
                     <ul className="cs-mp0 cs-center">
                         <li className={activeTab === 'all' ? 'active' : ''}>
-                            <a href="#" onClick={() => handleTabClick('all')}>
+                            <Link href="#" onClick={() => handleTabClick('all')}>
                                 <span>All Games</span>
-                            </a>
+                            </Link>
                         </li>
                         <li className={activeTab === 'nftea' ? 'active' : ''}>
-                            <a href="#" onClick={() => handleTabClick('nftea')}>
+                            <Link href="#" onClick={() => handleTabClick('nftea')}>
                                 <span>xFt</span>
-                            </a>
+                            </Link>
                         </li>
                         <li className={activeTab === 'crypto' ? 'active' : ''}>
-                            <a href="#" onClick={() => handleTabClick('crypto')}>
+                            <Link href="#" onClick={() => handleTabClick('crypto')}>
                                 <span>Crypto</span>
-                            </a>
+                            </Link>
                         </li>
                         <li className={activeTab === 'practice' ? 'active' : ''}>
-                            <a href="#" onClick={() => handleTabClick('practice')}>
+                            <Link href="#" onClick={() => handleTabClick('practice')}>
                                 <span>Practice</span>
-                            </a>
+                            </Link>
                         </li>
                         <li className={activeTab === 'create' ? 'active' : ''}>
-                            <a href="#" onClick={() => handleCreateModal()}>
+                            <Link href="#" onClick={() => handleCreateModal()}>
                                 <span>Create</span>
-                            </a>
+                            </Link>
                         </li>
                     </ul>
                 </div>
@@ -619,7 +619,7 @@ const Grabbit = ({ play }:any) => {
                                     <i className="fas fa-users fa-fw"></i>
                                         {item.playersReady || 0}/{item.playersMax}
                                     </span>
-                                    <a href={`/xmash/${item._id}`} className="cs-card_thumb cs-zoom_effect">
+                                    <Link href={`/xmash/${item._id}`} className="cs-card_thumb cs-zoom_effect">
                                     <img
                                         src={item.image}
                                         alt="Image"
@@ -628,16 +628,16 @@ const Grabbit = ({ play }:any) => {
                                         height='600'
                                         // onLoad={handleImageLoad}
                                     />
-                                    </a>
+                                    </Link>
                                     <div className="cs-card_info">
                                     <span>{item.title}</span>
-                                    <h3 className="cs-card_title text-center"><a href={`/xmash/${item._id}`}>{item.title}</a></h3>
+                                    <h3 className="cs-card_title text-center"><Link href={`/xmash/${item._id}`}>{item.title}</Link></h3>
                                     <p className="text-center mb-0 pb-0"><small>{item.playersMin} players to start</small></p>
                                     </div>
                                     <hr />
                                     <div className="cs-card_footer">
                                     <div className="text-center">
-                                        <a  href={`/xmash/${item._id}`} className="cs-btn cs-style1 cs-btn_lg w-100"><span>Play</span></a>
+                                        <Link  href={`/xmash/${item._id}`} className="cs-btn cs-style1 cs-btn_lg w-100"><span>Play</span></Link>
                                     </div>
                                     </div>
                                 </div>
@@ -741,9 +741,9 @@ const Grabbit = ({ play }:any) => {
                                 <div className="cs-tabs cs-fade_tabs cs-style1">
                                     <div className="cs-medium">
                                         <ul className="cs-tab_links cs-style1 cs-medium cs-primary_color cs-mp0 cs-primary_font">
-                                        <li className="active" style={{fontFamily: 'Comfortaa'}}><a href="#Description">Game Info</a></li>
-                                        <li><a href="#Details" style={{fontFamily: 'Comfortaa'}}>Prize Info</a></li>
-                                        <li><a href="#HowTo" style={{fontFamily: 'Comfortaa'}}>How To Play</a></li>
+                                        <li className="active" style={{fontFamily: 'Comfortaa'}}><Link href="#Description">Game Info</Link></li>
+                                        <li><Link href="#Details" style={{fontFamily: 'Comfortaa'}}>Prize Info</Link></li>
+                                        <li><Link href="#HowTo" style={{fontFamily: 'Comfortaa'}}>How To Play</Link></li>
                                         </ul>
                                     </div>
                                     <div className="cs-height_20 cs-height_lg_20"></div>
@@ -836,7 +836,7 @@ const Grabbit = ({ play }:any) => {
                                         </WeiboShareButton>
                             </div>
                             <div className="text-center pt-4">
-                                <a  href='/xmash/0' className="cs-btn cs-style1 cs-btn_lg w-100 pt-2"><span>Back</span></a>
+                                <Link  href='/xmash/0' className="cs-btn cs-style1 cs-btn_lg w-100 pt-2"><span>Back</span></Link>
                             </div>
                         </>
                         )}
@@ -917,7 +917,7 @@ const Grabbit = ({ play }:any) => {
                             </div>
                             <div className="row pt-4">
                                 <div className="col-12 text-center">
-                                    <a  href="/xmash/0" className="cs-btn cs-style1 cs-btn_lg w-100"><span>back</span></a>
+                                    <Link  href="/xmash/0" className="cs-btn cs-style1 cs-btn_lg w-100"><span>back</span></Link>
                                 </div>
                             </div>
                         </>

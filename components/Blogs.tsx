@@ -78,15 +78,15 @@ const Blogs = ({id}:any) => {
     return (
       <div className="col-lg-4" key={blog.id}>
         <div className="cs-post cs-style1">
-          <a href={`/blog/${blog.id}`} className="cs-post_thumb">
+          <Link href={`/blog/${blog.id}`} className="cs-post_thumb">
             <div
               className="cs-post_thumb_in cs-bg"
               style={{ backgroundImage: `url(${firstImage})` }}
             ></div>
-          </a>
+          </Link>
           <div className="cs-post_info">
             <h2 className="cs-post_title">
-              <a href={`/blog/${blog.id}`}>{blog.title}</a>
+              <Link href={`/blog/${blog.id}`}>{blog.title}</Link>
             </h2>
             <div className="cs-post_subtitle">{/* ... your subtitle logic */}</div>
             <div className="cs-height_20 cs-height_lg_20"></div>
@@ -158,8 +158,8 @@ const Blogs = ({id}:any) => {
                     <div className="text-center">
                         <h1 className="cs-page_title" style={{fontFamily: 'Comfortaa'}}>Blogs</h1>
                         <ol className="breadcrumb">
-                        <li className="breadcrumb-item" style={{fontFamily: 'Comfortaa'}}><a href="/">Home</a></li>
-                        <li className="breadcrumb-item active" style={{fontFamily: 'Comfortaa'}}><a href="#">Blogs</a></li>
+                        <li className="breadcrumb-item" style={{fontFamily: 'Comfortaa'}}><Link href="/">Home</Link></li>
+                        <li className="breadcrumb-item active" style={{fontFamily: 'Comfortaa'}}><Link href="#">Blogs</Link></li>
                         </ol>
                     </div>
                 </div>
@@ -184,7 +184,7 @@ const Blogs = ({id}:any) => {
                                   />
                                 </div>
                                 <p style={{lineHeight:'44px'}}>
-                                In the blink of an eye, Non-Fungible Tokens (NFTs) stormed the tech landscape, catching the attention of artists, investors, and enthusiasts alike. The meteoric rise of NFTs, epitomized by Beeple's staggering $69 million art sale, spurred creatives worldwide to dive into this digital phenomenon, all envisioning a lucrative future for their artistic endeavors.
+                                In the blink of an eye, Non-Fungible Tokens (NFTs) stormed the tech landscape, catching the attention of artists, investors, and enthusiasts alike. The meteoric rise of NFTs, epitomized by Beeple&quot;s staggering $69 million art sale, spurred creatives worldwide to dive into this digital phenomenon, all envisioning a lucrative future for their artistic endeavors.
                                 <br/><br/>
 
                                   <b className="pt-5">However</b>, the initial gold rush led to a saturated NFT market, leaving many tokens overlooked, unsold, and once-cherished collections devalued. It was akin to creating assets for a video game without having the game itself.<br/><br/>
@@ -198,7 +198,7 @@ const Blogs = ({id}:any) => {
 
                                   NFTea.app, our visionary marketplace, is at the forefront of this NFT 2.0 revolution. Tailored for Smart NFTs, it embodies our vision of how this format can empower the global economy. Beyond the realm of art, NFTea.app is a gateway to a new era where digital assets not only represent creative expression but also serve as dynamic tools shaping the future of finance and ownership.<br/><br/>
                                   
-                                  As NFT 2.0 continues to unfold, we stand on the precipice of a digital renaissance, where the potential applications of Smart NFTs are yet to be fully explored. The journey is not just about owning a piece of art; it's about embracing a dynamic ecosystem that merges creativity, technology, and global finance into a powerful force for change. Join us as we navigate this frontier and redefine the narrative of digital ownership in the 21st century.
+                                  As NFT 2.0 continues to unfold, we stand on the precipice of a digital renaissance, where the potential applications of Smart NFTs are yet to be fully explored. The journey is not just about owning a piece of art; it&quot;s about embracing a dynamic ecosystem that merges creativity, technology, and global finance into a powerful force for change. Join us as we navigate this frontier and redefine the narrative of digital ownership in the 21st century.
                               
                                 </p>
                             </div>
@@ -225,13 +225,13 @@ const Blogs = ({id}:any) => {
                                   
                                   Our ingenious solution to this paradigm shift is Labels — a groundbreaking concept that transforms how we perceive and interact with NFT collections. Think of Labels as ENS domains for your NFTs, granting you ownership and the power to dictate permissions and interactions.<br/><br/>
 
-                                  When you possess the label "Brooklyn NFT," you wield exclusive rights to sell NFTs under that label. Take it a step further by offering licenses to artists globally or narrow it down to a local scale, allowing only Brooklyn-based artists to contribute to your curated collection.<br/><br/>
+                                  When you possess the label &quot;Brooklyn NFT&quot;, you wield exclusive rights to sell NFTs under that label. Take it a step further by offering licenses to artists globally or narrow it down to a local scale, allowing only Brooklyn-based artists to contribute to your curated collection.<br/><br/>
 
                                   Labels aren't just a tool for individual ownership; they're a dynamic team management solution. Issue operator licenses to team members, granting them the authority to mint or sell NFTs on behalf of your label, fostering collaboration seamlessly.<br/><br/>
 
                                   What sets Labels apart is their integration of smart contracts. All sales generated from NFTs under your label are securely stored in the smart contract wallet associated with your label. This ensures effortless distribution of earnings to your team members. Fine-tune permissions, specifying when and how often team members can withdraw funds from the label wallet.<br/><br/>
 
-                                  But that's not all. Labels redefine the concept of royalties by directing them to buyers, not artists. Each NFT purchase from your label entitles the buyer to a share of perpetual sales. This unique approach to royalties transforms collectors into active stakeholders in the ecosystem, fostering a mutually beneficial relationship.<br/><br/>
+                                  But that&quot;s not all. Labels redefine the concept of royalties by directing them to buyers, not artists. Each NFT purchase from your label entitles the buyer to a share of perpetual sales. This unique approach to royalties transforms collectors into active stakeholders in the ecosystem, fostering a mutually beneficial relationship.<br/><br/>
                                   
                                   In the world of NFTs, where creativity knows no bounds, Labels emerge as a revolutionary force, challenging conventional notions of ownership, collaboration, and financial incentives. Step into a future where NFT collections are not just assets but living entities, dynamically shaping the landscape of global collaboration and artistic expression. Welcome to the era of Labels, where innovation meets imagination, and the possibilities are as limitless as human creativity itself.                              
                                 </p>
@@ -255,17 +255,17 @@ const Blogs = ({id}:any) => {
                                   />
                                 </div>
                                 <p style={{lineHeight:'44px'}}>
-                                The advent of Web 2.0 brought us platforms like Facebook, where the value of creative expression was distilled into the simplicity of a "like" button. While users experienced a fleeting sense of affirmation, major platforms (Zuck) reaped massive financial gains. Web 3.0, or what we affectionately term "web us," ushers in a paradigm shift where creators are not only acknowledged but also rewarded for their contributions.<br/><br/>
+                                The advent of Web 2.0 brought us platforms like Facebook, where the value of creative expression was distilled into the simplicity of a &quot;like&quot; button. While users experienced a fleeting sense of affirmation, major platforms (Zuck) reaped massive financial gains. Web 3.0, or what we affectionately term &quot;web us&quot;, ushers in a paradigm shift where creators are not only acknowledged but also rewarded for their contributions.<br/><br/>
 
-In this new digital landscape, we've discarded the socially limiting "like" button in favor of a more profound expression — the "Show Love" button. When you extend appreciation to a piece of art, you're not just signaling approval; you're elevating the intrinsic value of the artwork, and here's how.<br/><br/>
+In this new digital landscape, we&quot;ve discarded the socially limiting &quot;like&quot; button in favor of a more profound expression — the &quot;Show Love&quot; button. When you extend appreciation to a piece of art, you&quot;re not just signaling approval; you&quot;re elevating the intrinsic value of the artwork, and here&quot;s how.<br/><br/>
 
-Meet the Tea Pot, a unique community vault fueled by the NFTea token. Every time you hit the "Show Love" button, a small contribution is drawn from the Tea Pot and seamlessly integrated into the smart contract of the NFT you're appreciating. This isn't just a symbolic gesture; it's a tangible way to add substantial value to the creations you genuinely "love."<br/><br/>
+Meet the Tea Pot, a unique community vault fueled by the NFTea token. Every time you hit the &quot;Show Love&quot; button, a small contribution is drawn from the Tea Pot and seamlessly integrated into the smart contract of the NFT you&quot;re appreciating. This isn&quot;t just a symbolic gesture; it&quot;s a tangible way to add substantial value to the creations you genuinely &quot;love.&quot;<br/><br/>
 
-The magic lies in the reciprocity of the act. As you express your admiration for an artwork, you're not merely a passive viewer; you become an active participant in fostering a culture of appreciation. This mechanism not only empowers creators by attributing tangible value to their work but also creates a decentralized ecosystem where users collectively contribute to the growth and sustainability of the artistic community.<br/><br/>
+The magic lies in the reciprocity of the act. As you express your admiration for an artwork, you&quot;re not merely a passive viewer; you become an active participant in fostering a culture of appreciation. This mechanism not only empowers creators by attributing tangible value to their work but also creates a decentralized ecosystem where users collectively contribute to the growth and sustainability of the artistic community.<br/><br/>
 
-The "Show Love" feature isn't just a button; it's a conduit for genuine appreciation to flow through, fostering a symbiotic relationship between creators and their audience. No longer confined to the limitations of a singular gesture, your appreciation becomes an integral part of an evolving narrative, shaping the destiny of the digital art realm.<br/><br/>
+The "Show Love" feature isn&quot;t just a button; it&quot;s a conduit for genuine appreciation to flow through, fostering a symbiotic relationship between creators and their audience. No longer confined to the limitations of a singular gesture, your appreciation becomes an integral part of an evolving narrative, shaping the destiny of the digital art realm.<br/><br/>
 
-In the era of Web 3.0, let's redefine the dynamics of digital interaction. It's not just about acknowledging creativity; it's about actively contributing to its growth and acknowledging the profound impact it has on our digital culture. Step into a world where the act of showing love isn't just a click; it's a transformative force shaping the future of digital appreciation. Join us as we celebrate the true essence of art, one "Show Love" at a time.                                </p>
+In the era of Web 3.0, let&quot;s redefine the dynamics of digital interaction. It&quot;s not just about acknowledging creativity; it&quot;s about actively contributing to its growth and acknowledging the profound impact it has on our digital culture. Step into a world where the act of showing love isn&quot;t just a click; it&quot;s a transformative force shaping the future of digital appreciation. Join us as we celebrate the true essence of art, one &quot;Show Love&quot; at a time.                                </p>
                             </div>
                         </div>
                     )}

@@ -966,7 +966,7 @@ const Display = ({ nftea, sellid, seller, isConnected, url, type }:any) => {
                     <div className="text-center">
                         <h1 className="cs-page_title" style={{fontFamily: 'Comfortaa'}}>Art Display</h1>
                         <ol className="breadcrumb">
-                        <li className="breadcrumb-item" style={{fontFamily: 'Comfortaa'}}><a href="/">Home</a></li>
+                        <li className="breadcrumb-item" style={{fontFamily: 'Comfortaa'}}><Link href="/">Home</Link></li>
                         <li className="breadcrumb-item active" style={{fontFamily: 'Comfortaa'}}>Display</li>
                         </ol>
                     </div>
@@ -995,10 +995,10 @@ const Display = ({ nftea, sellid, seller, isConnected, url, type }:any) => {
                         <div className="cs-tabs cs-fade_tabs cs-style1">
                             <div className="cs-medium">
                                 <ul className="cs-tab_links cs-style1 cs-medium cs-primary_color cs-mp0 cs-primary_font">
-                                <li className="active" style={{fontFamily: 'Comfortaa'}}><a href="#details" onClick={() => handleTab(3)}>Details</a></li>
-                                <li style={{fontFamily: 'Comfortaa'}}><a href="#media" onClick={() => handleTab(4)}>Media</a></li>
-                                <li style={{fontFamily: 'Comfortaa'}}><a href="#bag" onClick={() => handleTab(5)}>Vault</a></li>
-                                <li style={{fontFamily: 'Comfortaa'}}><a href="#stats" onClick={() => handleTab(6)}>Label Stats</a></li>
+                                <li className="active" style={{fontFamily: 'Comfortaa'}}><Link href="#details" onClick={() => handleTab(3)}>Details</Link></li>
+                                <li style={{fontFamily: 'Comfortaa'}}><Link href="#media" onClick={() => handleTab(4)}>Media</Link></li>
+                                <li style={{fontFamily: 'Comfortaa'}}><Link href="#bag" onClick={() => handleTab(5)}>Vault</Link></li>
+                                <li style={{fontFamily: 'Comfortaa'}}><Link href="#stats" onClick={() => handleTab(6)}>Label Stats</Link></li>
                                 </ul>
                             </div>
                             <div className="cs-height_20 cs-height_lg_20"></div>
@@ -1020,7 +1020,7 @@ const Display = ({ nftea, sellid, seller, isConnected, url, type }:any) => {
                                     <div className="mt-4" style={{fontFamily: 'Comfortaa'}}>
                                         <span className="font-medium text-slate-400 block mb-1">Linked To Label: </span>
                                         {_display.nftea[0].settings[0] > 0 && (<span className="font-medium block">#{_display.nftea[0].settings[0]}</span>)}
-                                        {_display.nftea[0].settings[0] < 1 && (<span className="font-medium block">not linked {_display.holders[0] == account && (<a href="#" onClick={() => openModal(12)} >edit</a>)}</span>)}
+                                        {_display.nftea[0].settings[0] < 1 && (<span className="font-medium block">not linked {_display.holders[0] == account && (<Link href="#" onClick={() => openModal(12)} >edit</Link>)}</span>)}
                                     </div>
                                     {_display.nftea[0].settings[3]<7 && (
                                     <div className="mt-4" style={{fontFamily: 'Comfortaa'}}>
@@ -1034,7 +1034,7 @@ const Display = ({ nftea, sellid, seller, isConnected, url, type }:any) => {
                                     </div>
                                     {_display.bag != BLANK && _display.holders[0]!=teaPot && (
                                         <div className="mt-4" style={{fontFamily: 'Comfortaa'}}>
-                                            <a href={`/operators/${_nftea}/${BLANK}`}className="btn rounded-full bg-violet-600 hover:bg-violet-700 border-violet-600 hover:border-violet-700 text-white w-full">Operators</a>
+                                            <Link href={`/operators/${_nftea}/${BLANK}`}className="btn rounded-full bg-violet-600 hover:bg-violet-700 border-violet-600 hover:border-violet-700 text-white w-full">Operators</Link>
                                         </div>
                                     )}
                                     {_display.bag != BLANK && _display.holders[0]==teaPot && (
@@ -1067,7 +1067,7 @@ const Display = ({ nftea, sellid, seller, isConnected, url, type }:any) => {
                                                 {_mediaTracks.map((item:any) => (
                                                 <tr key={item.key}>
                                                     <td className="px-6 py-4 text-center">{item.title}</td>
-                                                    <td className="px-6 py-4 text-center"><a href="#" onClick={() => handlePlayMedia(item.url)} className="btn btn-sm rounded-full bg-green-600 hover:bg-green-700 border-green-600 hover:border-green-700 text-white">play</a> </td>
+                                                    <td className="px-6 py-4 text-center"><Link href="#" onClick={() => handlePlayMedia(item.url)} className="btn btn-sm rounded-full bg-green-600 hover:bg-green-700 border-green-600 hover:border-green-700 text-white">play</Link> </td>
                                                 </tr>   
                                                 ))}
                                                 </>
@@ -1101,7 +1101,7 @@ const Display = ({ nftea, sellid, seller, isConnected, url, type }:any) => {
                                             <div className="col-6">
                                                 <p className="text-center" style={{fontFamily: 'Comfortaa'}}>vault<br/>
                                                 {_display.bag!=BLANK && (
-                                                    <a href={`https://testnet.bscscan.com/address/${_display.bag}`} className="font-medium text-violet-600 underline block">{`${_display.bag.substring(0, 6)}...${_display.bag.substring(_display.bag.length - 6)}`}</a>
+                                                    <Link href={`https://testnet.bscscan.com/address/${_display.bag}`} className="font-medium text-violet-600 underline block">{`${_display.bag.substring(0, 6)}...${_display.bag.substring(_display.bag.length - 6)}`}</Link>
                                                     
                                                     )}
                                                     {_display.bag==BLANK && (
@@ -1187,7 +1187,7 @@ const Display = ({ nftea, sellid, seller, isConnected, url, type }:any) => {
                         <div className="cs-single_product_head">
                             <h2 style={{fontFamily: 'Comfortaa'}}>{_display.name} #{_display.id}</h2>
                             { _display.nftea[2]!="" && (
-                                <p style={{fontFamily: 'Comfortaa'}}>Label: <a href="/" className="text-violet-600">{_display.nftea[2]}</a></p>
+                                <p style={{fontFamily: 'Comfortaa'}}>Label: <Link href="/" className="text-violet-600">{_display.nftea[2]}</Link></p>
                             )}
                             {_display.nftea[2]=="" && (
                                 <p style={{fontFamily: 'Comfortaa'}}>Label: N/A</p>
@@ -1211,7 +1211,7 @@ const Display = ({ nftea, sellid, seller, isConnected, url, type }:any) => {
                                 <div className="cs-author_right">
                                 <h3 style={{fontFamily: 'Comfortaa'}}>Owner</h3>
                                 {_display.holders[0] != teaPot && (
-                                    <p><a href={`/profile/${_display.holders[0]}`}>{`${_display.holders[0].substring(0, 6)}...${_display.holders[0].substring(_display.holders[0].length - 6)}`}</a></p>
+                                    <p><Link href={`/profile/${_display.holders[0]}`}>{`${_display.holders[0].substring(0, 6)}...${_display.holders[0].substring(_display.holders[0].length - 6)}`}</Link></p>
                                 )}
                                 {_display.holders[0] == teaPot && (
                                     <p style={{fontFamily: 'Comfortaa'}}>Teapot</p>
@@ -1237,8 +1237,8 @@ const Display = ({ nftea, sellid, seller, isConnected, url, type }:any) => {
                         <div className="cs-tabs cs-fade_tabs cs-style1">
                             <div className="cs-medium">
                                 <ul className="cs-tab_links cs-style1 cs-medium cs-primary_color cs-mp0 cs-primary_font">
-                                <li className="active" style={{fontFamily: 'Comfortaa'}}><a href="#story" onClick={() => handleTab(1)}>Story</a></li>
-                                <li style={{fontFamily: 'Comfortaa'}}><a href="#attributes" onClick={() => handleTab(2)}>Attributes</a></li>
+                                <li className="active" style={{fontFamily: 'Comfortaa'}}><Link href="#story" onClick={() => handleTab(1)}>Story</Link></li>
+                                <li style={{fontFamily: 'Comfortaa'}}><Link href="#attributes" onClick={() => handleTab(2)}>Attributes</Link></li>
                                 </ul>
                             </div>
                             <div className="cs-height_20 cs-height_lg_20"></div>
@@ -1279,18 +1279,18 @@ const Display = ({ nftea, sellid, seller, isConnected, url, type }:any) => {
                                 <>        
                                         {!_display.ondisplay && sellid < 1 && (
                                         <div className="col-lg-4">
-                                         <a href="#" onClick={() => openModal(3)}  className="cs-btn cs-style1 cs-btn_lg w-100 text-center"><i className="mdi mdi-swap-horizontal"></i> Trade</a>
+                                         <Link href="#" onClick={() => openModal(3)}  className="cs-btn cs-style1 cs-btn_lg w-100 text-center"><i className="mdi mdi-swap-horizontal"></i> Trade</Link>
 
                                         </div>)}
 
                                         {!_display.ondisplay && !_display.sell.active && sellid<1 && _display.amount==1 && (
                                         <div className="col-lg-4">
-                                        <a href="#" onClick={() => openModal(2)}  className="cs-btn cs-style1 cs-btn_lg w-100 text-center"><i className="mdi mdi-spotlight"></i> Display</a>
+                                        <Link href="#" onClick={() => openModal(2)}  className="cs-btn cs-style1 cs-btn_lg w-100 text-center"><i className="mdi mdi-spotlight"></i> Display</Link>
                                         
                                         </div>)}
                                         {!_display.ondisplay && sellid < 1 && (
                                         <div className="col-lg-4">
-                                            <a href="#" onClick={() => openModal(5)}  className="cs-btn cs-style1 cs-btn_lg w-100 text-center"><i className="mdi mdi-send"></i> Send</a>
+                                            <Link href="#" onClick={() => openModal(5)}  className="cs-btn cs-style1 cs-btn_lg w-100 text-center"><i className="mdi mdi-send"></i> Send</Link>
                                         
                                         </div>)}
                                 
@@ -1298,18 +1298,18 @@ const Display = ({ nftea, sellid, seller, isConnected, url, type }:any) => {
                                         {!_display.ondisplay && sellid < 1 && _display.holding>0 && _display.wrappedto>0 && (
                                         <div className="col-lg-4">
                                         
-                                        <a href="#" onClick={() => openModal(11)}  className="cs-btn cs-style1 cs-btn_lg w-100 text-center"><i className="mdi mdi-refresh"></i> UnWrap</a>
+                                        <Link href="#" onClick={() => openModal(11)}  className="cs-btn cs-style1 cs-btn_lg w-100 text-center"><i className="mdi mdi-refresh"></i> UnWrap</Link>
                                         </div>
                                         )}
                                         {_display.ondisplay && (
                                         <div className="col-lg-4">
                                         
-                                        <a href="#" onClick={() => openModal(13)}  className="cs-btn cs-style1 cs-btn_lg w-100 text-center"><i className="mdi mdi-spotlight"></i> Remove Display</a>
+                                        <Link href="#" onClick={() => openModal(13)}  className="cs-btn cs-style1 cs-btn_lg w-100 text-center"><i className="mdi mdi-spotlight"></i> Remove Display</Link>
                                         </div>
                                         )}
                                     {/* {sellid>0 && (
                                         <>
-                                        {_display.sell[3][0] == account && _display.sell.active && ( <a href="#" onClick={() => handleUnSell()}  className="btn rounded-full bg-red-600 hover:bg-red-700 border-red-600 hover:border-red-700 text-white ml-1"><i className="mdi mdi-close-outline"></i> End Sale</a>)}
+                                        {_display.sell[3][0] == account && _display.sell.active && ( <Link href="#" onClick={() => handleUnSell()}  className="btn rounded-full bg-red-600 hover:bg-red-700 border-red-600 hover:border-red-700 text-white ml-1"><i className="mdi mdi-close-outline"></i> End Sale</Link>)}
                                         </>
                                     )} */}
                                 </>
@@ -1317,12 +1317,12 @@ const Display = ({ nftea, sellid, seller, isConnected, url, type }:any) => {
                             {_display.holding <1 && (
                                 <div className="col-12">
                                     {!_display.ondisplay && sellid <1 && ( <p className="text-center"><i className="mdi mdi-swap-horizontal"></i> Not On Display or Sale</p>)}
-                                    {_display.ondisplay && (<a href="#" onClick={() => openModal(10)}  className="cs-btn cs-style1 cs-btn_lg w-100 text-center"><i className="mdi mdi-spotlight"></i> Show Love</a>)}
+                                    {_display.ondisplay && (<Link href="#" onClick={() => openModal(10)}  className="cs-btn cs-style1 cs-btn_lg w-100 text-center"><i className="mdi mdi-spotlight"></i> Show Love</Link>)}
                                 </div>
                             )}
                             {seller==account && (
                                 <div className="col-12">
-                                {_display.sell[3][0] == account && _display.sell.active && ( <a href="#" onClick={() => handleUnSell()}  className="cs-btn cs-style1 cs-btn_lg w-100 text-center"><i className="mdi mdi-close-outline"></i> End Sale</a>)}
+                                {_display.sell[3][0] == account && _display.sell.active && ( <Link href="#" onClick={() => handleUnSell()}  className="cs-btn cs-style1 cs-btn_lg w-100 text-center"><i className="mdi mdi-close-outline"></i> End Sale</Link>)}
                                 </div>
                             )}
                         </div>
@@ -1330,7 +1330,7 @@ const Display = ({ nftea, sellid, seller, isConnected, url, type }:any) => {
                         <div className="col-12">
                             {sellid>0 && (
                                 <div className="">
-                                    {_display.sell[3][0] != account && (<a href="#" onClick={() => openModal(9)}  className="cs-btn cs-style1 cs-btn_lg w-100 text-center"><i className="mdi mdi-tag-faces"></i> Buy Item</a>)}
+                                    {_display.sell[3][0] != account && (<Link href="#" onClick={() => openModal(9)}  className="cs-btn cs-style1 cs-btn_lg w-100 text-center"><i className="mdi mdi-tag-faces"></i> Buy Item</Link>)}
                                 
                                 </div>
                             )}
@@ -1451,7 +1451,7 @@ const Display = ({ nftea, sellid, seller, isConnected, url, type }:any) => {
                                 <div className="cs-height_20 cs-height_lg_20"></div>
                                 
                                 <div className="mt-4">
-                                    <a href="#" onClick={() => handleDisplayRemove()} className="cs-btn cs-style1 cs-btn_lg w-100"><i className="mdi mdi-star-circle"></i> Remove</a>
+                                    <Link href="#" onClick={() => handleDisplayRemove()} className="cs-btn cs-style1 cs-btn_lg w-100"><i className="mdi mdi-star-circle"></i> Remove</Link>
                                 
                                 </div>                    
                         </Modal>
@@ -1467,8 +1467,8 @@ const Display = ({ nftea, sellid, seller, isConnected, url, type }:any) => {
                                 
                                 <div className="pt-4 border-t dark:border-t-gray-800 text-center">
                                     <div className="mb-2">
-                                        <p className="font-semibold text-sm text-center"> <a href="#" onClick={() => openModal(1)}   className="btn rounded-full bg-blue-600 hover:bg-blue-700 border-blue-600 hover:border-blue-700 text-white w-full"><i className="mdi mdi-tag-plus"></i> Sell</a></p>
-                                        <p className="font-semibold text-sm text-center pt-3"> <a href="#" onClick={() => openModal(4)}    className="btn rounded-full bg-green-600 hover:bg-green-700 border-green-600 hover:border-green-700 text-white w-full"><i className="mdi mdi-basket-fill"></i> Collateralize</a></p>
+                                        <p className="font-semibold text-sm text-center"> <Link href="#" onClick={() => openModal(1)}   className="btn rounded-full bg-blue-600 hover:bg-blue-700 border-blue-600 hover:border-blue-700 text-white w-full"><i className="mdi mdi-tag-plus"></i> Sell</Link></p>
+                                        <p className="font-semibold text-sm text-center pt-3"> <Link href="#" onClick={() => openModal(4)}    className="btn rounded-full bg-green-600 hover:bg-green-700 border-green-600 hover:border-green-700 text-white w-full"><i className="mdi mdi-basket-fill"></i> Collateralize</Link></p>
                                     </div>
                                 </div>                    
                         </Modal>               
@@ -1485,7 +1485,7 @@ const Display = ({ nftea, sellid, seller, isConnected, url, type }:any) => {
                                 
                                 <div className="pt-4 border-t dark:border-t-gray-800 text-center">
                                     <div className="mb-2">
-                                        <p className="font-semibold text-sm text-center"> <a href="#" onClick={() => handleUnWrap()}   className="btn rounded-full bg-blue-600 hover:bg-blue-700 border-blue-600 hover:border-blue-700 text-white w-full"><i className="mdi mdi-tag-plus"></i> UnWrap</a></p>
+                                        <p className="font-semibold text-sm text-center"> <Link href="#" onClick={() => handleUnWrap()}   className="btn rounded-full bg-blue-600 hover:bg-blue-700 border-blue-600 hover:border-blue-700 text-white w-full"><i className="mdi mdi-tag-plus"></i> UnWrap</Link></p>
                                     </div>
                                 </div>                    
                         </Modal>               
@@ -1549,7 +1549,7 @@ const Display = ({ nftea, sellid, seller, isConnected, url, type }:any) => {
                                 
                                 <div className="cs-height_20 cs-height_lg_20"></div>
                                 
-                                <a href={`/loans/${_display.id}`}className="cs-btn cs-style1 cs-btn_lg w-100"><span>Get A Loan</span></a>
+                                <Link href={`/loans/${_display.id}`}className="cs-btn cs-style1 cs-btn_lg w-100"><span>Get A Loan</span></Link>
                     </Modal>
                 </>
             )}
@@ -1563,8 +1563,8 @@ const Display = ({ nftea, sellid, seller, isConnected, url, type }:any) => {
                                 <div className="cs-height_20 cs-height_lg_20"></div>
                                 
                                 <div className="mt-4">
-                                    {_display.bag != BLANK && (<a href="#" onClick={() => handleDisplay(_display.id)}   className="cs-btn cs-style1 cs-btn_lg w-100"><i className="mdi mdi-spotlight"></i> Lock Bag</a>)}
-                                    {_display.bag != BLANK && (<a href="#" onClick={() => handleDisplay(_display.id)}   className="cs-btn cs-style1 cs-btn_lg w-100"><i className="mdi mdi-spotlight"></i> Withdraw From Bag</a>)}
+                                    {_display.bag != BLANK && (<Link href="#" onClick={() => handleDisplay(_display.id)}   className="cs-btn cs-style1 cs-btn_lg w-100"><i className="mdi mdi-spotlight"></i> Lock Bag</Link>)}
+                                    {_display.bag != BLANK && (<Link href="#" onClick={() => handleDisplay(_display.id)}   className="cs-btn cs-style1 cs-btn_lg w-100"><i className="mdi mdi-spotlight"></i> Withdraw From Bag</Link>)}
                                 
                                 </div>                    
                         </Modal>
@@ -1610,7 +1610,7 @@ const Display = ({ nftea, sellid, seller, isConnected, url, type }:any) => {
                                 <div className="cs-height_20 cs-height_lg_20"></div>
                                 
                                 <div className="mt-4">
-                                    <a href="#" onClick={() => handleShowLove()} className="cs-btn cs-style1 cs-btn_lg w-100"><i className="mdi mdi-star-circle"></i> Show Love</a>
+                                    <Link href="#" onClick={() => handleShowLove()} className="cs-btn cs-style1 cs-btn_lg w-100"><i className="mdi mdi-star-circle"></i> Show Love</Link>
                                 
                                 </div>                    
                         </Modal>

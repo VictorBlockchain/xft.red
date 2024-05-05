@@ -1,5 +1,7 @@
-const PrivacyPolicy = () => {
+import Link from 'next/link'
 
+const PrivacyPolicy = () => {
+    
     return(
         <>
                 <div className="cs-height_90 cs-height_lg_80"></div>
@@ -9,8 +11,8 @@ const PrivacyPolicy = () => {
     <div className="text-center">
     <h1 className="cs-page_title" style={{fontFamily: 'Comfortaa'}}>Privacy Policy</h1>
     <ol className="breadcrumb">
-    <li className="breadcrumb-item" style={{fontFamily: 'Comfortaa'}}><a href="/">Home</a></li>
-    <li className="breadcrumb-item active" style={{fontFamily: 'Comfortaa'}}><a href="/agreement">Privacy</a></li>
+    <li className="breadcrumb-item" style={{fontFamily: 'Comfortaa'}}><Link href="/">Home</Link></li>
+    <li className="breadcrumb-item active" style={{fontFamily: 'Comfortaa'}}><Link href="/agreement">Privacy</Link></li>
     </ol>
     </div>
     </div>
@@ -60,7 +62,7 @@ const PrivacyPolicy = () => {
                                         <p className="mb-2">To personalize your experience and customize content based on your preferences.</p>
                                     </li>
                                     <li>
-                                        <p className="mb-2">To analyze and understand user behavior and improve our platform's performance and security.</p>
+                                        <p className="mb-2">To analyze and understand user behavior and improve our platform&apos;s performance and security.</p>
                                     </li>
                                     <li>
                                         <p className="mb-2">To comply with legal obligations and enforce our Terms of Service.</p>
@@ -92,7 +94,7 @@ const PrivacyPolicy = () => {
                                     Our NFT marketplace may contain links to third-party websites or services that are not operated by us. We have no control over and assume no responsibility for the privacy practices or content of these websites. We encourage you to review the privacy policies of any third-party sites you visit.
                                     </p>
 
-                                    <h3 className="text-xl font-bold mb-4">Children's Privacy</h3>
+                                    <h3 className="text-xl font-bold mb-4">Children&apos;s Privacy</h3>
                                     <p className="mb-4">
                                     Our platform is not intended for use by individuals under the age of 18. We do not knowingly collect personal information from minors. If we become aware that we have inadvertently gathered personal data from a minor, we will take steps to delete it.
                                     </p>

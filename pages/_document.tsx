@@ -14,7 +14,7 @@ class MyDocument extends Document {
             rel="stylesheet"
           />
           <link rel="preconnect" href="https://fonts.googleapis.com" />
-          <link href="https://fonts.googleapis.com/css2?family=Caveat&family=Moirai+One&family=Rubik+Glitch&family=Shadows+Into+Light&family=Rubik+Lines" rel="stylesheet" />
+          <link href="https://fonts.googleapis.com/css2?family=Caveat&family=Moirai+One&family=Rubik+Glitch&family=Shadows+Into+Light&family=Rubik+Lines&display=optional" rel="stylesheet" />
           {/* <meta http-equiv="x-ua-compatible" content="ie=edge" />
           <meta name="viewport" content="width=device-width, initial-scale=1" />
           <meta name="author" content="ThemeMarch"></meta> */}

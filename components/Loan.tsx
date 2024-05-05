@@ -252,7 +252,7 @@ const Loan = ({nftea}:any) => {
                     <div className="text-center">
                         <h1 className="cs-page_title" style={{fontFamily: 'Comfortaa'}}>Get A Loan</h1>
                         <ol className="breadcrumb">
-                        <li className="breadcrumb-item" style={{fontFamily: 'Comfortaa'}}><a href="/">Home</a></li>
+                        <li className="breadcrumb-item" style={{fontFamily: 'Comfortaa'}}><Link href="/">Home</Link></li>
                         <li className="breadcrumb-item active" style={{fontFamily: 'Comfortaa'}}>Loans</li>
                         </ol>
                     </div>
@@ -263,24 +263,24 @@ const Loan = ({nftea}:any) => {
             <div className="cs-isotop_filter cs-style1 cs-center">
                 <ul className="cs-mp0 cs-center">
                     <li className={activeTab === 'all' ? 'active' : ''}>
-                        <a href="#" onClick={() => handleTabClick('all')}>
+                        <Link href="#" onClick={() => handleTabClick('all')}>
                             <span>Active Loans</span>
-                        </a>
+                        </Link>
                     </li>
                     <li className={activeTab === 'loan' ? 'active' : ''}>
-                        <a href="#" onClick={() => handleTabClick('loan')}>
+                        <Link href="#" onClick={() => handleTabClick('loan')}>
                             <span>Get A Loan</span>
-                        </a>
+                        </Link>
                     </li>
                     <li className={activeTab === 'nftea' ? 'active' : ''}>
-                        <a href="#" onClick={() => handleTabClick('nftea')}>
+                        <Link href="#" onClick={() => handleTabClick('nftea')}>
                             <span>NFTea</span>
-                        </a>
+                        </Link>
                     </li>
                     <li className={activeTab === 'faq' ? 'active' : ''}>
-                        <a href="#" onClick={() => handleTabClick('faq')}>
+                        <Link href="#" onClick={() => handleTabClick('faq')}>
                             <span>Faq</span>
-                        </a>
+                        </Link>
                     </li>
                 </ul>
             </div>
@@ -309,7 +309,7 @@ const Loan = ({nftea}:any) => {
                                 <div className="col-xl-3 col-lg-4 col-sm-6" key={item.key}>
                                     <div className="cs-card cs-style4 cs-box_shadow cs-white_bg">
                                     <span className="cs-card_like cs-primary_color">{item.loanAmount}</span>
-                                    <a href={`/view/${item.id}/0/${BLANK}`} className="cs-card_thumb cs-zoom_effect">
+                                    <Link href={`/view/${item.id}/0/${BLANK}`} className="cs-card_thumb cs-zoom_effect">
                                         <Image
                                         src={item.image}
                                         alt="Image"
@@ -318,18 +318,18 @@ const Loan = ({nftea}:any) => {
                                         height="200"
                                         // onLoad={handleImageLoad}
                                         />
-                                    </a>
+                                    </Link>
                                     <div className="cs-card_button">
-                                        <a href={`/view/${item.id}/0/${BLANK}`}  className="cs-btn cs-style1 cs-btn_lg w-100">
+                                        <Link href={`/view/${item.id}/0/${BLANK}`}  className="cs-btn cs-style1 cs-btn_lg w-100">
                                             <span>View</span>
-                                        </a>
+                                        </Link>
                                     </div>
                                     <div className="cs-card_info">
-                                        <a href="#" className="cs-avatar cs-white_bg">
+                                        <Link href="#" className="cs-avatar cs-white_bg">
                                         <span>{`${account.substring(0, 6)}...${account.substring(account.length - 6)}`}</span>
-                                        </a>
+                                        </Link>
                                         <h3 className="cs-card_title text-center">
-                                        <a href={`/view/${item.id}/0/${BLANK}`}>{item.name} #{item.id}</a>
+                                        <Link href={`/view/${item.id}/0/${BLANK}`}>{item.name} #{item.id}</Link>
                                         </h3>
                                         <div className="cs-card_price text-center">
                                         <b className="cs-primary_color">{item.typeName}</b>

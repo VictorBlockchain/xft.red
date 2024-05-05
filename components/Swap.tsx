@@ -147,7 +147,7 @@ const Swapper = ({tokenin, tokenout}:any) => {
                     <div className="text-center">
                         <h1 className="cs-page_title" style={{fontFamily: 'Comfortaa'}}>xSwap</h1>
                         <ol className="breadcrumb">
-                        <li className="breadcrumb-item" style={{fontFamily: 'Comfortaa'}}><a href="/">Home</a></li>
+                        <li className="breadcrumb-item" style={{fontFamily: 'Comfortaa'}}><Link href="/">Home</Link></li>
                         <li className="breadcrumb-item active" style={{fontFamily: 'Comfortaa'}}>Swap</li>
                         </ol>
                     </div>
@@ -190,7 +190,7 @@ const Swapper = ({tokenin, tokenout}:any) => {
                             
                         </>
                     </div>
-                    <div className="col-lg-8 offset-lg-2 p-4"><p className="text-center m-3">allow 5 - 30 mins for swap, based on network congestion. Head to our <a href="https://discord.gg/RFu8Yj4YYk" target='_blank'>discord </a> or telegram for support</p></div>
+                    <div className="col-lg-8 offset-lg-2 p-4"><p className="text-center m-3">allow 5 - 30 mins for swap, based on network congestion. Head to our <Link href="https://discord.gg/RFu8Yj4YYk" target='_blank'>discord </Link> or telegram for support</p></div>
                     </>
                     )}
                     

@@ -1,5 +1,6 @@
 import React, {useEffect, useState} from 'react'
 import Modal from './Modal';
+import Link from 'next/link'
 
 const Footer = () => {
     const [isLabelModalOpen, setLabelModalOpen]:any = React.useState(false)
@@ -89,11 +90,11 @@ const Footer = () => {
                     <div className="cs-footer_widget">
                     <h2 className="cs-widget_title" style={{fontFamily: 'Comfortaa'}}>Labels</h2>
                     <ul className="cs-widget_nav">
-                    <li style={{fontFamily: 'Comfortaa'}}><a href="#" onClick={handleLabelModal}>Whats A Label?</a></li>
-                    <li style={{fontFamily: 'Comfortaa'}}><a href="#" onClick={handleOperatorModal}>Label Operators</a></li>
-                    <li style={{fontFamily: 'Comfortaa'}}><a href="#" onClick={handleLicenseModal}>Label License</a></li>
-                    <li style={{fontFamily: 'Comfortaa'}}><a href="#" onClick={handleWalletModal}>Label Wallet</a></li>
-                    <li style={{fontFamily: 'Comfortaa'}}><a href="#" onClick={handleUseModal}>Use Cases</a></li>
+                    <li style={{fontFamily: 'Comfortaa'}}><Link href="#" onClick={handleLabelModal}>Whats A Label?</Link></li>
+                    <li style={{fontFamily: 'Comfortaa'}}><Link href="#" onClick={handleOperatorModal}>Label Operators</Link></li>
+                    <li style={{fontFamily: 'Comfortaa'}}><Link href="#" onClick={handleLicenseModal}>Label License</Link></li>
+                    <li style={{fontFamily: 'Comfortaa'}}><Link href="#" onClick={handleWalletModal}>Label Wallet</Link></li>
+                    <li style={{fontFamily: 'Comfortaa'}}><Link href="#" onClick={handleUseModal}>Use Cases</Link></li>
                     </ul>
                     </div>
                     </div>
@@ -101,8 +102,8 @@ const Footer = () => {
                     <div className="cs-footer_widget">
                     <h2 className="cs-widget_title" style={{fontFamily: 'Comfortaa'}}>Vaults</h2>
                     <ul className="cs-widget_nav">
-                    <li style={{fontFamily: 'Comfortaa'}}><a href="#" onClick={handleBagModal}>What's A Vault</a></li>
-                    <li style={{fontFamily: 'Comfortaa'}}><a href="#" onClick={handleLockModal}>Time Lock Vaults</a></li>
+                    <li style={{fontFamily: 'Comfortaa'}}><Link href="#" onClick={handleBagModal}>What's A Vault</Link></li>
+                    <li style={{fontFamily: 'Comfortaa'}}><Link href="#" onClick={handleLockModal}>Time Lock Vaults</Link></li>
                     </ul>
                     </div>
                     </div>
@@ -110,9 +111,9 @@ const Footer = () => {
                     <div className="cs-footer_widget">
                     <h2 className="cs-widget_title" style={{fontFamily: 'Comfortaa'}}>Company</h2>
                     <ul className="cs-widget_nav">
-                    <li style={{fontFamily: 'Comfortaa'}}><a href="/about">About Us</a></li>
-                    <li style={{fontFamily: 'Comfortaa'}}><a href="https://discord.gg/RFu8Yj4YYk">Discord</a></li>
-                    <li style={{fontFamily: 'Comfortaa'}}><a href="https://bscscan.com/address/0xaf73c709e66fe339bee5608477f9e7a589acaec5#code" target='_blank'>Contract</a></li>
+                    <li style={{fontFamily: 'Comfortaa'}}><Link href="/about">About Us</Link></li>
+                    <li style={{fontFamily: 'Comfortaa'}}><Link href="https://discord.gg/RFu8Yj4YYk">Discord</Link></li>
+                    <li style={{fontFamily: 'Comfortaa'}}><Link href="https://bscscan.com/address/0xaf73c709e66fe339bee5608477f9e7a589acaec5#code" target='_blank'>Contract</Link></li>
                     </ul>
                     </div>
                     </div>
@@ -130,8 +131,8 @@ const Footer = () => {
                     </button>
                     </form>
                     <div className="cs-footer_social_btns">
-                    <a href="https://twitter.com/xftdotred" target="_blank"><i className="fab fa-twitter fa-fw"></i></a>
-                    <a href="https://github.com/VictorBlockchain/xft.red" target='_blank'><i className="fab fa-github fa-fw"></i></a>
+                    <Link href="https://twitter.com/xftdotred" target="_blank"><i className="fab fa-twitter fa-fw"></i></Link>
+                    <Link href="https://github.com/VictorBlockchain/xft.red" target='_blank'><i className="fab fa-github fa-fw"></i></Link>
                     </div>
                     </div>
                     </div>
@@ -144,8 +145,8 @@ const Footer = () => {
             <div className="cs-footer_bottom_in">
             <div className="cs-copyright" style={{fontFamily: 'Comfortaa'}}>Copyright 2023 xFT.red</div>
             <ul className="cs-footer_menu">
-            <li><a href="/privacy" style={{fontFamily: 'Comfortaa'}}>Privacy Policy</a></li>
-            <li><a href="/agreement" style={{fontFamily: 'Comfortaa'}}>Terms &amp; Condition</a></li>
+            <li><Link href="/privacy" style={{fontFamily: 'Comfortaa'}}>Privacy Policy</Link></li>
+            <li><Link href="/agreement" style={{fontFamily: 'Comfortaa'}}>Terms &amp; Condition</Link></li>
             </ul>
             </div>
             </div>
@@ -155,9 +156,9 @@ const Footer = () => {
                     <Modal onClose={handleLabelModal} title="What's a label?">
                         <div className="cs-single_post">
                             <p style={{color:'#000', lineHeight:'44px', fontFamily: 'Comfortaa'}}>
-                            Labels are akin to collections, but they offer more. Imagine wanting to invite global artists to contribute to your 'funky jazz' collection — how would you manage that? This is one of the challenges that labels solve through label licensing.
+                            Labels are akin to collections, but they offer more. Imagine wanting to invite global artists to contribute to your &apos;funky jazz&apos; collection — how would you manage that? This is one of the challenges that labels solve through label licensing.
 
-Consider scenarios where your graphic artist should mint an NFT into your collection when ready. Here's where operator licenses come into play, neatly compartmentalizing your organization (team) and curation tasks. In essence, labels streamline both team collaboration and curation processes.
+Consider scenarios where your graphic artist should mint an NFT into your collection when ready. Here&apos;s where operator licenses come into play, neatly compartmentalizing your organization (team) and curation tasks. In essence, labels streamline both team collaboration and curation processes.
                             </p>
                         
                         </div>
@@ -167,7 +168,7 @@ Consider scenarios where your graphic artist should mint an NFT into your collec
             <Modal onClose={handleOperatorModal} title="Label Operators">
               <div className="cs-single_post">
                 <p className="text-center" style={{color:'#000', lineHeight:'44px', fontFamily: 'Comfortaa'}}>
-                Picture this: you're a celebrity, and your graphic artist or marketer contacts you for every mint. What if they could independently mint and sell on your behalf whenever necessary? Label operators provide the autonomy your team members need for more efficient NFT management, enabling them to excel in the NFT space
+                Picture this: you&apos;re a celebrity, and your graphic artist or marketer contacts you for every mint. What if they could independently mint and sell on your behalf whenever necessary? Label operators provide the autonomy your team members need for more efficient NFT management, enabling them to excel in the NFT space
                 </p>
                 <div className="cs-height_20 cs-height_lg_20"></div>
               </div>
@@ -180,7 +181,7 @@ Consider scenarios where your graphic artist should mint an NFT into your collec
                 <p className="text-center" style={{color:'#000', lineHeight:'44px', fontFamily: 'Comfortaa'}}>
                 A Label License presents an innovative solution to the NFT licensing challenge. Interested in having creatives contribute their work to your label? Provide or sell them a renewable license. Looking to grant collectors permission to use your intellectual property? Offer or sell them a renewable license for the privilege.
 
-Whether you aspire to curate exceptional art from local talents or run a themed label, like "psychedelic art," you can offer or sell licenses to select artists, empowering them to showcase and sell their creations under your label.
+Whether you aspire to curate exceptional art from local talents or run a themed label, like &apos;psychedelic art&apos;, you can offer or sell licenses to select artists, empowering them to showcase and sell their creations under your label.
                 </p>
                 <div className="cs-height_20 cs-height_lg_20"></div>
               </div>
@@ -204,7 +205,7 @@ Need to distribute funds to your team members? Effortlessly configure withdrawal
             <Modal onClose={handleBagModal} title="Vault">
               <div className="cs-single_post">
                 <p className="text-center" style={{color:'#000', lineHeight:'44px', fontFamily: 'Comfortaa'}}>
-                Empower your XFT with a Vault — a smart contract attached to your unique (1 of 1) "NFT". Elevate its value by storing diverse assets such as wrapped BTC, wrapped ETH, DeFi tokens, other XFT's, and more within its Vault. Introduce captivating buyer incentives, like intricate puzzles featuring vaults within bags within vaults, enhancing your XFT's dynamism, enjoyment, and ensuring its resale value.                </p>
+                Empower your XFT with a Vault — a smart contract attached to your unique (1 of 1) &apos;NFT&apos;. Elevate its value by storing diverse assets such as wrapped BTC, wrapped ETH, DeFi tokens, other XFT&apos;s, and more within its Vault. Introduce captivating buyer incentives, like intricate puzzles featuring vaults within bags within vaults, enhancing your XFT's dynamism, enjoyment, and ensuring its resale value.                </p>
                 <div className="cs-height_20 cs-height_lg_20"></div>
               </div>
             </Modal>
@@ -214,7 +215,7 @@ Need to distribute funds to your team members? Effortlessly configure withdrawal
             <Modal onClose={handleLockModal} title="Time Lock Vault">
               <div className="cs-single_post">
                 <p className="text-center" style={{color:'#000', lineHeight:'44px', fontFamily: 'Comfortaa'}}>
-                Boost the value of your XFT by securing assets within its vault. Imagine locking 0.01 wrapped BTC in your XFT's vault for five years — how much would its current selling price reflect this added value?                 </p>
+                Boost the value of your XFT by securing assets within its vault. Imagine locking 0.01 wrapped BTC in your XFT&apos;s vault for five years — how much would its current selling price reflect this added value?                 </p>
                 <div className="cs-height_20 cs-height_lg_20"></div>
               </div>
             </Modal>

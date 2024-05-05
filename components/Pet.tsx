@@ -374,7 +374,7 @@ function handleCloseWNFTModal() {
               <div className="text-center">
                 <h1 className="cs-page_title">Pet Details</h1>
                 <ol className="breadcrumb">
-                <li className="breadcrumb-item"><a href="/">Home</a></li>
+                <li className="breadcrumb-item"><Link href="/">Home</Link></li>
                 <li className="breadcrumb-item active">Pet Details</li>
                 </ol>
               </div>
@@ -445,8 +445,8 @@ function handleCloseWNFTModal() {
                 <div className="cs-tabs cs-fade_tabs cs-style1">
                   <div className="cs-medium">
                   <ul className="cs-tab_links cs-style1 cs-medium cs-primary_color cs-mp0 cs-primary_font">
-                  <li className="active"><a href="#Description">Pet Attributes</a></li>
-                  <li className=""><a href="#Details">Wallet Actions</a></li>
+                  <li className="active"><Link href="#Description">Pet Attributes</Link></li>
+                  <li className=""><Link href="#Details">Wallet Actions</Link></li>
                   </ul>
                   </div>
                   <div className="cs-height_20 cs-height_lg_20"></div>
@@ -485,29 +485,29 @@ function handleCloseWNFTModal() {
                   <div className="cs-white_bg cs-box_shadow cs-general_box_5">
                   <div className="row">
                       <div className="col-6">
-                        <a href="#" className="cs-btn cs-style1 cs-btn_lg w-100 text-center" onClick={handleOpenLockTokenModal}><span>Lock Token</span></a>
+                        <Link href="#" className="cs-btn cs-style1 cs-btn_lg w-100 text-center" onClick={handleOpenLockTokenModal}><span>Lock Token</span></Link>
                       </div>
                       <div className="col-6">
-                        <a href="#" className="cs-btn cs-style1 cs-btn_lg w-100 text-center" onClick={handleOpenLockBNBModal}><span>Lock BNB</span></a>
+                        <Link href="#" className="cs-btn cs-style1 cs-btn_lg w-100 text-center" onClick={handleOpenLockBNBModal}><span>Lock BNB</span></Link>
                       </div>
                     </div>
                     <div className="cs-height_30 cs-height_lg_30"></div>
                     <div className="row">
                       <div className="col-6">
-                        <a href="#" className="cs-btn cs-style1 cs-btn_lg w-100 text-center" onClick={handleOpenLockNFTModal}><span>Lock NFT</span></a>
+                        <Link href="#" className="cs-btn cs-style1 cs-btn_lg w-100 text-center" onClick={handleOpenLockNFTModal}><span>Lock NFT</span></Link>
                       </div>
                       <div className="col-6">
-                        <a href="#" className="cs-btn cs-style1 cs-btn_lg w-100 text-center" onClick={handleOpenWBNBModal}><span>W/BNB</span></a>
+                        <Link href="#" className="cs-btn cs-style1 cs-btn_lg w-100 text-center" onClick={handleOpenWBNBModal}><span>W/BNB</span></Link>
                       </div>
                     </div>
                     <div className="cs-height_30 cs-height_lg_30"></div>
                     
                     <div className="row">
                       <div className="col-6">
-                        <a href="#" className="cs-btn cs-style1 cs-btn_lg w-100 text-center" onClick={handleOpenWTOKENModal}><span>W/Token</span></a>
+                        <Link href="#" className="cs-btn cs-style1 cs-btn_lg w-100 text-center" onClick={handleOpenWTOKENModal}><span>W/Token</span></Link>
                       </div>
                       <div className="col-6">
-                        <a href="#" className="cs-btn cs-style1 cs-btn_lg w-100 text-center" onClick={handleOpenWNFTModal}><span>W/NFT</span></a>
+                        <Link href="#" className="cs-btn cs-style1 cs-btn_lg w-100 text-center" onClick={handleOpenWNFTModal}><span>W/NFT</span></Link>
                       </div>
                     </div>
                   </div>
@@ -517,10 +517,10 @@ function handleCloseWNFTModal() {
                 <div className="cs-height_70 cs-height_lg_70"></div>
                 <div className="row">
                   <div className="col-6">
-                  <a href="#" className="cs-btn cs-style1 cs-btn_lg w-100 text-center"><span>Sell On NFTea</span></a>
+                  <Link href="#" className="cs-btn cs-style1 cs-btn_lg w-100 text-center"><span>Sell On NFTea</span></Link>
                   </div>
                   <div className="col-6">
-                    {userpet && userpet.owner && (<a href={`https://bscscan.com/address/${userpet.bag}`} target='_blank' className="cs-btn cs-style1 cs-btn_lg w-100 text-center"><span>View Wallet</span></a>)}
+                    {userpet && userpet.owner && (<Link href={`https://bscscan.com/address/${userpet.bag}`} target='_blank' className="cs-btn cs-style1 cs-btn_lg w-100 text-center"><span>View Wallet</span></Link>)}
                   </div>
                 </div>
               
@@ -652,7 +652,7 @@ function handleCloseWNFTModal() {
               </form>
             </div>            
             <div className="cs-height_20 cs-height_lg_20"></div>
-            <p className="text-center">You must own Pet to withdraw from it's wallet.<br/> If you have this nft wrapped on NFTea.app<br/> unwrap it 1st</p>
+            <p className="text-center">You must own Pet to withdraw from it&apos;s wallet.<br/> If you have this nft wrapped on NFTea.app<br/> unwrap it 1st</p>
             <div className="cs-height_25 cs-height_lg_25"></div>
             
             <button className="cs-btn cs-style1 cs-btn_lg w-100" onClick={handleWithdrawBNB}><span>Withdraw</span></button>
@@ -672,7 +672,7 @@ function handleCloseWNFTModal() {
               </form>            
             </div>            
             <div className="cs-height_20 cs-height_lg_20"></div>
-            <p className="text-center">You must own Pet to withdraw from it's wallet.<br/> If you have this nft wrapped on NFTea.app<br/> unwrap it 1st</p>
+            <p className="text-center">You must own Pet to withdraw from it&apos;s wallet.<br/> If you have this nft wrapped on NFTea.app<br/> unwrap it 1st</p>
             <div className="cs-height_25 cs-height_lg_25"></div>
             
             <button className="cs-btn cs-style1 cs-btn_lg w-100" onClick={handleWithdrawToken}><span>Withdraw</span></button>
@@ -693,7 +693,7 @@ function handleCloseWNFTModal() {
                 <input type="number" className="cs-form_field"  placeholder="amount" name="amount" />
             
             <div className="cs-height_20 cs-height_lg_20"></div>
-            <p className="text-center">You must own Pet to withdraw from it's wallet.<br/> If you have this nft wrapped on NFTea.app<br/> unwrap it 1st</p>
+            <p className="text-center">You must own Pet to withdraw from it&apos;s wallet.<br/> If you have this nft wrapped on NFTea.app<br/> unwrap it 1st</p>
             <div className="cs-height_25 cs-height_lg_25"></div>
             
             <button type="submit" className="cs-btn cs-style1 cs-btn_lg w-100" onClick={handleWithdrawNFT}><span>Withdraw</span></button>

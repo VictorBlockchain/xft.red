@@ -904,7 +904,7 @@ const Create = () => {
                     <div className="cs-iconbox cs-style3 cs-box_shadow cs-white_bg">
                       <div className="cs-iconbox_img">
                       <h4>NFT</h4>
-                      <div className="cs-iconbox_text">Create limited edition prints (smart nft's) or music, blog nfts. Link your nft to your label.</div>
+                      <div className="cs-iconbox_text">Create limited edition prints (smart nft&quot;s) or music, blog nfts. Link your nft to your label.</div>
                         <a href="#nft" className="cs-iconbox_btn cs-primary_font" onClick={() => handleShowCreate(2)}>
                         Mint
                         <svg width="17" height="12" viewBox="0 0 17 12" fill="none" xmlns="http://www.w3.org/2000/svg">

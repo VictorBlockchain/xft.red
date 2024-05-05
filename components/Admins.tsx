@@ -242,8 +242,8 @@ const Admins = () => {
             <div className="text-center">
             <h1 className="cs-page_title" style={{fontFamily: 'Comfortaa'}}>Admin</h1>
             <ol className="breadcrumb">
-            <li className="breadcrumb-item" style={{fontFamily: 'Comfortaa'}}><a href="/">Home</a></li>
-            <li className="breadcrumb-item active" style={{fontFamily: 'Comfortaa'}}><a href="/xmash/0">Admin</a></li>
+            <li className="breadcrumb-item" style={{fontFamily: 'Comfortaa'}}><Link href="/">Home</Link></li>
+            <li className="breadcrumb-item active" style={{fontFamily: 'Comfortaa'}}><Link href="/xmash/0">Admin</Link></li>
             </ol>
             </div>
             </div>
@@ -254,24 +254,24 @@ const Admins = () => {
                 <div className="cs-isotop_filter cs-style1 cs-center">
                     <ul className="cs-mp0 cs-center">
                         <li className={activeTab === 'stats' ? 'active' : ''}>
-                            <a href="#" onClick={() => handleTabClick('stats')}>
+                            <Link href="#" onClick={() => handleTabClick('stats')}>
                                 <span>Stats</span>
-                            </a>
+                            </Link>
                         </li>
                         <li className={activeTab === 'edituser' ? 'active' : ''}>
-                            <a href="#" onClick={() => handleTabClick('edituser')}>
+                            <Link href="#" onClick={() => handleTabClick('edituser')}>
                                 <span>Edit User</span>
-                            </a>
+                            </Link>
                         </li>
                         <li className={activeTab === 'editgrabbit' ? 'active' : ''}>
-                            <a href="#" onClick={() => handleTabClick('editgrabbit')}>
+                            <Link href="#" onClick={() => handleTabClick('editgrabbit')}>
                                 <span>Edit xMash</span>
-                            </a>
+                            </Link>
                         </li>
                         <li className={activeTab === 'addtoken' ? 'active' : ''}>
-                            <a href="#" onClick={() => handleTabClick('addtoken')}>
+                            <Link href="#" onClick={() => handleTabClick('addtoken')}>
                                 <span>Add Token</span>
-                            </a>
+                            </Link>
                         </li>
                     </ul>
                 </div>
@@ -405,7 +405,7 @@ const Admins = () => {
                                 <div className="cs-form_field_wrap">
                                     <input name="type" id="type"  type="number" className="cs-form_field" placeholder="1"  />
                                 </div>
-                                <p className="text-center p-0">enter 1 for nft or 2 if it's a crypto prize</p>
+                                <p className="text-center p-0">enter 1 for nft or 2 if it&quot;s a crypto prize</p>
                                 <div className="cs-height_20 cs-height_lg_20"></div>
                                 
                                 <label className="cs-form_label">NFT 2 Play</label>

@@ -27,7 +27,7 @@ const About = () => {
                     <div className="text-center">
                         <h1 className="cs-page_title" style={{fontFamily: 'Comfortaa'}}>About Us</h1>
                         <ol className="breadcrumb" style={{fontFamily: 'Comfortaa'}}>
-                        <li className="breadcrumb-item"><a href="/">Home</a></li>
+                        <li className="breadcrumb-item"><Link href="/">Home</Link></li>
                         <li className="breadcrumb-item active">About</li>
                         </ol>
                     </div>
@@ -108,7 +108,7 @@ const About = () => {
             <Modal onClose={handleVideoModal} title="Gamerholic">
               <div className="cs-single_post">
                 <p className="text-center" style={{color:'#000', lineHeight:'44px', fontFamily: 'Comfortaa'}}>
-                    Our founder Ibrahym 0x, (AKA Victor Blockchain), launched the very 1st crypto for video games "Gamerholic" in 2014.
+                    Our founder Ibrahym 0x, (AKA Victor Blockchain), launched the very 1st crypto for video games &quot;Gamerholic&quot; in 2014.
                     He also has a passion for music, not only is he the 1st rapper to perform at the bitcoin conference, he also encrypts
                     bitcoin in his lyrics. 
                 </p>

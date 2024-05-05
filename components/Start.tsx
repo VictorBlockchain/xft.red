@@ -256,14 +256,14 @@ async function handleStartConnected(user_:any){
                                       <h1 className="cs-hero_title"  dangerouslySetInnerHTML={{ __html: mainTitle }} style={{fontFamily: 'Comfortaa'}}></h1>
                                       <div className="cs-hero_subtitle cs-medium" style={{fontFamily: 'Comfortaa'}}>{subTitle}</div>
                                       <div className="cs-hero_btns">
-                                      <a href="https://ahp.xft.red" target='_blank' className="cs-hero_btn cs-style1 cs-color1 d-block d-lg-none">
+                                      <Link href="https://ahp.xft.red" target='_blank' className="cs-hero_btn cs-style1 cs-color1 d-block d-lg-none">
                                         <span className="white-text">Hyenas</span>
-                                      </a>
-                                      <a href="https://ahp.xft.red" target='_blank' className="cs-hero_btn cs-style1 cs-color1 d-none d-lg-block">
+                                      </Link>
+                                      <Link href="https://ahp.xft.red" target='_blank' className="cs-hero_btn cs-style1 cs-color1 d-none d-lg-block">
                                           <span className="white-text">Hyena Pets</span>
-                                        </a>
-                                      <a href="/swap/0/0" className="cs-hero_btn cs-style1 cs-color2"><span className="white-text">xSwap</span></a>
-                                      <a href="/xmash/0" className="cs-hero_btn cs-style1 cs-color1"><span className="white-text">xMash</span></a>
+                                        </Link>
+                                      <Link href="/swap/0/0" className="cs-hero_btn cs-style1 cs-color2"><span className="white-text">xSwap</span></Link>
+                                      <Link href="/xmash/0" className="cs-hero_btn cs-style1 cs-color1"><span className="white-text">xMash</span></Link>
                                       
                                       </div>
                                     </div>
@@ -312,7 +312,7 @@ async function handleStartConnected(user_:any){
               <div className="cs-height_45 cs-height_lg_45"></div>
                 <div className="row">
                   {/* <div className="col-lg-2 col-sm-4 col-6">
-                  <a href="https://xft.red/search/african%20hyena%20pets" className="cs-card cs-style1 cs-box_shadow text-center cs-white_bg">
+                  <Link href="https://xft.red/search/african%20hyena%20pets" className="cs-card cs-style1 cs-box_shadow text-center cs-white_bg">
                     <div className="cs-card_thumb" >
                     <Image
                     src="/img/pets/27.png"
@@ -323,11 +323,11 @@ async function handleStartConnected(user_:any){
                     // onLoad={handleImageLoad}
                 />                    </div>
                     <p className="cs-card_title" style={{fontFamily: 'Comfortaa'}}>Hyena Pets</p>
-                    </a>
+                    </Link>
                   </div> */}
                   
                   <div className="col-lg-2 col-sm-4 col-6 offset-lg-1">
-                  <a href="#" className="cs-card cs-style1 cs-box_shadow text-center cs-white_bg">
+                  <Link href="#" className="cs-card cs-style1 cs-box_shadow text-center cs-white_bg">
                     <div className="cs-card_thumb" onClick={handleOpenExampleModal}>
                     <Image
                     src="/img/nft_nigeria.jpeg"
@@ -338,11 +338,11 @@ async function handleStartConnected(user_:any){
                     // onLoad={handleImageLoad}
                 />                    </div>
                     <p className="cs-card_title" style={{fontFamily: 'Comfortaa'}}>NFT Nigeria</p>
-                    </a>
+                    </Link>
                   </div>
                   
                   <div className="col-lg-2 col-sm-4 col-6">
-                  <a href="#" className="cs-card cs-style1 cs-box_shadow text-center cs-white_bg">
+                  <Link href="#" className="cs-card cs-style1 cs-box_shadow text-center cs-white_bg">
                     <div className="cs-card_thumb" onClick={handleOpenExampleModal}>
                     <Image
                     src="/img/nft_newyork.jpeg"
@@ -353,11 +353,11 @@ async function handleStartConnected(user_:any){
                     // onLoad={handleImageLoad}
                 />                    </div>
                     <p className="cs-card_title" style={{fontFamily: 'Comfortaa'}}>NFT New York</p>
-                    </a>
+                    </Link>
                   </div>
 
                   <div className="col-lg-2 col-sm-4 col-6">
-                  <a href="#" className="cs-card cs-style1 cs-box_shadow text-center cs-white_bg">
+                  <Link href="#" className="cs-card cs-style1 cs-box_shadow text-center cs-white_bg">
                     <div className="cs-card_thumb" onClick={handleOpenExampleModal}>
                     <Image
                     src="/img/nft_miami.jpeg"
@@ -368,11 +368,11 @@ async function handleStartConnected(user_:any){
                     // onLoad={handleImageLoad}
                 />                    </div>
                     <p className="cs-card_title" style={{fontFamily: 'Comfortaa'}}>NFT Miami</p>
-                    </a>
+                    </Link>
                   </div>
                   
                   <div className="col-lg-2 col-sm-4 col-6">
-                  <a href="#" className="cs-card cs-style1 cs-box_shadow text-center cs-white_bg">
+                  <Link href="#" className="cs-card cs-style1 cs-box_shadow text-center cs-white_bg">
                     <div className="cs-card_thumb" onClick={handleFlames}>
                     <Image
                     src="/img/afro_beats.jpeg"
@@ -383,11 +383,11 @@ async function handleStartConnected(user_:any){
                     // onLoad={handleImageLoad}
                 />                    </div>
                     <p className="cs-card_title" style={{fontFamily: 'Comfortaa'}}>Afro Beats</p>
-                    </a>
+                    </Link>
                   </div>
                   
                   <div className="col-lg-2 col-sm-4 col-6">
-                  <a href="#" className="cs-card cs-style1 cs-box_shadow text-center cs-white_bg">
+                  <Link href="#" className="cs-card cs-style1 cs-box_shadow text-center cs-white_bg">
                     <div className="cs-card_thumb" onClick={handleOpenExampleModal}>
                     <Image
                     src="/img/web3women.jpeg"
@@ -398,7 +398,7 @@ async function handleStartConnected(user_:any){
                     // onLoad={handleImageLoad}
                 />                    </div>
                     <p className="cs-card_title" style={{fontFamily: 'Comfortaa'}}>Web3 Women</p>
-                    </a>
+                    </Link>
                   </div>
                 </div>
             </div>
@@ -422,16 +422,16 @@ async function handleStartConnected(user_:any){
                   <div className="cs-cta_right">
                   <div style={{ backgroundColor: 'white', border: '1px solid black', borderRadius: '10px', color: 'black', padding:'25px' }}>
                     <h2 className="cs-cta_title text-center mt-10" style={{ fontFamily: 'Comfortaa', lineHeight:'54px' }}>
-                      Hyena Pets <br/> nft's of the future
+                      Hyena Pets <br/> nft&apos;s of the future
                     </h2>
                     <div className="cs-cta_subtitle text-center" style={{ fontFamily: 'Comfortaa', lineHeight:'33px' }}>
-                      These mythical, magical, battle-able pet hyenas are the 1st generative xFt's. Each pet has a vault to store assets. <br/>Lock assets in the vault of your xFt till a future date
+                      These mythical, magical, battle-able pet hyenas are the 1st generative xFt&apos;s. Each pet has a vault to store assets. <br/>Lock assets in the vault of your xFt till a future date
                     </div>
                     <div className="text-center">
-                    <a href="https://ahp.xft.red" target='_blank' className="cs-btn cs-style1 cs-btn_lg" style={{ color: 'white' }}>
+                    <Link href="https://ahp.xft.red" target='_blank' className="cs-btn cs-style1 cs-btn_lg" style={{ color: 'white' }}>
                       <span>Mint Yours Now</span>
-                    </a>
-
+                    </Link>
+                    
                     </div>
                   </div>
 
@@ -479,7 +479,7 @@ async function handleStartConnected(user_:any){
                             <i className="fas fa-heart fa-fw"></i>
                             0
                           </span>
-                          <a href={`/view/${item.id}/0/${BLANK}`} className="cs-card_thumb cs-zoom_effect">
+                          <Link href={`/view/${item.id}/0/${BLANK}`} className="cs-card_thumb cs-zoom_effect">
                             <img
                               src={item.image}
                               alt="Image"
@@ -488,9 +488,9 @@ async function handleStartConnected(user_:any){
                               height='200'
                               // onLoad={handleImageLoad}
                             />
-                          </a>
+                          </Link>
                           <div className="cs-card_info">
-                            <a href={`/profile/${item.profile.account}`} className="cs-avatar cs-white_bg">
+                            <Link href={`/profile/${item.profile.account}`} className="cs-avatar cs-white_bg">
                               <img
                                 src={item.profile.avatar}
                                 alt="Image"
@@ -498,8 +498,8 @@ async function handleStartConnected(user_:any){
                                 width='50'
                                 height='50'
                               /> <span>{`${item.profile.account.substring(0, 6)}...${item.profile.account.substring(item.profile.account.length - 6)}`}</span>
-                            </a>
-                            <h3 className="cs-card_title text-center"><a href={`/view/${item.id}/0/${BLANK}`}>{item.name} #{item.id}</a></h3>
+                            </Link>
+                            <h3 className="cs-card_title text-center"><Link href={`/view/${item.id}/0/${BLANK}`}>{item.name} #{item.id}</Link></h3>
                           </div>
                           <hr />
                           <div className="cs-card_footer">
@@ -532,7 +532,7 @@ async function handleStartConnected(user_:any){
                   <div className="col-lg-3 col-sm-6">
                     
                   <div className="cs-iconbox cs-style1 cs-white_bg">
-                  <a href="#" onClick={handleTokenModal}>
+                  <Link href="#" onClick={handleTokenModal}>
                     <div className="cs-iconbox_icon">
                       
                       <Image
@@ -544,7 +544,7 @@ async function handleStartConnected(user_:any){
                         style={{ borderRadius: '5px' }} 
                       />
                     
-                    </div></a>
+                    </div></Link>
                     <h2 className="cs-iconbox_title" >XFT (XTHOS) Token</h2>
                     <div className="cs-iconbox_subtitle">An innovative DEFI token that feeds the big vault</div>
                     </div>
@@ -553,7 +553,7 @@ async function handleStartConnected(user_:any){
                   
                   <div className="col-lg-3 col-sm-6">
                       <div className="cs-iconbox cs-style1 cs-white_bg">
-                      <a href="#" onClick={handleTeapotModal}>
+                      <Link href="#" onClick={handleTeapotModal}>
                       
                       <div className="cs-iconbox_icon">
                       <Image
@@ -564,7 +564,7 @@ async function handleStartConnected(user_:any){
                         height='100'
                         style={{ borderRadius: '5px' }} 
                       />
-                      </div></a>
+                      </div></Link>
                       <h2 className="cs-iconbox_title">Big Vault</h2>
                       <div className="cs-iconbox_subtitle">A community vault for community loans and refunds </div>
                       </div>
@@ -573,7 +573,7 @@ async function handleStartConnected(user_:any){
                 
                   <div className="col-lg-3 col-sm-6">
                       <div className="cs-iconbox cs-style1 cs-white_bg">
-                      <a href="#" onClick={handleOperatorsModal}>
+                      <Link href="#" onClick={handleOperatorsModal}>
 
                       <div className="cs-iconbox_icon">
                       <Image
@@ -584,8 +584,8 @@ async function handleStartConnected(user_:any){
                         height='100'
                         style={{ borderRadius: '5px' }} 
                       />
-                      </div></a>
-                      <h2 className="cs-iconbox_title">XFT's</h2>
+                      </div></Link>
+                      <h2 className="cs-iconbox_title">XFT&apos;s</h2>
                       <div className="cs-iconbox_subtitle">Smarter, more dynamic, more collaborative NFTs</div>
                       </div>
                       <div className="cs-height_30 cs-height_lg_30"></div>
@@ -593,7 +593,7 @@ async function handleStartConnected(user_:any){
                   
                   <div className="col-lg-3 col-sm-6">
                       <div className="cs-iconbox cs-style1 cs-white_bg">
-                      <a href="#" onClick={handleAttributesModal}>
+                      <Link href="#" onClick={handleAttributesModal}>
 
                       <div className="cs-iconbox_icon">
                       <Image
@@ -604,7 +604,7 @@ async function handleStartConnected(user_:any){
                         height='100'
                         style={{ borderRadius: '5px' }} 
                       />
-                      </div></a>
+                      </div></Link>
                       <h2 className="cs-iconbox_title">Attribute Tokens</h2>
                       <div className="cs-iconbox_subtitle">SPEED, POWER, DEFENSE etc.. Attributes As Tokens</div>
                       </div>
@@ -634,7 +634,7 @@ async function handleStartConnected(user_:any){
                   <div className="cs-cta_right">
                     <h2 className="cs-cta_title cs-white_color_8" style={{fontFamily: 'Comfortaa'}}>xMash! &amp; WIN NFTs! WIN Crypto! A mash button game to win nfts and crypto.</h2>
                     <div className="cs-cta_subtitle cs-white_color_8">xMash is a fun, fast paced, rapid fire, mash button game. Slap, Grab, or Sneak your way to winning awesome crypto prizes. .</div>
-                    <a href="/xmash/0" className="cs-btn cs-style1 cs-btn_lg"><span>Play xMash</span></a>
+                    <Link href="/xmash/0" className="cs-btn cs-style1 cs-btn_lg"><span>Play xMash</span></Link>
                   </div>
               </div>
             </div>
@@ -650,7 +650,7 @@ async function handleStartConnected(user_:any){
                   <h2 className="cs-section_title">XFT Blogs</h2>
                   </div>
                   <div className="cs-section_right">
-                    {/* <a href="explore-details.html" className="cs-btn cs-style1"><span>Explore More</span></a> */}
+                    {/* <Link href="explore-details.html" className="cs-btn cs-style1"><span>Explore More</span></Link> */}
                   </div>
                   </div>
                 </div>
@@ -660,11 +660,11 @@ async function handleStartConnected(user_:any){
               <div className="row">
               <div className="col-lg-4">
                 <div className="cs-post cs-style1">
-                <a href="/blog/1" className="cs-post_thumb">
+                <Link href="/blog/1" className="cs-post_thumb">
                 <div className="cs-post_thumb_in cs-bg" data-src="/img/general_26.jpeg" style={{backgroundImage: "url('/assets/images/nft2.jpeg')"}}></div>
-                </a>
+                </Link>
                 <div className="cs-post_info">
-                <h2 className="cs-post_title" style={{fontFamily: 'Comfortaa'}}><a href="#">Welcome to NFT 2.0</a></h2>
+                <h2 className="cs-post_title" style={{fontFamily: 'Comfortaa'}}><Link href="#">Welcome to NFT 2.0</Link></h2>
                 <div className="cs-post_subtitle">In the blink of an eye, Non-Fungible Tokens (NFTs) stormed the tech landscape, catching the attention of artists, investors, and enthusiasts alike...</div>
                 <div className="cs-height_20 cs-height_lg_20"></div>
                 </div>
@@ -674,11 +674,11 @@ async function handleStartConnected(user_:any){
 
                 <div className="col-lg-4">
                 <div className="cs-post cs-style1">
-                <a href="/blog/2" className="cs-post_thumb">
+                <Link href="/blog/2" className="cs-post_thumb">
                 <div className="cs-post_thumb_in cs-bg" data-src="/img/general_27.jpeg" style={{backgroundImage: "url('/img/general_27.jpeg')"}}></div>
-                </a>
+                </Link>
                 <div className="cs-post_info">
-                <h2 className="cs-post_title" style={{fontFamily: 'Comfortaa'}}><a href="#">The Genius of Labels</a></h2>
+                <h2 className="cs-post_title" style={{fontFamily: 'Comfortaa'}}><Link href="#">The Genius of Labels</Link></h2>
                 <div className="cs-post_subtitle">In the realm of innovation, the path to progress is often paved with reinvention. Tesla redefined the truck with a vision of the future, and similarly, our NFT marketplace...</div>
                 <div className="cs-height_20 cs-height_lg_20"></div>
 
@@ -689,12 +689,12 @@ async function handleStartConnected(user_:any){
 
                 <div className="col-lg-4">
                 <div className="cs-post cs-style1">
-                <a href="/blog/3" className="cs-post_thumb">
+                <Link href="/blog/3" className="cs-post_thumb">
                 <div className="cs-post_thumb_in cs-bg" data-src="/img/general_28.jpeg" style={{backgroundImage: "url('/img/general_28.jpeg')"}}></div>
-                </a>
+                </Link>
                 <div className="cs-post_info">
-                <h2 className="cs-post_title" style={{fontFamily: 'Comfortaa'}}><a href="#">Show Love</a></h2>
-                <div className="cs-post_subtitle">The advent of Web 2.0 brought us platforms like Facebook, where the value of creative expression was distilled into the simplicity of a "like" button. While users experienced...</div>
+                <h2 className="cs-post_title" style={{fontFamily: 'Comfortaa'}}><Link href="#">Show Love</Link></h2>
+                <div className="cs-post_subtitle">The advent of Web 2.0 brought us platforms like Facebook, where the value of creative expression was distilled into the simplicity of a &apos;like&apos; button. While users experienced...</div>
                 <div className="cs-height_20 cs-height_lg_20"></div>
                 
                 </div>
@@ -709,7 +709,7 @@ async function handleStartConnected(user_:any){
           {isNFTModalOpen && ( 
             <Modal onClose={handleCloseNFTModal} title="XFT">
                 <div className="cs-single_post">
-                  <p style={{color:'#000', lineHeight:'44px', fontFamily: 'Comfortaa'}}>XFT's are NFT 2.0. We attach a smart contract to your NFT (making it an XFT). This groundbreaking feature opens up a realm of possibilities for creators, offering avenues for collector incentives, gamification, puzzles, and beyond.
+                  <p style={{color:'#000', lineHeight:'44px', fontFamily: 'Comfortaa'}}>XFT&apos;s are NFT 2.0. We attach a smart contract to your NFT (making it an XFT). This groundbreaking feature opens up a realm of possibilities for creators, offering avenues for collector incentives, gamification, puzzles, and beyond.
                 </p>
               </div>
             </Modal>
@@ -722,8 +722,8 @@ async function handleStartConnected(user_:any){
                 
                 </p>
                 <p className="text-center" style={{color:'#000', lineHeight:'44px', fontFamily: 'Comfortaa', marginTop:'13px'}}>
-                  <b>current xapps</b><br/><b>xFT</b>: better more dynamic nft's<br/><b>Grabbit</b>: a fun, fast paced game to win crypto, nfts and other prizes<br/>
-                  <b>Esports</b>: compete in heads up  battles on your console or pc for crypto prizes and nftea's
+                  <b>current xapps</b><br/><b>xFT</b>: better more dynamic nft&apos;s<br/><b>Grabbit</b>: a fun, fast paced game to win crypto, nfts and other prizes<br/>
+                  <b>Esports</b>: compete in heads up  battles on your console or pc for crypto prizes and nftea&apos;s
 
                 </p>
               </div>
@@ -734,7 +734,7 @@ async function handleStartConnected(user_:any){
             <Modal onClose={handleCloseExampleModal} title="Example Labels">
               <div className="cs-single_post">
                 <p style={{color:'#000', lineHeight:'44px', fontFamily: 'Comfortaa'}}>
-                Consider owning labels like 'NFT Nigeria,' 'NFT New York,' 'NFT Miami,' etc. If these labels are unclaimed, seize the opportunity. In the NFT world, you don't have to be an artist to earn. As a curator, you can offer licenses to artists that align with your curation. Secure your label now before someone else does and unlock the potential for unique curation and collaboration in the NFT space. 
+                Consider owning labels like &apos;NFT Nigeria&apos;, &apos;NFT New York&apos;, &apos;NFT Miami&apos;, etc. If these labels are unclaimed, seize the opportunity. In the NFT world, you don&apos;t have to be an artist to earn. As a curator, you can offer licenses to artists that align with your curation. Secure your label now before someone else does and unlock the potential for unique curation and collaboration in the NFT space. 
                 </p>
               
               </div>
@@ -765,8 +765,8 @@ async function handleStartConnected(user_:any){
                 <p className="text-center mt-10" style={{color:'#000', lineHeight:'44px', fontFamily: 'Comfortaa'}}> <b>Tokenomics</b></p>
                 <p className="text-center" style={{color:'#000', lineHeight:'44px', fontFamily: 'Comfortaa'}}> supply: 24,000,000 <br/>up to 5% development<br/>up to 5% marketing/donations<br/>up to 3% static reflections<br/><br/>This is a rebrand from the NFTea token, holders are able to redeem the equivilent of % of NFTea tokens held in wallet at time of recording (1/24/2024). Holders can also request other tokens including meme tokens in our ecosystem.</p>
                 <div className="cs-height_20 cs-height_lg_20"></div>
-                {/* <p className="text-center mb-3"><a href="https://www.dextools.io/app/en/bnb/pair-explorer/0x3acd58d9cc879bed0b0b5313466c9116176bc242" target='_blank' style={{textDecoration:'none'}}>Dextools</a></p>
-                <p className="text-center"><a href="https://pancakeswap.finance/swap?outputCurrency=0xb4668238Acf0314A7b4e153368e479fCd2E09831" target='_blank' className="cs-btn cs-style1 cs-btn_lg w-100"><span>Buy</span></a></p> */}
+                {/* <p className="text-center mb-3"><Link href="https://www.dextools.io/app/en/bnb/pair-explorer/0x3acd58d9cc879bed0b0b5313466c9116176bc242" target='_blank' style={{textDecoration:'none'}}>Dextools</Link></p>
+                <p className="text-center"><Link href="https://pancakeswap.finance/swap?outputCurrency=0xb4668238Acf0314A7b4e153368e479fCd2E09831" target='_blank' className="cs-btn cs-style1 cs-btn_lg w-100"><span>Buy</span></Link></p> */}
               
               </div>
             </Modal>
@@ -776,7 +776,7 @@ async function handleStartConnected(user_:any){
             <Modal onClose={handleTeapotModal} title="Teapot">
               <div className="cs-single_post">
                 <p className="text-center" style={{color:'#000', lineHeight:'44px', fontFamily: 'Comfortaa'}}>
-                Access a community wallet designed for interest-free loans and 'show love' rewards. Secure 0% interest, 30-day loans directly from the teapot, eliminating the need to borrow from other members at high interest rates.                </p>
+                Access a community wallet designed for interest-free loans and &apos;show love&apos; rewards. Secure 0% interest, 30-day loans directly from the teapot, eliminating the need to borrow from other members at high interest rates.                </p>
                 <p className="text-center mt-3" style={{color:'#000', lineHeight:'44px', fontFamily: 'Comfortaa'}}><b>Teapot</b><br/> {_teaPot || 'connect wallet to see pot balance'}</p>
                 <div className="cs-height_20 cs-height_lg_20"></div>
 
@@ -788,7 +788,7 @@ async function handleStartConnected(user_:any){
             <Modal onClose={handleOperatorsModal} title="Label Operators">
               <div className="cs-single_post">
                 <p className="text-center" style={{color:'#000', lineHeight:'44px', fontFamily: 'Comfortaa'}}>
-                Picture this: you're a celebrity, and your graphic artist or marketer contacts you for every mint. What if they could independently mint and sell on your behalf whenever necessary? Label operators provide the autonomy your team members need for more efficient NFT management, enabling them to excel in the NFT space
+                Picture this: you&apos;re a celebrity, and your graphic artist or marketer contacts you for every mint. What if they could independently mint and sell on your behalf whenever necessary? Label operators provide the autonomy your team members need for more efficient NFT management, enabling them to excel in the NFT space
 
                 </p>
                 <div className="cs-height_20 cs-height_lg_20"></div>

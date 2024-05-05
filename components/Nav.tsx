@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { useRouter } from 'next/router';
 import { useEffect,useState} from 'react'
 import { useSDK } from '@metamask/sdk-react';
+import Link from 'next/link'
 import { preloader } from '../utils/main';
 import { smoothScroll } from '../utils/main';
 import { dynamicBackground } from '../utils/main';
@@ -160,9 +161,9 @@ const Nav = ({}) => {
                 <div className="cs-main_header_in">
                 <div className="cs-main_header_left">
 
-                <a className="cs-site_branding" href="/">
+                <Link className="cs-site_branding" href="/">
                     <span className="animated-text" style={{fontFamily: "'Rubik Lines',systen-ui", marginLeft:'10px', marginTop:'3px'}}>xFT.red</span>
-                </a>
+                </Link>
                 </div>
                 <div className="cs-main_header_right">
                 {account && (
@@ -184,17 +185,17 @@ const Nav = ({}) => {
                 <div className="cs-nav">
                 <ul className="cs-nav_list">
                 {/* <li>
-                  <a href="https://pancakeswap.finance/swap?outputCurrency=0xb4668238Acf0314A7b4e153368e479fCd2E09831" target='_blank'>Buy XFT</a>
+                  <Link href="https://pancakeswap.finance/swap?outputCurrency=0xb4668238Acf0314A7b4e153368e479fCd2E09831" target='_blank'>Buy XFT</Link>
                 </li> */}
-                <li><a href="/swap/0/0">xSwap</a></li>
-                <li><a href="/xmash/0">xMash</a></li>
-                {/* <li><a href="/esports/0">xSports</a></li> */}
+                <li><Link href="/swap/0/0">xSwap</Link></li>
+                <li><Link href="/xmash/0">xMash</Link></li>
+                {/* <li><Link href="/esports/0">xSports</Link></li> */}
                 
                 <li>
-                  <a href="#" onClick={handleOpenSellModal}>Display</a>
+                  <Link href="#" onClick={handleOpenSellModal}>Display</Link>
                 </li>
-                <li><a href="/loans">Loans</a></li>
-                <li><a href="https://ahp.xft.red">Hyena Pets</a></li>
+                <li><Link href="/loans">Loans</Link></li>
+                <li><Link href="https://ahp.xft.red">Hyena Pets</Link></li>
                 </ul>
                 <span className="cs-munu_toggle"><span></span></span>
                 </div>
@@ -217,26 +218,26 @@ const Nav = ({}) => {
                   </div>
                 )}
                 {!account && (
-                    <a href="#" className="cs-btn cs-style1" onClick={handleConnect}><span>Connect Wallet</span></a>
+                    <Link href="#" className="cs-btn cs-style1" onClick={handleConnect}><span>Connect Wallet</span></Link>
                 )}
                 
                 {account && (
                   <>
                     <div className="cs-toggle_btn cs-header_icon_btn cs-center">
-                      <a href={`/profile/${account}`}>
+                      <Link href={`/profile/${account}`}>
                       <svg width="19" height="18" viewBox="0 0 19 18" fill="none" xmlns="http://www.w3.org/2000/svg">
                       <path d="M15.5 15.75V14.25C15.5 13.4544 15.1839 12.6913 14.6213 12.1287C14.0587 11.5661 13.2956 11.25 12.5 11.25H6.5C5.70435 11.25 4.94129 11.5661 4.37868 12.1287C3.81607 12.6913 3.5 13.4544 3.5 14.25V15.75" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round"></path>
                       <path d="M9.5 8.25C11.1569 8.25 12.5 6.90685 12.5 5.25C12.5 3.59315 11.1569 2.25 9.5 2.25C7.84315 2.25 6.5 3.59315 6.5 5.25C6.5 6.90685 7.84315 8.25 9.5 8.25Z" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round"></path>
-                      </svg></a>
+                      </svg></Link>
                     </div>
-                    <a href="/mint" className="cs-btn" style={{ color: isHovered ? '#fff' : '#fff', backgroundColor: isHovered ? 'purple' : '#000', borderRadius:'50px' }} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}><i className="fa fa-magic" aria-hidden="true" style={{color: isHovered ? '#fff' : '#fff', transition: 'color 0.3s',}}></i>{' '}Mint</a>
+                    <Link href="/mint" className="cs-btn" style={{ color: isHovered ? '#fff' : '#fff', backgroundColor: isHovered ? 'purple' : '#000', borderRadius:'50px' }} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}><i className="fa fa-magic" aria-hidden="true" style={{color: isHovered ? '#fff' : '#fff', transition: 'color 0.3s',}}></i>{' '}Mint</Link>
 
                   </>
                 )}
                 {/* {user && (
-                    <a href="#" className="cs-btn cs-style1" style={{
+                    <Link href="#" className="cs-btn cs-style1" style={{
                       background: 'inear-gradient(116.85deg, #FC466B 0%, #3F5EFB 100%)',
-                    }}><span></span></a>
+                    }}><span></span></Link>
                 )} */}
                 </div>
                 </div>
@@ -261,10 +262,10 @@ const Nav = ({}) => {
                 {isSellModalOpen &&  
                     <Modal onClose={handleCloseSellModal} title="On Display">
                                 <div className="cs-single_post">
-                        <p style={{color:'#000', lineHeight:'44px', fontFamily: 'Comfortaa'}}>Don't want to sell? Then display your creations for all to see, your 1 of 1 gets TEA tokens in it's bag with each love!
+                        <p style={{color:'#000', lineHeight:'44px', fontFamily: 'Comfortaa'}}>Don&apos;t want to sell? Then display your creations for all to see, your 1 of 1 gets TEA tokens in it&apos;s bag with each love!
                         </p>
                         <h4 className="text-center" style={{fontFamily: 'Comfortaa'}}>Get A Loan</h4>
-                        <p style={{color:'#000', lineHeight:'44px', fontFamily: 'Comfortaa'}}>Get a loan on your creations based on the value of tokens in it's bag.</p>
+                        <p style={{color:'#000', lineHeight:'44px', fontFamily: 'Comfortaa'}}>Get a loan on your creations based on the value of tokens in it&apos;s bag.</p>
 
                     </div>
                     </Modal>

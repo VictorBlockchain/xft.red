@@ -492,7 +492,7 @@ const Label = ({label}:any) => {
                                     {!_showLabelChildren && !_loading && (
                                         <>
                                                 <div className="cs-white_bg cs-box_shadow cs-general_box_5 text-center">
-                                                    no nft's linked to this label
+                                                    no nft&apos;s linked to this label
                                                 </div>
                                         </>
                                     )}

@@ -9,6 +9,7 @@ import { useRouter } from 'next/router';
 import { setWalletProvider, servActivate,servActivatePrice,servPrice,servMint,servOperator,servLabel,servFlames,servNFT2Label, servNFT,servBag,servContract2Label,servWrap,servURI,servApproveWrapper,servWrapApproveCheck,servRenew, servApproveToken,servCheckOperator } from '../services/web3Service';
 import axios from "axios";
 import { servSetProfile } from '../services/profile';
+import Link from 'next/link'
 
 const Side = ({profile}:any) => {
     const router = useRouter();
@@ -160,42 +161,42 @@ const Side = ({profile}:any) => {
                   )}
                   <ul className="cs-profile_nav cs-mp0">
                     {/* <li>
-                    <a href="#">
+                    <Link href="#">
                     <i className="mdi mdi-account-key"></i>
                     <span>Profile Info</span>
-                    </a>
+                    </Link>
                     </li> */}
                     {account== profile.account && (
                         <li>
-                          <a href="#"onClick={handleOpenEditModal}>
+                          <Link href="#"onClick={handleOpenEditModal}>
                           <i className="mdi mdi-beaker"></i>
                           <span>Account Settings</span>
-                          </a>
+                          </Link>
                         </li>
                     )}
                     <li>
-                    <a href="/mint">
+                    <Link href="/mint">
                     <i className="mdi mdi-auto-fix"></i>
                     <span>Create</span>
-                    </a>
+                    </Link>
                     </li>
                     {/* <li>
-                    <a href="#">
+                    <Link href="#">
                     <i className="mdi mdi-apps"></i>
                     <span>My Activity</span>
-                    </a>
+                    </Link>
                     </li> */}
                     <li>
-                    <a href="/wallet/">
+                    <Link href="/wallet/">
                     <i className="mdi mdi-wallet"></i>
                     <span>My Wallet</span>
-                    </a>
+                    </Link>
                     </li>
                     <li>
-                    <a href="/logout">
+                    <Link href="/logout">
                     <i className="mdi mdi-logout"></i>
                     <span>Logout</span>
-                    </a>
+                    </Link>
                     </li>
                     </ul>
                 </div>

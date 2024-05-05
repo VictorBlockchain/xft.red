@@ -20,7 +20,7 @@ const Label = () => {
             <div className="absolute text-center z-10 bottom-5 right-0 left-0 mx-3">
                 <ul className="breadcrumb tracking-[0.5px] breadcrumb-light mb-0 inline-block">
                    <li className="inline breadcrumb-item text-[15px] font-semibold duration-500 ease-in-out text-white/50 hover:text-white"><a href="index.html">NfTea</a></li>
-                    <li className="inline breadcrumb-item text-[15px] font-semibold duration-500 ease-in-out text-white" aria-current="page">NFTea's</li>
+                    <li className="inline breadcrumb-item text-[15px] font-semibold duration-500 ease-in-out text-white" aria-current="page">NFTea&apos;s</li>
                 </ul>
             </div>
         </section>
@@ -61,26 +61,26 @@ const Label = () => {
                                     <div className="bg-white p-6 rounded-lg shadow-md">
                                     <h2 className="text-2xl font-bold mb-4">Immerse Yourself in the Ultimate Gaming Experience</h2>
                                     <p className="text-gray-700">
-                                        NFTEA takes gaming to the next level with Smart NFTs. Imagine a world where game characters' attributes are represented
+                                        NFTEA takes gaming to the next level with Smart NFTs. Imagine a world where game characters attributes are represented
                                         as tokens in their wallets. Speed, power, defense - all customizable and tradable assets. Battle it out in epic Pokémon-style
-                                        arenas, where each move is powered by the unique combination of tokens within your Smart NFT's wallet.
+                                        arenas, where each move is powered by the unique combination of tokens within your Smart NFT&apos;s wallet.
                                     </p>
                                     </div>
                                 </div>
 
                                 <div className="mt-8 whiteText">
                                     <h2 className="text-3xl font-bold mb-4">Time Locked Value: Unleash the Potential of Smart NFTs</h2>
-                                    <p className="text-lg text-gray-700 whiteText">Imagine a world where Smart NFTs go beyond their inherent value and provide a new level of motivation and reward. With Time Locked Value, these revolutionary digital assets allow you to lock valuable tokens within the NFT's smart contract for a specific period. Let's explore the possibilities with an inspiring example.</p>
+                                    <p className="text-lg text-gray-700 whiteText">Imagine a world where Smart NFTs go beyond their inherent value and provide a new level of motivation and reward. With Time Locked Value, these revolutionary digital assets allow you to lock valuable tokens within the NFT&apos;s smart contract for a specific period. Let&apos;s explore the possibilities with an inspiring example.</p>
                                     <div className="mt-8">
                                     <h3 className="text-2xl font-semibold">Time Locked Value for Education</h3>
-                                    <p className="text-lg text-gray-700 whiteText">Meet Alex, a bright 5th grader who owns a Smart NFT linked to their academic journey. This extraordinary NFT holds a treasure trove of token assets, representing their accomplishments and milestones throughout their educational voyage. However, there's a unique twist: these assets are time-locked, only accessible upon graduating high school.</p>
+                                    <p className="text-lg text-gray-700 whiteText">Meet Alex, a bright 5th grader who owns a Smart NFT linked to their academic journey. This extraordinary NFT holds a treasure trove of token assets, representing their accomplishments and milestones throughout their educational voyage. However, there&apos;s a unique twist: these assets are time-locked, only accessible upon graduating high school.</p>
                                     <p className="text-lg text-gray-700 whiteText">This concept transforms the way we approach education and motivation. As Alex progresses through each grade, their Smart NFT becomes a tangible symbol of their academic achievements, waiting patiently for the grand unlocking ceremony at high school graduation. The locked assets within the NFT serve as a powerful incentive, igniting a whole new level of determination and drive within Alex.</p>
-                                    <p className="text-lg text-gray-700 whiteText">Picture the excitement and sense of accomplishment as Alex unlocks their Smart NFT, revealing the well-deserved rewards for years of hard work and dedication. It's a transformative experience, reinforcing the value of education and providing a lasting reminder of their academic journey.</p>
+                                    <p className="text-lg text-gray-700 whiteText">Picture the excitement and sense of accomplishment as Alex unlocks their Smart NFT, revealing the well-deserved rewards for years of hard work and dedication. It&apos;s a transformative experience, reinforcing the value of education and providing a lasting reminder of their academic journey.</p>
                                     </div>
                                     <div className="mt-8">
                                     <h3 className="text-2xl font-semibold">Unlocking Potential in Various Domains</h3>
-                                    <p className="text-lg text-gray-700 whiteText">Time Locked Value within Smart NFTs doesn't just incentivize students; it opens up a world of possibilities for various domains. From sports to creative arts, professional development to personal growth, these locked assets can represent future opportunities waiting to be unlocked.</p>
-                                    <p className="text-lg text-gray-700 whiteText">At the heart of it all, Time Locked Value in Smart NFTs redefines motivation, fostering a deeper connection between individuals and their goals. It's a powerful tool that inspires excellence, encourages perseverance, and amplifies the joy of accomplishment.</p>
+                                    <p className="text-lg text-gray-700 whiteText">Time Locked Value within Smart NFTs doesn&apos;t just incentivize students; it opens up a world of possibilities for various domains. From sports to creative arts, professional development to personal growth, these locked assets can represent future opportunities waiting to be unlocked.</p>
+                                    <p className="text-lg text-gray-700 whiteText">At the heart of it all, Time Locked Value in Smart NFTs redefines motivation, fostering a deeper connection between individuals and their goals. It&apos;s a powerful tool that inspires excellence, encourages perseverance, and amplifies the joy of accomplishment.</p>
                                     </div>
                                     <div className="mt-8">
                                     <h3 className="text-2xl font-semibold">Experience the Transformative Power</h3>

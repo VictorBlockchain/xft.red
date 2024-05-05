@@ -1,3 +1,5 @@
+import Link from 'next/link'
+
 const PrivacyPolicy = () => {
 
     return(
@@ -13,7 +15,7 @@ const PrivacyPolicy = () => {
             
             <div className="absolute text-center z-10 bottom-5 right-0 left-0 mx-3">
                 <ul className="breadcrumb tracking-[0.5px] breadcrumb-light mb-0 inline-block">
-                   <li className="inline breadcrumb-item text-[15px] font-semibold duration-500 ease-in-out text-white/50 hover:text-white"><a href="/">XFT</a></li>
+                   <li className="inline breadcrumb-item text-[15px] font-semibold duration-500 ease-in-out text-white/50 hover:text-white"><Link href="/">XFT</Link></li>
                     <li className="inline breadcrumb-item text-[15px] font-semibold duration-500 ease-in-out text-white" aria-current="page">Terms</li>
                 </ul>
             </div>
@@ -35,7 +37,7 @@ const PrivacyPolicy = () => {
 
                                 <div className="bg-white rounded-lg p-6 shadow-md">
                                 <h2 className="mt-4">1. Acceptance of Terms</h2>
-                                <p>By accessing or using the XFT.red platform, including the NFT marketplace, competitive esports, games, and DeFi trading, you agree to be bound by these Terms & Agreement ("Terms"). If you do not agree to these Terms, please do not use our platform.</p>
+                                <p>By accessing or using the XFT.red platform, including the NFT marketplace, competitive esports, games, and DeFi trading, you agree to be bound by these Terms & Agreement (&quot;Terms&quot;). If you do not agree to these Terms, please do not use our platform.</p>
                                 <h2 className="mt-4">2. Use of the Platform</h2>
                                 <h3>2.1. Eligibility</h3>
                                 <p>You must be at least 18 years old to use our platform. By using our platform, you represent and warrant that you are at least 18 years old.</p>
@@ -67,7 +69,7 @@ const PrivacyPolicy = () => {
                                 <h2 className="mt-4">6. Disclaimer of Warranties</h2>
 
                                 <h3>6.1. Platform Availability: </h3>
-                                <p>XFT.red provides the platform "as is" and "as available." We make no warranties, express or implied, regarding the accuracy, reliability, or availability of our platform. We do not guarantee uninterrupted access to the platform.</p>
+                                <p>XFT.red provides the platform &quot;as is&quot; and &quot;as available&quot;. We make no warranties, express or implied, regarding the accuracy, reliability, or availability of our platform. We do not guarantee uninterrupted access to the platform.</p>
 
                                 <h3>6.2. User Responsibility:</h3>
                                 <p>Users acknowledge that they use the platform and engage in NFT trading at their own risk. XFT.red does not endorse or verify the authenticity of NFTs listed on the platform.</p>

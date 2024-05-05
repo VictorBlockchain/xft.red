@@ -676,7 +676,7 @@ const CreateLabel = () => {
                 )}
                     <div className="cs-height_30 cs-height_lg_30"></div>
                     <div className='p-10' style={{borderRadius: '10px', backgroundImage: `url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' rx='8' ry='8' stroke='%237B61FFFF' stroke-width='3' stroke-dasharray='5%2c 10' stroke-dashoffset='0' stroke-linecap='square'/%3e%3c/svg%3e")` }}>
-                        <p className="smallText text-center pt-5">** need more variations of your label? don't worry you can link them to a main label ** </p>
+                        <p className="smallText text-center pt-5">** need more variations of your label? don&quot;t worry you can link them to a main label ** </p>
                         <p className="text-center p-3">
                             <span>**</span> <span>labels</span> <span>STA</span>RTING <span>wit</span>h
                             <span> spe</span>c<span>ial</span> <br />
@@ -694,7 +694,7 @@ const CreateLabel = () => {
                             [ <small>label operator</small><br />
                             # <small>social/lingo/marketplace license </small><br /><small>ie: #onFleek, #acmeshoes etc </small><br />
                             ! <small>male</small><br />
-                            @ <small>contract</small> <br /><small>ie: don't call or email unless you have this label</small><br />
+                            @ <small>contract</small> <br /><small>ie: don&quot;t call or email unless you have this label</small><br />
                             $ <small>business</small><br />
                             % <small>n/a</small> <br />
                             ^ <small>travel</small> <br />
@@ -833,7 +833,7 @@ const CreateLabel = () => {
                         </span>
                         </div>
                         <div className="cs-accordian-body" style={{display: 'none'}}>
-                        <p>Limited Edition prints, that are text based NfTea's. These are perfect for literature, poems, stories, recipes and more</p>
+                        <p>Limited Edition prints, that are text based NfTea&quot;s. These are perfect for literature, poems, stories, recipes and more</p>
                         {_showLabelAvailable && (
 
                         <p className="text-center" style={{marginTop:'20px'}}>
