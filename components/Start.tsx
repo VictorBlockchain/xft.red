@@ -141,8 +141,10 @@ async function handleStartConnected(user_:any){
   let balances_:any = await servBalances(user_)
   const number = new BigNumber(balances_.teapot);
   let formattedNumber = number.dividedBy(1000000000).toFixed(9);   
-  const formattedString = formattedNumber.toLocaleString(undefined, { minimumFractionDigits: 0, maximumFractionDigits: 9 });
-  
+  const formattedString = parseFloat(formattedNumber).toLocaleString(undefined, {
+    minimumFractionDigits: 0,
+    maximumFractionDigits: 9
+});  
   setTeaPot(formattedString)
   setLoading(false)
 

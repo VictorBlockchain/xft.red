@@ -275,7 +275,7 @@ const Esports = ({ challenge }:any) => {
                 }
             }else{
                 token = BLANK
-                amount = await ckc(amount)
+                // amount = await ckc(amount)
                 
             }
         
