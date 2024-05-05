@@ -14,8 +14,14 @@
     "isolatedModules": true,
     "jsx": "preserve",
     "incremental": true,
-    "types":["mongoose"]
+    "types": ["mongoose", "mongodb"] // Added "mongodb" here
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "pages/[...mint]tsx", "components/Service.js"],
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    "pages/**/*",  // Updated this to include all files under the pages directory
+    "components/Service.js"
+  ],
   "exclude": ["node_modules"]
 }
