@@ -1,7 +1,7 @@
 module.exports = {
   apps: [
     {
-      name: 'nftea',
+      name: 'xft',
       script: 'npm',
       args: 'run dev',
       exec_mode: 'fork',
