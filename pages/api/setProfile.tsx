@@ -13,22 +13,22 @@ export default async (req:any, res:any) => {
 
         let exists = await Profile.findOne({ name2:name2 });
         if(exists && exists.account!=account){
-          msg = {msg: 'user name taken'}
+          msg = {success:false, msg: 'user name taken'}
         }else{
             
           exists = await Profile.findOne({ email:email });
           if(exists && exists.account!=account){
-            msg = {msg: 'email taken'}
+            msg = {success:false, msg: 'email taken'}
           }else{
 
             exists = await Profile.findOne({ twitter:twitter });
             if(exists && exists.account!=account){
-              msg = {msg: 'twitter taken'}
+              msg = {success:false, msg: 'twitter taken'}
             }else{
-
+              
               exists = await Profile.findOne({ tiktok:tiktok });
               if(exists && exists.account!=account){
-                msg = {msg: 'tiktok taken'}
+                msg = {success:false, msg: 'tiktok taken'}
 
               }else{
                   
@@ -70,7 +70,7 @@ export default async (req:any, res:any) => {
                   }
                   exists.active = true
                   await exists.save()
-                  msg = {msg: 'profile updated'}
+                  msg = {success:true, msg: 'profile updated'}
 
                 }else{
                   //create new
@@ -94,7 +94,7 @@ export default async (req:any, res:any) => {
                       admin:0
                   });
                   await post.save();
-                  msg = {msg: 'profile created'}
+                  msg = {success:true, msg: 'profile created'}
                 }
               }
             }

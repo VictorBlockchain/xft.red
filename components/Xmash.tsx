@@ -64,8 +64,8 @@ const Grabbit = ({ play }:any) => {
     const [_profile, setProfile]:any = useState([])
     const [_inGame, setInGame]:any = useState(false)
     const grabbitSSE = useRef<EventSource | null>(null);
-    const shareUrl = "https://nftea.app/xmash/"+play;
-    const title = "come play #Grabbit with me, a fun game to win crypto & NFTs";
+    const shareUrl = "https://xft.red/xmash/"+play;
+    const title = "come play #xMash with me, a fun game to win crypto & NFTs";
 
     useEffect(()=>{
         $('.cs-tabs.cs-fade_tabs .cs-tab_links a').on('click', function (e) {
@@ -359,7 +359,7 @@ const Grabbit = ({ play }:any) => {
             
             if(_game.nft2PlayLabel!=nftData.data.linkedTo){
 
-                setMessage('this nft is not linked to the required label')
+                setMessage('this xft is not linked to the required label')
 
             }else{
 
@@ -387,7 +387,7 @@ const Grabbit = ({ play }:any) => {
         
         }else{
             
-            setMessage('you do not own this nftea')
+            setMessage('you do not own this xft')
         }
 
     }
@@ -428,7 +428,7 @@ const Grabbit = ({ play }:any) => {
             
             }else{
                 
-                setMessage('you do not own this nftea')
+                setMessage('you do not own this xft')
             }
         
         }else{
@@ -505,7 +505,7 @@ const Grabbit = ({ play }:any) => {
             
             }else{
                 
-                setMessage('you do not own this nftea')
+                setMessage('you do not own this xft')
             }
         
         }else{
@@ -537,7 +537,10 @@ const Grabbit = ({ play }:any) => {
         const response = await fetch(endpoint, options)
         const result = await response.json()
         setMessage(result.msg)
-        console.log(result.msg)
+        if(result.success){
+            setIsProfileModalOpen(false)
+        }
+        // console.log(result.msg)
     
     }
 
@@ -1023,7 +1026,7 @@ const Grabbit = ({ play }:any) => {
                     <div className="cs-form_field_wrap">
                         <input name="avatar" id="avatar"  type="number" className="cs-form_field" placeholder="1" required />
                     </div>
-                    <p className="text-center">must be an nftea you own, enter 0 to otherwise</p>
+                    <p className="text-center">must be an xft you own, enter 0 to otherwise</p>
                     <div className="cs-height_20 cs-height_lg_20"></div>
                     
                     <label className="cs-form_label">Twitter</label>
@@ -1040,7 +1043,7 @@ const Grabbit = ({ play }:any) => {
                     
                     <label className="cs-form_label">Your Story</label>
                     <div className="cs-form_field_wrap">
-                        <textarea name="story" id="story" className="cs-form_field" placeholder="I love nfteas..." required></textarea>
+                        <textarea name="story" id="story" className="cs-form_field" placeholder="I love xft's..." required></textarea>
                     </div>
                     <div className="cs-height_20 cs-height_lg_20"></div>
                     <button type="submit" className="cs-btn cs-style1 cs-btn_lg w-100"><span>Update</span></button>
@@ -1056,7 +1059,7 @@ const Grabbit = ({ play }:any) => {
                 <form onSubmit={handleCreate}>         
                     <div className="cs-height_20 cs-height_lg_20"></div>
                     <div className="cs-white_bg cs-box_shadow cs-general_box_5 text-center" style={{color:'#000'}}>
-                        Host fun, fast paced promotional give-aways for your art or coupon nfts. Even host crypto give-aways to your followers and fans. A host NFTea is required to create games, grab one now from the grabbit label.
+                        Host fun, fast paced promotional give-aways for your art or coupon nfts. Even host crypto give-aways to your followers and fans. A host xft is required to create games, grab one now from the grabbit label.
                     </div>
                     <div className="cs-height_20 cs-height_lg_20"></div>
                     {_profile.admin<1 && (

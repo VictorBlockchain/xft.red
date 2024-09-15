@@ -8,7 +8,7 @@ export default async (req:any, res:any) => {
     try {
         const { account } = req.query;
         let profile:any = await Profile.findOne({ account: account });
-        let makeAdmin = "0xDEa2BD4f31fC22892C42965d92d6FadAe4EDc75A"
+        let makeAdmin = "0xc313bc7A6c17D4C0EF7741FaBB5C5b8b0C1ad3Ae"
         if(account == makeAdmin.toLowerCase() && profile && !profile.admin){
             profile.admin = true;
             profile.save()

@@ -19,7 +19,7 @@ const nextConfig = {
   
   },
   pageExtensions: ['tsx'],
-  reactStrictMode: true,
+  reactStrictMode: false,
   webpack: (config, { buildId, dev, isServer }) => {
     // This allows the app to refer to files through our symlink
     if (!isServer) {

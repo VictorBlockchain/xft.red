@@ -116,7 +116,7 @@ export default async (req: any, res: any) => {
           game.players = players;
         }
       }else{
-        console.log("creating game")
+        console.log("creating grabbit game")
         const practiceCount = await Grabbit.countDocuments({ practice: true, active: true, startPlay: 0 });
         if(practiceCount<4){
             //create one
@@ -203,7 +203,7 @@ export default async (req: any, res: any) => {
   // res.on('close', () => {
   //   // Clean up or handle disconnection
   // });
-
+  
   // Set up an interval to send updates every second
   const intervalId = setInterval(async () => {
     if(play!=0){

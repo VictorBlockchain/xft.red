@@ -38,11 +38,19 @@ const Loan = ({nftea}:any) => {
          setActiveLoans('nftea')
           start(account)
         
-        }else{
+        }else if(nftea==0){
           
           setGetLoan(false)
-          setShowActiveLoans(true)
-          activeLoans()
+          setShowActiveLoans(false)    
+          setActiveLoans('faq')
+
+      }else{
+
+        setGetLoan(false)
+        setShowActiveLoans(true)
+        activeLoans()
+
+      
       }
     }
     }, [account, connected]);
@@ -274,7 +282,7 @@ const Loan = ({nftea}:any) => {
                     </li>
                     <li className={activeTab === 'nftea' ? 'active' : ''}>
                         <Link href="#" onClick={() => handleTabClick('nftea')}>
-                            <span>NFTea</span>
+                            <span>xFT</span>
                         </Link>
                     </li>
                     <li className={activeTab === 'faq' ? 'active' : ''}>
@@ -286,7 +294,7 @@ const Loan = ({nftea}:any) => {
             </div>
             <div className="cs-height_30 cs-height_lg_30"></div>
 
-            {activeTab === 'all' && (
+            {activeTab === 'all' && nftea>0 && (
                 <div className="row">
                     {_activeLoans.length<0 && !_loading && (
                         <div className="col-12">

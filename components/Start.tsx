@@ -40,15 +40,15 @@ const [outputAmount, setOutputAmount] = useState('');
 const [currencyData, setCurrencyData]:any = useState([]);
 const [message, setMessage] = useState()
 const titles = [
-  "Get up to $1,000 BNB referral bonus",
-  "Need BNB? Swap BTC/ETH/XRP +",
+  "XFT Token Launching Soon!",
+  "Need BNB? Swap BTC/ETH/SOL +",
   "XFT, bridge to your future with xft vaults",
   "Play xSmash, a fun mash button game to win prizes"
 
 ]; // Add your replacement titles here
 
 const subtitles = [
-  "Mint your Hyena Pet & tell a friend, 1st to refer 30 friends/followers wins up to $1,000 BNB",
+  "Open to Hyena Pet holders only for the 1st 6 days of trading, get 0% loans on your xft's from the community pot",
   "Easily swap btc, eth and other assets using our decentralized swap. Get BNB in your wallet within mints & start minting.",
   "Lock assets in the vault of your xft, your future self will thank you. Use your xft as collateral for 0% loans if needed.",
   "Win crypto & xfts in this fun, fast paced mash button game. Grab, Slap, & Sneak away with awesome prizes"
@@ -258,10 +258,10 @@ async function handleStartConnected(user_:any){
                                       <h1 className="cs-hero_title"  dangerouslySetInnerHTML={{ __html: mainTitle }} style={{fontFamily: 'Comfortaa'}}></h1>
                                       <div className="cs-hero_subtitle cs-medium" style={{fontFamily: 'Comfortaa'}}>{subTitle}</div>
                                       <div className="cs-hero_btns">
-                                      <Link href="https://ahp.xft.red" target='_blank' className="cs-hero_btn cs-style1 cs-color1 d-block d-lg-none">
+                                      <Link href="https://hyenapet.com" target='_blank' className="cs-hero_btn cs-style1 cs-color1 d-block d-lg-none">
                                         <span className="white-text">Hyenas</span>
                                       </Link>
-                                      <Link href="https://ahp.xft.red" target='_blank' className="cs-hero_btn cs-style1 cs-color1 d-none d-lg-block">
+                                      <Link href="https://hyenapet.com" target='_blank' className="cs-hero_btn cs-style1 cs-color1 d-none d-lg-block">
                                           <span className="white-text">Hyena Pets</span>
                                         </Link>
                                       <Link href="/swap/0/0" className="cs-hero_btn cs-style1 cs-color2"><span className="white-text">xSwap</span></Link>
@@ -430,7 +430,7 @@ async function handleStartConnected(user_:any){
                       These mythical, magical, battle-able pet hyenas are the 1st generative xFt&apos;s. Each pet has a vault to store assets. <br/>Lock assets in the vault of your xFt till a future date
                     </div>
                     <div className="text-center">
-                    <Link href="https://ahp.xft.red" target='_blank' className="cs-btn cs-style1 cs-btn_lg" style={{ color: 'white' }}>
+                    <Link href="https://hyenapet.com" target='_blank' className="cs-btn cs-style1 cs-btn_lg" style={{ color: 'white' }}>
                       <span>Mint Yours Now</span>
                     </Link>
                     

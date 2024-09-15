@@ -11,7 +11,7 @@ import Image from 'next/image';
 
 import Modal from './Modal';
 interface NavProps {
-  handleConnect: () => void; // Define the correct type for handleConnect
+  handleConnect: (e: React.MouseEvent<HTMLAnchorElement>) => void;
 }
 const Nav = ({}) => {
 
@@ -106,29 +106,50 @@ const Nav = ({}) => {
           });
         }
       }, [provider, connected]);
-      
-      const handleConnect = async (event:any) => {
+
+      const handleConnect = (e:any) => {
+        e.preventDefault(); // Prevent default link behavior
         try {
+          sdk?.connect()
+          .then((accounts:any)=>{
+            // console.log(accounts)
+            localStorage.setItem("account", accounts?.[0])
+            setAccount(accounts?.[0]);
+
+          }).catch((error:any) => {
+            console.log(error.message)
+            localStorage.setItem("account", '');
+            setTimeout(() => {
+                window.location.reload();
+            }, 2000);
+        });
+      
+      } catch (error) {
+        console.error(error);
+      }
+    };
+      // const handleConnect = async (event:any) => {
+      //   try {
             
-            event.preventDefault();
-            sdk?.connect()
-            .then((accounts:any)=>{
-              // console.log(accounts)
-              localStorage.setItem("account", accounts?.[0])
-              setAccount(accounts?.[0]);
+      //       event.preventDefault();
+      //       sdk?.connect()
+      //       .then((accounts:any)=>{
+      //         // console.log(accounts)
+      //         localStorage.setItem("account", accounts?.[0])
+      //         setAccount(accounts?.[0]);
   
-            }).catch((error:any) => {
-              console.log(error.message)
-              localStorage.setItem("account", '');
-              setTimeout(() => {
-                  window.location.reload();
-              }, 2000);
-          });
+      //       }).catch((error:any) => {
+      //         console.log(error.message)
+      //         localStorage.setItem("account", '');
+      //         setTimeout(() => {
+      //             window.location.reload();
+      //         }, 2000);
+      //     });
         
-        } catch (error) {
-          console.error(error);
-        }
-      };
+      //   } catch (error) {
+      //     console.error(error);
+      //   }
+      // };
       const handleChange = (e:any) => {
         setQuery(e.target.value);
       };
@@ -194,8 +215,8 @@ const Nav = ({}) => {
                 <li>
                   <Link href="#" onClick={handleOpenSellModal}>Display</Link>
                 </li>
-                <li><Link href="/loans">Loans</Link></li>
-                <li><Link href="https://ahp.xft.red">Hyena Pets</Link></li>
+                {/* <li><Link href="/loans" onClick={handleOpenSellModal}>Loans</Link></li> */}
+                <li><Link href="https://hyenapet.com">Hyena Pets</Link></li>
                 </ul>
                 <span className="cs-munu_toggle"><span></span></span>
                 </div>
