@@ -547,7 +547,7 @@ async function handleStartConnected(user_:any){
                       />
                     
                     </div></Link>
-                    <h2 className="cs-iconbox_title" >XFT (XTHOS) Token</h2>
+                    <h2 className="cs-iconbox_title" >XFT (XFUTEK) Token</h2>
                     <div className="cs-iconbox_subtitle">An innovative DEFI token that feeds the big vault</div>
                     </div>
                     <div className="cs-height_30 cs-height_lg_30"></div>
@@ -759,13 +759,13 @@ async function handleStartConnected(user_:any){
         
         )}
         {isTokenModalOpen &&  (
-            <Modal onClose={handleTokenModal} title="xTHOS Token">
+            <Modal onClose={handleTokenModal} title="XFUTEK Token">
               <div className="cs-single_post">
                 <p className="text-center" style={{color:'#000', lineHeight:'44px', fontFamily: 'Comfortaa'}}>
                                   
                 </p>
                 <p className="text-center mt-10" style={{color:'#000', lineHeight:'44px', fontFamily: 'Comfortaa'}}> <b>Tokenomics</b></p>
-                <p className="text-center" style={{color:'#000', lineHeight:'44px', fontFamily: 'Comfortaa'}}> supply: 24,000,000 <br/>up to 5% development<br/>up to 5% marketing/donations<br/>up to 3% static reflections<br/><br/>This is a rebrand from the NFTea token, holders are able to redeem the equivilent of % of NFTea tokens held in wallet at time of recording (1/24/2024). Holders can also request other tokens including meme tokens in our ecosystem.</p>
+                <p className="text-center" style={{color:'#000', lineHeight:'44px', fontFamily: 'Comfortaa'}}> supply: 24,000,000 <br/>up to 5% development<br/>up to 5% marketing/donations<br/>up to 3% static reflections</p>
                 <div className="cs-height_20 cs-height_lg_20"></div>
                 {/* <p className="text-center mb-3"><Link href="https://www.dextools.io/app/en/bnb/pair-explorer/0x3acd58d9cc879bed0b0b5313466c9116176bc242" target='_blank' style={{textDecoration:'none'}}>Dextools</Link></p>
                 <p className="text-center"><Link href="https://pancakeswap.finance/swap?outputCurrency=0xb4668238Acf0314A7b4e153368e479fCd2E09831" target='_blank' className="cs-btn cs-style1 cs-btn_lg w-100"><span>Buy</span></Link></p> */}
