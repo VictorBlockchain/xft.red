@@ -40,15 +40,15 @@ const [outputAmount, setOutputAmount] = useState('');
 const [currencyData, setCurrencyData]:any = useState([]);
 const [message, setMessage] = useState()
 const titles = [
-  "XFT Token Launching Soon!",
+  "Maji Token Launching Soon!",
   "Need BNB? Swap BTC/ETH/SOL +",
-  "XFT, bridge to your future with xft vaults",
-  "Play xSmash, a fun mash button game to win prizes"
+  "XFT, NFT 2.0 is here!, NFTs with vaults",
+  "Play Smash, a fun mash button game to win prizes"
 
 ]; // Add your replacement titles here
 
 const subtitles = [
-  "Open to Hyena Pet holders only for the 1st 6 days of trading, get 0% loans on your xft's from the community pot",
+  "An innovative Defi token, get 0% loans on your xfts from the well (community vault).",
   "Easily swap btc, eth and other assets using our decentralized swap. Get BNB in your wallet within mints & start minting.",
   "Lock assets in the vault of your xft, your future self will thank you. Use your xft as collateral for 0% loans if needed.",
   "Win crypto & xfts in this fun, fast paced mash button game. Grab, Slap, & Sneak away with awesome prizes"
