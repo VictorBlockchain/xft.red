@@ -30,7 +30,7 @@ function MyApp({ Component, pageProps }: AppProps) {
     <MetaMaskProvider debug={true} sdkOptions={{
       checkInstallationImmediately: false,
       dappMetadata: {
-        name: "African Hyena Pets",
+        name: "Maji.app",
         url: 'http://'+router.asPath,
       }
     }}><UserProvider>

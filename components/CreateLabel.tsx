@@ -94,7 +94,7 @@ const CreateLabel = () => {
         
         }
         if (_search && _search[0] && (_search[0].nftea!="0" && moment().isBefore(moment.unix(_search[0][2][7])))) {
-
+            
             setShowLabelTaken(true)
             setShowLabelAvailable(false)
             
@@ -394,7 +394,7 @@ const CreateLabel = () => {
             tagType_ = 'business';
             cantransfer_ = false;
             setTag("$")
-
+        
         
         }else if(label_.startsWith('*')){
             tagType_ = 'identity';
@@ -411,7 +411,7 @@ const CreateLabel = () => {
             tagType_ = 'class';
             cantransfer_ = false;
             setTag("?")
-
+        
         
         }else if(label_.startsWith('()')){
             tagType_ = 'female';
@@ -526,11 +526,11 @@ const CreateLabel = () => {
                 setNfTeaype(0)
                 handleLabelImage(event.target.query.value)
                 // console.log(resp)
-
+            
             }else{
                 alert("login 1st")
             }
-
+        
         } catch (err) {
           console.error(err);
         }
