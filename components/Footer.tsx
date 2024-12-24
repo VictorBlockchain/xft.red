@@ -143,7 +143,7 @@ const Footer = () => {
             <div className="container">
             <div className="cs-footer_separetor"></div>
             <div className="cs-footer_bottom_in">
-            <div className="cs-copyright" style={{fontFamily: 'Comfortaa'}}>Copyright 2023 xFT.red</div>
+            <div className="cs-copyright" style={{fontFamily: 'Comfortaa'}}>Copyright 2024 Maji.app</div>
             <ul className="cs-footer_menu">
             <li><Link href="/privacy" style={{fontFamily: 'Comfortaa'}}>Privacy Policy</Link></li>
             <li><Link href="/agreement" style={{fontFamily: 'Comfortaa'}}>Terms &amp; Condition</Link></li>

@@ -310,7 +310,7 @@ async function handleStartConnected(user_:any){
           <div className="cs-height_95 cs-height_lg_70"></div>
           <section>
             <div className="container">
-              <h2 className="cs-section_heading cs-style1 text-center">XFT (NFT) Labels</h2>
+              <h2 className="cs-section_heading cs-style1 text-center">Labels</h2>
               <div className="cs-height_45 cs-height_lg_45"></div>
                 <div className="row">
                   {/* <div className="col-lg-2 col-sm-4 col-6">
@@ -482,18 +482,18 @@ async function handleStartConnected(user_:any){
                             0
                           </span>
                           <Link href={`/view/${item.id}/0/${BLANK}`} className="cs-card_thumb cs-zoom_effect">
-                            <img
+                            <Image
                               src={item.image}
                               alt="Image"
                               className="cs-zoom_item"
-                              width='200'
-                              height='200'
+                              width={200}
+                              height={200}
                               // onLoad={handleImageLoad}
                             />
                           </Link>
                           <div className="cs-card_info">
                             <Link href={`/profile/${item.profile.account}`} className="cs-avatar cs-white_bg">
-                              <img
+                              <Image
                                 src={item.profile.avatar}
                                 alt="Image"
                                 className="cs-zoom_item"
@@ -547,8 +547,8 @@ async function handleStartConnected(user_:any){
                       />
                     
                     </div></Link>
-                    <h2 className="cs-iconbox_title" >XFT (XFUTEK) Token</h2>
-                    <div className="cs-iconbox_subtitle">An innovative DEFI token that feeds the big vault</div>
+                    <h2 className="cs-iconbox_title" >Maji Token</h2>
+                    <div className="cs-iconbox_subtitle">An innovative DEFI token that feeds the well (community vault)</div>
                     </div>
                     <div className="cs-height_30 cs-height_lg_30"></div>
                   </div>
@@ -567,7 +567,7 @@ async function handleStartConnected(user_:any){
                         style={{ borderRadius: '5px' }} 
                       />
                       </div></Link>
-                      <h2 className="cs-iconbox_title">Big Vault</h2>
+                      <h2 className="cs-iconbox_title">Well</h2>
                       <div className="cs-iconbox_subtitle">A community vault for community loans and refunds </div>
                       </div>
                       <div className="cs-height_30 cs-height_lg_30"></div>
@@ -634,9 +634,9 @@ async function handleStartConnected(user_:any){
                   
                   </div>
                   <div className="cs-cta_right">
-                    <h2 className="cs-cta_title cs-white_color_8" style={{fontFamily: 'Comfortaa'}}>xMash! &amp; WIN NFTs! WIN Crypto! A mash button game to win nfts and crypto.</h2>
-                    <div className="cs-cta_subtitle cs-white_color_8">xMash is a fun, fast paced, rapid fire, mash button game. Slap, Grab, or Sneak your way to winning awesome crypto prizes. .</div>
-                    <Link href="/xmash/0" className="cs-btn cs-style1 cs-btn_lg"><span>Play xMash</span></Link>
+                    <h2 className="cs-cta_title cs-white_color_8" style={{fontFamily: 'Comfortaa'}}>Smash! &amp; WIN NFTs! WIN Crypto! A mash button game to win nfts and crypto.</h2>
+                    <div className="cs-cta_subtitle cs-white_color_8">Smash is a fun, fast paced, rapid fire, mash button game. Slap, Grab, or Sneak your way to winning awesome crypto prizes. .</div>
+                    <Link href="/xmash/0" className="cs-btn cs-style1 cs-btn_lg"><span>Play Smash</span></Link>
                   </div>
               </div>
             </div>
@@ -649,7 +649,7 @@ async function handleStartConnected(user_:any){
                 <div className="cs-section_left">
                 <div className="cs-section_heading cs-style2">
                   <div className="cs-section_left">
-                  <h2 className="cs-section_title">XFT Blogs</h2>
+                  <h2 className="cs-section_title">Blogs</h2>
                   </div>
                   <div className="cs-section_right">
                     {/* <Link href="explore-details.html" className="cs-btn cs-style1"><span>Explore More</span></Link> */}
@@ -720,7 +720,7 @@ async function handleStartConnected(user_:any){
         {isLabelModalOpen &&  (
             <Modal onClose={handleCloseLabelModal} title="XAPPS">
               <div className="cs-single_post">
-                <p style={{color:'#000', lineHeight:'44px', fontFamily: 'Comfortaa'}}>XAPPS are innovative decentralized applications within the XFT excosystem. <br/><br/> XAPPS are also products that are so innovative, we must introduce them to our community.<br/>
+                <p style={{color:'#000', lineHeight:'44px', fontFamily: 'Comfortaa'}}>XAPPS are innovative decentralized applications within the Maji excosystem. <br/><br/> XAPPS are also products that are so innovative, we must introduce them to our community.<br/>
                 
                 </p>
                 <p className="text-center" style={{color:'#000', lineHeight:'44px', fontFamily: 'Comfortaa', marginTop:'13px'}}>
@@ -749,7 +749,7 @@ async function handleStartConnected(user_:any){
                 <p className="text-center" style={{color:'#000', lineHeight:'44px', fontFamily: 'Comfortaa'}}>
                   Show Love to awesome art works.<br/>Unlike the like button with no rewards, showing love earns the art work a tip from the big vault.
                 </p>
-                <p className="text-center" style={{color:'#000', lineHeight:'44px', fontFamily: 'Comfortaa'}}> Big Vault: {_teaPot}</p>
+                <p className="text-center" style={{color:'#000', lineHeight:'44px', fontFamily: 'Comfortaa'}}> Well: {_teaPot}</p>
                 <div className="cs-height_20 cs-height_lg_20"></div>
                 {/* <p className="text-center">live soon</p> */}
                 <button onClick={() => handleShowLove()} className="cs-btn cs-style1 cs-btn_lg w-100"><span>Show Love</span></button>
@@ -759,13 +759,13 @@ async function handleStartConnected(user_:any){
         
         )}
         {isTokenModalOpen &&  (
-            <Modal onClose={handleTokenModal} title="XFUTEK Token">
+            <Modal onClose={handleTokenModal} title="Maji Token">
               <div className="cs-single_post">
                 <p className="text-center" style={{color:'#000', lineHeight:'44px', fontFamily: 'Comfortaa'}}>
                                   
                 </p>
                 <p className="text-center mt-10" style={{color:'#000', lineHeight:'44px', fontFamily: 'Comfortaa'}}> <b>Tokenomics</b></p>
-                <p className="text-center" style={{color:'#000', lineHeight:'44px', fontFamily: 'Comfortaa'}}> supply: 24,000,000 <br/>up to 5% development<br/>up to 5% marketing/donations<br/>up to 3% static reflections</p>
+                <p className="text-center" style={{color:'#000', lineHeight:'44px', fontFamily: 'Comfortaa'}}> supply: 99,000,000 <br/>up to 5% development<br/>up to 5% marketing/donations<br/>up to 3% static reflections</p>
                 <div className="cs-height_20 cs-height_lg_20"></div>
                 {/* <p className="text-center mb-3"><Link href="https://www.dextools.io/app/en/bnb/pair-explorer/0x3acd58d9cc879bed0b0b5313466c9116176bc242" target='_blank' style={{textDecoration:'none'}}>Dextools</Link></p>
                 <p className="text-center"><Link href="https://pancakeswap.finance/swap?outputCurrency=0xb4668238Acf0314A7b4e153368e479fCd2E09831" target='_blank' className="cs-btn cs-style1 cs-btn_lg w-100"><span>Buy</span></Link></p> */}

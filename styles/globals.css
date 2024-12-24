@@ -3,7 +3,7 @@
   /* font-family: 'Vina Sans', sans-serif; */
   background-clip: text;
   color: transparent;
-  background-image: linear-gradient(45deg, #000, #808080, #E21E4A, #808080, #000);
+  background-image: linear-gradient(45deg, #003973, #006d8e, #00a3c4, #3bc9e7, #8ee0f0);
   background-size: 200% 200%;
   animation: gradientAnimation 5s infinite;
   font-size: 33px;

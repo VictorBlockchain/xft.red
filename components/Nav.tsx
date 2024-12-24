@@ -183,7 +183,7 @@ const Nav = ({}) => {
                 <div className="cs-main_header_left">
 
                 <Link className="cs-site_branding" href="/">
-                    <span className="animated-text" style={{fontFamily: "'Rubik Lines',systen-ui", marginLeft:'10px', marginTop:'3px'}}>xFT.red</span>
+                    <span className="animated-text" style={{fontFamily: "'Rubik Lines',systen-ui", marginLeft:'10px', marginTop:'3px'}}>Maji.app</span>
                 </Link>
                 </div>
                 <div className="cs-main_header_right">
@@ -208,8 +208,8 @@ const Nav = ({}) => {
                 {/* <li>
                   <Link href="https://pancakeswap.finance/swap?outputCurrency=0xb4668238Acf0314A7b4e153368e479fCd2E09831" target='_blank'>Buy XFT</Link>
                 </li> */}
-                <li><Link href="/swap/0/0">xSwap</Link></li>
-                <li><Link href="/xmash/0">xMash</Link></li>
+                <li><Link href="/swap/0/0">Swap</Link></li>
+                <li><Link href="/xmash/0">Mash</Link></li>
                 {/* <li><Link href="/esports/0">xSports</Link></li> */}
                 
                 <li>
