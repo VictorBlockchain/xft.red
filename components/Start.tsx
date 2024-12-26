@@ -264,8 +264,8 @@ async function handleStartConnected(user_:any){
                                       <Link href="https://hyenapet.com" target='_blank' className="cs-hero_btn cs-style1 cs-color1 d-none d-lg-block">
                                           <span className="white-text">Hyena Pets</span>
                                         </Link>
-                                      <Link href="/swap/0/0" className="cs-hero_btn cs-style1 cs-color2"><span className="white-text">xSwap</span></Link>
-                                      <Link href="/xmash/0" className="cs-hero_btn cs-style1 cs-color1"><span className="white-text">xMash</span></Link>
+                                      <Link href="/swap/0/0" className="cs-hero_btn cs-style1 cs-color2"><span className="white-text">Swap</span></Link>
+                                      <Link href="/xmash/0" className="cs-hero_btn cs-style1 cs-color1"><span className="white-text">Smash</span></Link>
                                       
                                       </div>
                                     </div>
